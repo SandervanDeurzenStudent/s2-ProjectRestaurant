@@ -1,0 +1,26 @@
+﻿
+
+@{
+    ViewData["Title"] = "Restaurant";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+    <div class="col-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="CreateRestaurant" method="post" >
+                    <input type="text" name="Name" placeholder="RestaurantName" />
+                    <input type="text" name="address" placeholder="address" />
+                    <input type="number" name="telephone" placeholder="telephone" />
+                    <input type="text" name="info" placeholder="Restaurant_info" />
+                    <input type="text" name="email" placeholder="email" />
+                    <input type="submit" value="CreateRestaurant" name="submit" placeholder="submit!" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+

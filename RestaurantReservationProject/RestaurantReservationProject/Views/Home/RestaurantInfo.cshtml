@@ -1,0 +1,26 @@
+﻿
+@model List<DataAccess.Restaurants.Restaurant>;
+@{
+    ViewData["Title"] = "Restaurant";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var restaurant = ViewData["Restaurant"] as DataAccess.Restaurants.Restaurant;
+}
+@foreach (DataAccess.Restaurants.Restaurant text in Model)
+{
+    <div class="col-4 mb-3 ">
+        <div class="card border-bottom-1">
+            <div class="card-body">
+                <h1 class="card-text">@text.Name</h1>
+                <h2 class="card-text">@text.Info</h2>
+                <h4 class="card-text">@text.Address</h4>
+                <p class="card-text">@text.Telephone</p>
+                <p class="card-text">@text.email</p>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+
