@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Presentation.models;
 using RestaurantReservationProject.Models;
 
 namespace RestaurantReservationProject.Controllers
@@ -43,11 +44,8 @@ namespace RestaurantReservationProject.Controllers
             BusinessLogic.Restraurants.RestaurantCollectionController RDC = new BusinessLogic.Restraurants.RestaurantCollectionController();
             return View(RDC.getRestaurantById(Convert.ToInt32(id)));
         }
-        public IActionResult UpdateRestaurant(int? id, DataAccess.Restaurants.Restaurant restaurant)
+        public IActionResult UpdateRestaurant(int? id, RestaurantModel restaurant)
         {
-
-            BusinessLogic.Restraurants.RestaurantCollectionController RDC = new BusinessLogic.Restraurants.RestaurantCollectionController();
-            RDC.update(Convert.ToInt32(id), restaurant);
             return RedirectToAction("RestaurantShow");
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -74,10 +72,10 @@ namespace RestaurantReservationProject.Controllers
         {
             return View();
         }
-        public IActionResult CreateRestaurant(DataAccess.Restaurants.Restaurant restaurant)
+        public IActionResult CreateRestaurant(RestaurantModel restaurant)
         {
-            BusinessLogic.Restraurants.RestaurantCollectionController RDC = new BusinessLogic.Restraurants.RestaurantCollectionController();
-            RDC.create(restaurant);
+            //BusinessLogic.Restraurants.RestaurantCollectionController RDC = new BusinessLogic.Restraurants.RestaurantCollectionController();
+            //RDC.create(restaurant);
             return Redirect("Restaurant");
         }
         public IActionResult RestaurantInfo(int? id)

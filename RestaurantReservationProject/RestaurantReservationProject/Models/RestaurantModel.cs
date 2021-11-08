@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogic.Models;
+using System;
 
 
 namespace Presentation.models
@@ -30,10 +31,47 @@ namespace Presentation.models
             get;
             set;
         }
-        public string email
+        public string Email
         {
             get;
             set;
+        }
+
+        public RestaurantModel()
+        {
+        }
+
+        public RestaurantModel(int id, string name, string info, string address, int telephone, string email)
+        {
+            Id = id;
+            Name = name;
+            Info = info;
+            Address = address;
+            Telephone = telephone;
+            this.Email = email;
+        }
+
+        public RestaurantModel(string name, string info, string address, int telephone, string email)
+        {
+            Name = name;
+            Info = info;
+            Address = address;
+            Telephone = telephone;
+            this.Email = email;
+        }
+        public Restaurant convertToLogic()
+        {
+            return new Restaurant(Id, Name, Info, Address, Telephone, Email);
+        }
+        public RestaurantModel(Restaurant restaurant)
+        {
+            Id = restaurant.Id;
+            Name = restaurant.Name;
+            Info = restaurant.Info;
+            Address = restaurant.Address;
+            Telephone = restaurant.Telephone;
+            Email = restaurant.Email;
+
         }
     }
 }

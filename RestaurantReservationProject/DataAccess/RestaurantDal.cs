@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using MySqlConnector;
-using DataAccess.Restaurants;
-
-
-
-
+using DataAcces.interfaces.interfaces;
+using DataAccess.interfaces.RestaurantsDto;
+using System.Linq;
 
 namespace DataAccess
 {
-    public class RestaurantDal 
+    public class RestaurantDal : IRestaurantDal, IRestaurantContainerDal
     {
-        public void create(Restaurant restaurant)
+        public RestaurantDal()
+        {
+
+        }
+        public void create(RestaurantDto restaurant)
         {
             //inject local DB
             Dependecy dependecy = new Dependecy(new DB());
@@ -22,7 +24,7 @@ namespace DataAccess
             {
                 DB db = new DB();
                 string conn = db.ReturnConnectionString();
-                string query = "INSERT INTO `restaurants` (`restaurant_name`, `restaurant_info`, `address`, `telephone`, `email`) VALUES( '"+ restaurant.Name + "', '" + restaurant.Info + "', '" + restaurant.Address + "', " + restaurant.Telephone + ", '" + restaurant.email + "')";
+                string query = "INSERT INTO `restaurants` (`restaurant_name`, `restaurant_info`, `address`, `telephone`, `email`) VALUES( '"+ restaurant.Name + "', '" + restaurant.Info + "', '" + restaurant.Address + "', " + restaurant.Telephone + ", '" + restaurant.Email + "')";
                 MySqlConnection MyConn2 = new MySqlConnection(conn);
                 //This is command class which will handle the query and connection object.  
                 MySqlCommand MyCommand2 = new MySqlCommand(query, MyConn2);
@@ -40,7 +42,7 @@ namespace DataAccess
             }
 
         }
-        public List<Restaurants.Restaurant> returnList()
+        public List<RestaurantDto> returnList()
         {
             DB db = new DB();
             string conn = db.ReturnConnectionString();
@@ -51,7 +53,7 @@ namespace DataAccess
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
                 MyAdapter.SelectCommand = MyCommand2;
-                List<Restaurant> restaurants = new List<Restaurant>();
+                List<RestaurantDto> restaurants = new List<RestaurantDto>();
 
                 using (MySqlCommand command = new MySqlCommand(Query, MyConn2))
                 {
@@ -60,12 +62,12 @@ namespace DataAccess
                     {
                         while (reader.Read())
                         {
-                            Restaurant entity = new Restaurant();
+                            RestaurantDto entity = new RestaurantDto();
                             entity.Id = (int)reader["id"];
                             entity.Name = (string)reader["restaurant_name"];
                             entity.Telephone = (int)reader["telephone"];
                             entity.Address = (string)reader["address"];
-                            entity.email = (string)reader["email"];
+                            entity.Email = (string)reader["email"];
                             entity.Info = (string)reader["restaurant_info"];
                             restaurants.Add(entity);
                         }
@@ -110,7 +112,7 @@ namespace DataAccess
         }
 
 
-        public List<Restaurant> getRestaurantById(int id)
+        public RestaurantDto getRestaurantById(int id)
         {
             DB db = new DB();
             string conn = db.ReturnConnectionString();
@@ -122,7 +124,7 @@ namespace DataAccess
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
                 MyAdapter.SelectCommand = MyCommand2;
-                List<Restaurant> restaurants = new List<Restaurant>();
+                List<RestaurantDto> restaurants = new List<RestaurantDto>();
 
                 using (MySqlCommand command = new MySqlCommand(Query, MyConn2))
                 {
@@ -131,17 +133,17 @@ namespace DataAccess
                     {
                         while (reader.Read())
                         {
-                            Restaurant entity = new Restaurant();
+                            RestaurantDto entity = new RestaurantDto();
                             entity.Id = (int)reader["id"];
                             entity.Name = (string)reader["restaurant_name"];
                             entity.Telephone = (int)reader["telephone"];
                             entity.Address = (string)reader["address"];
-                            entity.email = (string)reader["email"];
+                            entity.Email = (string)reader["email"];
                             entity.Info = (string)reader["restaurant_info"];
                             restaurants.Add(entity);
                         }
                         // Call Close when done reading.
-                        return restaurants;
+                        return restaurants.First();
                     }
                 }
 
@@ -152,7 +154,7 @@ namespace DataAccess
             }
         }
 
-        public void update(int id, Restaurant restaurant)
+        public void update(int id, RestaurantDto restaurant)
         {
             try
             {
@@ -167,7 +169,7 @@ namespace DataAccess
                 MyCommand2.Parameters.AddWithValue("@info", restaurant.Info);
                 MyCommand2.Parameters.AddWithValue("@address", restaurant.Address);
                 MyCommand2.Parameters.AddWithValue("@telephone", restaurant.Telephone);
-                MyCommand2.Parameters.AddWithValue("@email", restaurant.email);
+                MyCommand2.Parameters.AddWithValue("@email", restaurant.Email);
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();

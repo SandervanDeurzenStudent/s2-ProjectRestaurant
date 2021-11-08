@@ -1,46 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BusinessLogic.Models;
+using DataAcces.interfaces.interfaces;
+using DataAccess.Factories;
 using MySqlConnector;
-
 namespace BusinessLogic.Restraurants
 {
-    public class RestaurantCollectionController : IRestaurantController
+    public class RestaurantCollectionController : IRestaurantContainerLogic
     {
-        public void create(DataAccess.Restaurants.Restaurant restaurant)
+        IRestaurantContainerDal restaurantContainerDal;
+        public RestaurantCollectionController()
         {
-            
-            DataAccess.RestaurantDal dataacces = new DataAccess.RestaurantDal();
-            dataacces.create(restaurant);
+            restaurantContainerDal = RestaurantFactory.CreateRestaurantCollection();
         }
-        public List<DataAccess.Restaurants.Restaurant> GetList()
+        public void create(Restaurant restaurant)
         {
-            DataAccess.RestaurantDal dataacces = new DataAccess.RestaurantDal();
-            return dataacces.returnList();
-            
+            restaurantContainerDal.create(restaurant.convertToDto());   
         }
-
+        public List<Restaurant> GetList()
+        {
+            List<Restaurant> restaurants = new List<Restaurant>();
+            restaurantContainerDal.returnList().ForEach(dto => restaurants.Add(new Restaurant(dto)));
+            return restaurants;
+        }
         public void Delete(int id)
         {
-            DataAccess.RestaurantDal dataacces = new DataAccess.RestaurantDal();
-            dataacces.Delete(id);
+            restaurantContainerDal.Delete(id);
         }
-        public void update(int id, DataAccess.Restaurants.Restaurant restaurant)
-        {
-            DataAccess.RestaurantDal dataacces = new DataAccess.RestaurantDal();
-            dataacces.update(id, restaurant);
-        }
-
+        
+        //testing with unit tests
         public int ReturnList(int id)
         {
             return id = 5;
         }
 
         
-        public List<DataAccess.Restaurants.Restaurant> getRestaurantById( int id)
+        public Restaurant getRestaurantById( int id)
         {
-            DataAccess.RestaurantDal dataacces = new DataAccess.RestaurantDal();
-            return dataacces.getRestaurantById( id);
+            return new Restaurant(restaurantContainerDal.getRestaurantById(id));
         }
 
     }

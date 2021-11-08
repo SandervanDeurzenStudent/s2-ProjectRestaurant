@@ -1,11 +1,11 @@
-﻿@model List<DataAccess.Restaurants.Restaurant>;
+﻿@model List<Presentation.models.RestaurantModel>;
 @{
     ViewData["Title"] = "Restaurant";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var restaurant = ViewData["Restaurant"] as DataAccess.Restaurants.Restaurant;
+    var restaurant = ViewData["Restaurant"] as Presentation.models.RestaurantModel;
 }
 
-@foreach (DataAccess.Restaurants.Restaurant text in Model)
+@foreach (Presentation.models.RestaurantModel text in Model)
 {
     <div class="col-4 mb-3 ">
         <div class="card border-bottom-1">

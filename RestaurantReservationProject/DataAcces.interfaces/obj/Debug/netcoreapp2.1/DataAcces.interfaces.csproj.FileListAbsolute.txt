@@ -1,0 +1,8 @@
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\bin\Debug\netcoreapp2.1\DataAcces.interfaces.deps.json
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\bin\Debug\netcoreapp2.1\DataAcces.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\bin\Debug\netcoreapp2.1\DataAcces.interfaces.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\obj\Debug\netcoreapp2.1\DataAcces.interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\obj\Debug\netcoreapp2.1\DataAcces.interfaces.AssemblyInfoInputs.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\obj\Debug\netcoreapp2.1\DataAcces.interfaces.AssemblyInfo.cs
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\obj\Debug\netcoreapp2.1\DataAcces.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\obj\Debug\netcoreapp2.1\DataAcces.interfaces.pdb

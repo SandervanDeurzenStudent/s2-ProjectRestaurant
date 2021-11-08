@@ -2586,7 +2586,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DataAccess": "1.0.0",
+          "DataAcces.interfaces": "1.0.0",
+          "DataAccess.Factories": "1.0.0",
           "MySqlConnector": "1.3.13"
         },
         "compile": {
@@ -2596,10 +2597,34 @@
           "bin/placeholder/BusinessLogic.dll": {}
         }
       },
+      "BusinessLogic.Factories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "BusinessLogic": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BusinessLogic.Factories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLogic.Factories.dll": {}
+        }
+      },
+      "DataAcces.interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/DataAcces.interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAcces.interfaces.dll": {}
+        }
+      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
+          "DataAcces.interfaces": "1.0.0",
           "MySqlConnector": "1.3.13"
         },
         "compile": {
@@ -2607,6 +2632,20 @@
         },
         "runtime": {
           "bin/placeholder/DataAccess.dll": {}
+        }
+      },
+      "DataAccess.Factories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "DataAcces.interfaces": "1.0.0",
+          "DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.Factories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.Factories.dll": {}
         }
       },
       "Presentation/1.0.0": {
@@ -2614,6 +2653,7 @@
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "BusinessLogic": "1.0.0",
+          "BusinessLogic.Factories": "1.0.0",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
           "MySqlConnector": "1.3.13"
@@ -8244,10 +8284,25 @@
       "path": "../BusinessLogic/BusinessLogic.csproj",
       "msbuildProject": "../BusinessLogic/BusinessLogic.csproj"
     },
+    "BusinessLogic.Factories/1.0.0": {
+      "type": "project",
+      "path": "../BusinessLogic.Factories/BusinessLogic.Factories.csproj",
+      "msbuildProject": "../BusinessLogic.Factories/BusinessLogic.Factories.csproj"
+    },
+    "DataAcces.interfaces/1.0.0": {
+      "type": "project",
+      "path": "../DataAcces.interfaces/DataAcces.interfaces.csproj",
+      "msbuildProject": "../DataAcces.interfaces/DataAcces.interfaces.csproj"
+    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
       "msbuildProject": "../DataAccess/DataAccess.csproj"
+    },
+    "DataAccess.Factories/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess.Factories/DataAccess.Factories.csproj",
+      "msbuildProject": "../DataAccess.Factories/DataAccess.Factories.csproj"
     },
     "Presentation/1.0.0": {
       "type": "project",

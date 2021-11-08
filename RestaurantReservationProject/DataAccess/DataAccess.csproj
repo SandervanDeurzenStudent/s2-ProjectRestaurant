@@ -9,9 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Users\" />
-    <Folder Include="Interfaces\Users\" />
-    <Folder Include="Interfaces\Restaurants\" />
+    <ProjectReference Include="..\DataAcces.interfaces\DataAcces.interfaces.csproj" />
   </ItemGroup>
 
 </Project>

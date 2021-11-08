@@ -1,0 +1,14 @@
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\bin\Debug\netcoreapp2.1\DataAccess.Factories.deps.json
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\bin\Debug\netcoreapp2.1\DataAccess.Factories.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\bin\Debug\netcoreapp2.1\DataAccess.Factories.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\bin\Debug\netcoreapp2.1\DataAcces.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\bin\Debug\netcoreapp2.1\DataAccess.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\bin\Debug\netcoreapp2.1\DataAcces.interfaces.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\bin\Debug\netcoreapp2.1\DataAccess.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\obj\Debug\netcoreapp2.1\DataAccess.Factories.csprojAssemblyReference.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\obj\Debug\netcoreapp2.1\DataAccess.Factories.csproj.CoreCompileInputs.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\obj\Debug\netcoreapp2.1\DataAccess.Factories.AssemblyInfoInputs.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\obj\Debug\netcoreapp2.1\DataAccess.Factories.AssemblyInfo.cs
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\obj\Debug\netcoreapp2.1\DataAccess.Factories.csproj.CopyComplete
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\obj\Debug\netcoreapp2.1\DataAccess.Factories.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAccess.Factories\obj\Debug\netcoreapp2.1\DataAccess.Factories.pdb

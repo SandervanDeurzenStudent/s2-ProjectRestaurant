@@ -2,11 +2,25 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccess.Restaurants
+namespace DataAccess.interfaces.RestaurantsDto
 {
-        public class Restaurant
+        public  class RestaurantDto
         {
-            public int Id
+        public RestaurantDto()
+        {
+        }
+
+        public RestaurantDto(int id, string name, string info, string address, int telephone, string email)
+        {
+            Id = id;
+            Name = name;
+            Info = info;
+            Address = address;
+            Telephone = telephone;
+            Email = email;
+        }
+
+        public int Id
             {
                 get;
                 set;
@@ -31,7 +45,7 @@ namespace DataAccess.Restaurants
                 get;
                 set;
             }
-            public string email
+            public string Email
             {
                 get;
                 set;
