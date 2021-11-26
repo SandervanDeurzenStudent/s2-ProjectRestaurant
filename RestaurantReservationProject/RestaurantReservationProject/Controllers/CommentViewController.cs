@@ -117,7 +117,7 @@ namespace Presentation.Controllers
             }
 
             commentContainerLogic.Delete(Convert.ToInt32(id));
-            return Redirect("Commentview.Index");
+             return Redirect("/");
         }
 
         [HttpPost, ActionName("Delete")]
