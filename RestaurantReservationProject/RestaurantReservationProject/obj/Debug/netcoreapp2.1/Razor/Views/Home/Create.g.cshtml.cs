@@ -67,7 +67,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral("\r\n    <div class=\"col-4 mb-3\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                ");
             EndContext();
             BeginContext(212, 593, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "245e1cc1121a490eaa204b2ebc348b35", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23dbc02661234fa1a6daeb2641c9165b", async() => {
                 BeginContext(263, 535, true);
                 WriteLiteral(@"
                     <input type=""text"" name=""Name"" placeholder=""RestaurantName"" />

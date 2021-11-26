@@ -75,7 +75,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral("    <div class=\"col-4 mb-3 \">\r\n        <div class=\"card border-bottom-1\">\r\n            <div class=\"card-body\">\r\n                ");
             EndContext();
             BeginContext(424, 97, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "261746383480443a8d1bda5d9f4a4ba3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b84e10fd3ee4fcca29042c637ff7fe7", async() => {
                 BeginContext(479, 23, true);
                 WriteLiteral("<h5 class=\"card-title\">");
                 EndContext();
@@ -130,7 +130,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral("</p>\r\n                ");
             EndContext();
             BeginContext(592, 175, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09625764eb1c4cedbf3794284053b01f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aed69d262e22485bb9bc2335b9f80e76", async() => {
                 BeginContext(652, 108, true);
                 WriteLiteral("\r\n                    <button class=\"btn btn-outline-danger\" type=\"submit\">Delete</button>\r\n                ");
                 EndContext();
@@ -167,7 +167,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(785, 159, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c26c063cbb94c4cbf016e376a764523", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4eeca74fe9a4e00a5fa6dd4538711fd", async() => {
                 BeginContext(832, 108, true);
                 WriteLiteral("\r\n                    <button class=\"btn btn-outline-warning \" type=\"submit\">Edit</button>\r\n                ");
                 EndContext();

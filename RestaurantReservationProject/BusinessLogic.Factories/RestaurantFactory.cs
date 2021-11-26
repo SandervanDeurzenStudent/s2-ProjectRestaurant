@@ -7,7 +7,7 @@ namespace BusinessLogic.Factories
     {
         public static IRestaurantLogic CreateRestaurant()
         {
-            return new BusinessLogic.Controller.Restraurants.RestaurantDataController();
+            return new Controller.Restraurants.RestaurantDataController();
         }
         public static IRestaurantContainerLogic CreateRestaurantCollection()
         {

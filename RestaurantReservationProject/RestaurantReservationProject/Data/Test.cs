@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Presentation.models;
+using Presentation.Models;
 
     public class Test : DbContext
     {
@@ -13,4 +14,6 @@ using Presentation.models;
         }
 
         public DbSet<Presentation.models.RestaurantModel> RestaurantModel { get; set; }
+
+        public DbSet<Presentation.Models.CommentModel> CommentModel { get; set; }
     }

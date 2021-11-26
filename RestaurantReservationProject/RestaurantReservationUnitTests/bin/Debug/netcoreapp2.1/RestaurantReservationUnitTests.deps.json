@@ -1786,10 +1786,19 @@
       "BusinessLogic/1.0.0": {
         "dependencies": {
           "DataAcces.interfaces": "1.0.0",
+          "DataAccess.Factories": "1.0.0",
           "MySqlConnector": "1.3.13"
         },
         "runtime": {
           "BusinessLogic.dll": {}
+        }
+      },
+      "BusinessLogic.Factories/1.0.0": {
+        "dependencies": {
+          "BusinessLogic": "1.0.0"
+        },
+        "runtime": {
+          "BusinessLogic.Factories.dll": {}
         }
       },
       "DataAcces.interfaces/1.0.0": {
@@ -1806,9 +1815,19 @@
           "DataAccess.dll": {}
         }
       },
+      "DataAccess.Factories/1.0.0": {
+        "dependencies": {
+          "DataAcces.interfaces": "1.0.0",
+          "DataAccess": "1.0.0"
+        },
+        "runtime": {
+          "DataAccess.Factories.dll": {}
+        }
+      },
       "Presentation/1.0.0": {
         "dependencies": {
           "BusinessLogic": "1.0.0",
+          "BusinessLogic.Factories": "1.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
           "MySqlConnector": "1.3.13"
         },
@@ -2732,12 +2751,22 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BusinessLogic.Factories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "DataAcces.interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataAccess.Factories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

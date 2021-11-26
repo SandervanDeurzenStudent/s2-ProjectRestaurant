@@ -28,14 +28,6 @@ namespace BusinessLogic.Restraurants
         {
             restaurantContainerDal.Delete(id);
         }
-        
-        //testing with unit tests
-        public int ReturnList(int id)
-        {
-            return id = 5;
-        }
-
-        
         public Restaurant getRestaurantById( int id)
         {
             return new Restaurant(restaurantContainerDal.getRestaurantById(id));

@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantReservationUnitTests", "RestaurantReservationUnitTests\RestaurantReservationUnitTests.csproj", "{E39B5463-1765-4B7F-9B55-61B05CB0F6A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcces.interfaces", "DataAcces.interfaces\DataAcces.interfaces.csproj", "{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcces.interfaces", "DataAcces.interfaces\DataAcces.interfaces.csproj", "{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic.Factories", "BusinessLogic.Factories\BusinessLogic.Factories.csproj", "{958C7445-86AA-4630-AF75-C282F3A72AAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic.Factories", "BusinessLogic.Factories\BusinessLogic.Factories.csproj", "{958C7445-86AA-4630-AF75-C282F3A72AAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Factories", "DataAccess.Factories\DataAccess.Factories.csproj", "{93E47475-877D-43D9-9A44-06F12C7546EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.Factories", "DataAccess.Factories\DataAccess.Factories.csproj", "{93E47475-877D-43D9-9A44-06F12C7546EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

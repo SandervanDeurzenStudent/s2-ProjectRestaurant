@@ -9,6 +9,5 @@ namespace BusinessLogic.Restraurants
         void Delete(int id);
         List<Restaurant> GetList();
         Restaurant getRestaurantById(int id);
-        int ReturnList(int id);
     }
 }

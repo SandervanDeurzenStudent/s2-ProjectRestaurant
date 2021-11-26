@@ -9,8 +9,6 @@ namespace DataAccess.Factories
         {
             return new RestaurantDal();
         }
-
-
         public static IRestaurantContainerDal CreateRestaurantCollection()
         {
             return new RestaurantDal();

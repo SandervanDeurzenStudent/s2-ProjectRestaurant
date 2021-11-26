@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BusinessLogic.Models
 {
-        public  class Restaurant
+        public class Restaurant
         {
             public int Id
             {

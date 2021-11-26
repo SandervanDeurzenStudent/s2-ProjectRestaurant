@@ -12,7 +12,6 @@ namespace BusinessLogic.Controller.Restraurants
    public  class RestaurantDataController : IRestaurantLogic
     {
         IRestaurantDal restaurantDal;
-
         public RestaurantDataController()
         {
             restaurantDal = RestaurantFactory.CreateRestaurant();

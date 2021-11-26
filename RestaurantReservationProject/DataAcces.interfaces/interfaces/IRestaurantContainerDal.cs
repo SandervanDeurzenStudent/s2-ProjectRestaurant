@@ -14,7 +14,5 @@ namespace DataAcces.interfaces.interfaces
         void Delete(int id);
 
         RestaurantDto getRestaurantById(int id);
-       
-          
     }
 }

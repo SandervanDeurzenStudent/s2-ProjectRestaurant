@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataAccess
 {
-    public class DB : IDB1
+    public class DB 
     {
         public string ReturnConnectionString()
         {
