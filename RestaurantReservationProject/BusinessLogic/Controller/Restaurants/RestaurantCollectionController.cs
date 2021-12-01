@@ -28,7 +28,7 @@ namespace BusinessLogic.Restraurants
         {
             restaurantContainerDal.Delete(id);
         }
-        public Restaurant getRestaurantById( int id)
+        public Restaurant getRestaurantById(int id)
         {
             return new Restaurant(restaurantContainerDal.getRestaurantById(id));
         }

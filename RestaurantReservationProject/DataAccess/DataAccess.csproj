@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataAcces.interfaces\DataAcces.interfaces.csproj" />
+    <ProjectReference Include="..\Repositories.interfaces\Repositories.interfaces.csproj" />
+    <ProjectReference Include="..\Repository.factories\Repository.factories.csproj" />
   </ItemGroup>
 
 </Project>

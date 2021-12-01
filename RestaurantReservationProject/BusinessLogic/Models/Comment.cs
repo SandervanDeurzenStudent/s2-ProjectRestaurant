@@ -8,7 +8,7 @@ namespace BusinessLogic.Models
         public class Comment
         {
         private CommentDto dto;
-        //testwithdevf
+        
         public int Id
             {
                 get;
@@ -31,20 +31,20 @@ namespace BusinessLogic.Models
             }
 
         public Comment(int id, string name, string info, int restaurantId)
-            {
-                Id = id;
-                Name = name;
-                Info = info;
+        {
+            Id = id;
+            Name = name;
+            Info = info;
             RestaurantId = restaurantId;
         }
 
-            public Comment(string name, string info, int restaurantId)
-            {
-                Name = name;
-                Info = info;
-                RestaurantId = restaurantId;
+        public Comment(string name, string info, int restaurantId)
+        {
+            Name = name;
+            Info = info;
+            RestaurantId = restaurantId;
                 
-            }
+        }
 
         public Comment(CommentDto dto)
         {

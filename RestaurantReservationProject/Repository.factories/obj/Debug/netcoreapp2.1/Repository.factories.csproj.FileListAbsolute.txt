@@ -1,0 +1,16 @@
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\bin\Debug\netcoreapp2.1\Repository.factories.deps.json
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\bin\Debug\netcoreapp2.1\Repository.factories.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\bin\Debug\netcoreapp2.1\Repository.factories.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\bin\Debug\netcoreapp2.1\DataAcces.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\bin\Debug\netcoreapp2.1\Repositories.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\bin\Debug\netcoreapp2.1\Repositories.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\bin\Debug\netcoreapp2.1\Repositories.interfaces.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\bin\Debug\netcoreapp2.1\Repositories.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\bin\Debug\netcoreapp2.1\DataAcces.interfaces.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\obj\Debug\netcoreapp2.1\Repository.factories.csprojAssemblyReference.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\obj\Debug\netcoreapp2.1\Repository.factories.csproj.CoreCompileInputs.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\obj\Debug\netcoreapp2.1\Repository.factories.AssemblyInfoInputs.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\obj\Debug\netcoreapp2.1\Repository.factories.AssemblyInfo.cs
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\obj\Debug\netcoreapp2.1\Repository.factories.csproj.CopyComplete
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\obj\Debug\netcoreapp2.1\Repository.factories.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\Repository.factories\obj\Debug\netcoreapp2.1\Repository.factories.pdb
