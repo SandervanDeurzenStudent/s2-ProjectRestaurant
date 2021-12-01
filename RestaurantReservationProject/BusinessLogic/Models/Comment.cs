@@ -8,7 +8,7 @@ namespace BusinessLogic.Models
         public class Comment
         {
         private CommentDto dto;
-
+        //testwithdev
         public int Id
             {
                 get;
@@ -54,19 +54,7 @@ namespace BusinessLogic.Models
             RestaurantId = dto.Restaurantid;
         }
 
-        //public Restaurant(RestaurantDto restaurantDto)
-        //{
-        //    Id = restaurantDto.Id;
-        //    Name = restaurantDto.Name;
-        //    Info = restaurantDto.Info;
-        //    Address = restaurantDto.Address;
-        //    Telephone = restaurantDto.Telephone;
-        //    Email = restaurantDto.Email;
-        //}
-        //public RestaurantDto convertToDto()
-        //{
-        //    return new RestaurantDto(Id, Name, Info, Address, Telephone, Email);
-        //}
+       
         public CommentDto convertToDto()
         {
             return new CommentDto(Id, Name, Info, RestaurantId);
