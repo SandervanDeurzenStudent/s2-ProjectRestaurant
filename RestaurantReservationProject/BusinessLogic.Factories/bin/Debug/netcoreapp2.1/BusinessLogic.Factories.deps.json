@@ -217,22 +217,17 @@
       },
       "BusinessLogic/1.0.0": {
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
           "DataAccess.Factories": "1.0.0",
+          "DataAccess.interfaces": "1.0.0",
           "MySqlConnector": "1.3.13"
         },
         "runtime": {
           "BusinessLogic.dll": {}
         }
       },
-      "DataAcces.interfaces/1.0.0": {
-        "runtime": {
-          "DataAcces.interfaces.dll": {}
-        }
-      },
       "DataAccess/1.0.0": {
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
+          "DataAccess.interfaces": "1.0.0",
           "MySqlConnector": "1.3.13",
           "Repositories.interfaces": "1.0.0",
           "Repository.factories": "1.0.0"
@@ -243,16 +238,21 @@
       },
       "DataAccess.Factories/1.0.0": {
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
-          "DataAccess": "1.0.0"
+          "DataAccess": "1.0.0",
+          "DataAccess.interfaces": "1.0.0"
         },
         "runtime": {
           "DataAccess.Factories.dll": {}
         }
       },
+      "DataAccess.interfaces/1.0.0": {
+        "runtime": {
+          "DataAccess.interfaces.dll": {}
+        }
+      },
       "Repositories/1.0.0": {
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
+          "DataAccess.interfaces": "1.0.0",
           "MySql.Data": "8.0.27",
           "Repositories.interfaces": "1.0.0"
         },
@@ -262,7 +262,7 @@
       },
       "Repositories.interfaces/1.0.0": {
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0"
+          "DataAccess.interfaces": "1.0.0"
         },
         "runtime": {
           "Repositories.interfaces.dll": {}
@@ -409,17 +409,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DataAcces.interfaces/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "DataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "DataAccess.Factories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataAccess.interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

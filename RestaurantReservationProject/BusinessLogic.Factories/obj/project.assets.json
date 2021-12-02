@@ -428,8 +428,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
           "DataAccess.Factories": "1.0.0",
+          "DataAccess.interfaces": "1.0.0",
           "MySqlConnector": "1.3.13"
         },
         "compile": {
@@ -439,21 +439,11 @@
           "bin/placeholder/BusinessLogic.dll": {}
         }
       },
-      "DataAcces.interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "compile": {
-          "bin/placeholder/DataAcces.interfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataAcces.interfaces.dll": {}
-        }
-      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
+          "DataAccess.interfaces": "1.0.0",
           "MySqlConnector": "1.3.13",
           "Repositories.interfaces": "1.0.0",
           "Repository.factories": "1.0.0"
@@ -469,8 +459,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
-          "DataAccess": "1.0.0"
+          "DataAccess": "1.0.0",
+          "DataAccess.interfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DataAccess.Factories.dll": {}
@@ -479,11 +469,21 @@
           "bin/placeholder/DataAccess.Factories.dll": {}
         }
       },
+      "DataAccess.interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/DataAccess.interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.interfaces.dll": {}
+        }
+      },
       "Repositories/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
+          "DataAccess.interfaces": "1.0.0",
           "MySql.Data": "8.0.27",
           "Repositories.interfaces": "1.0.0"
         },
@@ -498,7 +498,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0"
+          "DataAccess.interfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Repositories.interfaces.dll": {}
@@ -1488,11 +1488,6 @@
       "path": "../BusinessLogic/BusinessLogic.csproj",
       "msbuildProject": "../BusinessLogic/BusinessLogic.csproj"
     },
-    "DataAcces.interfaces/1.0.0": {
-      "type": "project",
-      "path": "../DataAcces.interfaces/DataAcces.interfaces.csproj",
-      "msbuildProject": "../DataAcces.interfaces/DataAcces.interfaces.csproj"
-    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
@@ -1502,6 +1497,11 @@
       "type": "project",
       "path": "../DataAccess.Factories/DataAccess.Factories.csproj",
       "msbuildProject": "../DataAccess.Factories/DataAccess.Factories.csproj"
+    },
+    "DataAccess.interfaces/1.0.0": {
+      "type": "project",
+      "path": "../DataAcces.interfaces/DataAccess.interfaces.csproj",
+      "msbuildProject": "../DataAcces.interfaces/DataAccess.interfaces.csproj"
     },
     "Repositories/1.0.0": {
       "type": "project",

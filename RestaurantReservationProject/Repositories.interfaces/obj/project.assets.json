@@ -208,14 +208,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "DataAcces.interfaces/1.0.0": {
+      "DataAccess.interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "compile": {
-          "bin/placeholder/DataAcces.interfaces.dll": {}
+          "bin/placeholder/DataAccess.interfaces.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DataAcces.interfaces.dll": {}
+          "bin/placeholder/DataAccess.interfaces.dll": {}
         }
       }
     }
@@ -691,15 +691,15 @@
         "netstandard.library.nuspec"
       ]
     },
-    "DataAcces.interfaces/1.0.0": {
+    "DataAccess.interfaces/1.0.0": {
       "type": "project",
-      "path": "../DataAcces.interfaces/DataAcces.interfaces.csproj",
-      "msbuildProject": "../DataAcces.interfaces/DataAcces.interfaces.csproj"
+      "path": "../DataAcces.interfaces/DataAccess.interfaces.csproj",
+      "msbuildProject": "../DataAcces.interfaces/DataAccess.interfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "DataAcces.interfaces >= 1.0.0",
+      "DataAccess.interfaces >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -733,8 +733,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAcces.interfaces.csproj": {
-              "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAcces.interfaces.csproj"
+            "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAccess.interfaces.csproj": {
+              "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAccess.interfaces.csproj"
             }
           }
         }

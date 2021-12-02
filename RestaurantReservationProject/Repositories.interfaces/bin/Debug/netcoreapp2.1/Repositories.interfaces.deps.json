@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v2.1": {
       "Repositories.interfaces/1.0.0": {
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0"
+          "DataAccess.interfaces": "1.0.0"
         },
         "runtime": {
           "Repositories.interfaces.dll": {}
         }
       },
-      "DataAcces.interfaces/1.0.0": {
+      "DataAccess.interfaces/1.0.0": {
         "runtime": {
-          "DataAcces.interfaces.dll": {}
+          "DataAccess.interfaces.dll": {}
         }
       }
     }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DataAcces.interfaces/1.0.0": {
+    "DataAccess.interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

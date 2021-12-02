@@ -8,7 +8,6 @@ namespace RestaurantReservationUnitTests.Restaurants
     class RestaurantRepositoryTests
     {
 
-
         //create
         [Test]
         public void Should_createRestaurant()

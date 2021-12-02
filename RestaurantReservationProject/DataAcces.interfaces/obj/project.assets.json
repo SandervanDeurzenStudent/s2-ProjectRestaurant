@@ -694,9 +694,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAcces.interfaces.csproj",
-      "projectName": "DataAcces.interfaces",
-      "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAcces.interfaces.csproj",
+      "projectUniqueName": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAccess.interfaces.csproj",
+      "projectName": "DataAccess.interfaces",
+      "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAccess.interfaces.csproj",
       "packagesPath": "C:\\Users\\Sander van Deurzen\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\obj\\",
       "projectStyle": "PackageReference",

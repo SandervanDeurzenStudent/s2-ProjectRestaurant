@@ -415,21 +415,21 @@
           }
         }
       },
-      "DataAcces.interfaces/1.0.0": {
+      "DataAccess.interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "compile": {
-          "bin/placeholder/DataAcces.interfaces.dll": {}
+          "bin/placeholder/DataAccess.interfaces.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DataAcces.interfaces.dll": {}
+          "bin/placeholder/DataAccess.interfaces.dll": {}
         }
       },
       "Repositories/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
+          "DataAccess.interfaces": "1.0.0",
           "MySql.Data": "8.0.27",
           "Repositories.interfaces": "1.0.0"
         },
@@ -444,7 +444,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0"
+          "DataAccess.interfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Repositories.interfaces.dll": {}
@@ -1384,10 +1384,10 @@
         "version.txt"
       ]
     },
-    "DataAcces.interfaces/1.0.0": {
+    "DataAccess.interfaces/1.0.0": {
       "type": "project",
-      "path": "../DataAcces.interfaces/DataAcces.interfaces.csproj",
-      "msbuildProject": "../DataAcces.interfaces/DataAcces.interfaces.csproj"
+      "path": "../DataAcces.interfaces/DataAccess.interfaces.csproj",
+      "msbuildProject": "../DataAcces.interfaces/DataAccess.interfaces.csproj"
     },
     "Repositories/1.0.0": {
       "type": "project",
