@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Restraurants;
+﻿using BusinessLogic.Controller.Restraurants;
+using BusinessLogic.Restraurants;
 using System;
 
 namespace BusinessLogic.Factories
@@ -7,7 +8,7 @@ namespace BusinessLogic.Factories
     {
         public static IRestaurantLogic CreateRestaurant()
         {
-            return new Controller.Restraurants.RestaurantDataController();
+            return new RestaurantDataController();
         }
         public static IRestaurantContainerLogic CreateRestaurantCollection()
         {

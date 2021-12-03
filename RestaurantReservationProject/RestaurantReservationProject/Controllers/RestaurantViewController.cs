@@ -91,7 +91,6 @@ namespace Presentation.Controllers
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 try
@@ -103,10 +102,6 @@ namespace Presentation.Controllers
                     if (!RestaurantModelExists(restaurantModel.Id))
                     {
                         return NotFound();
-                    }
-                    else
-                    {
-                        throw;
                     }
                 }
                 return RedirectToAction(nameof(Index));
