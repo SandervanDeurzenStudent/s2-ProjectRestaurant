@@ -16,7 +16,8 @@ namespace BusinessLogic.Restraurants
         }
         public void create(Restaurant restaurant)
         {
-            restaurantContainerDal.create(restaurant.convertToDto());   
+            restaurantContainerDal.create(restaurant.convertToDto());  
+            //testet
         }
         public List<Restaurant> GetList()
         {
