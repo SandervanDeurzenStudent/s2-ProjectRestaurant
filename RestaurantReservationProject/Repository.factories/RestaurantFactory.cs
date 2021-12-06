@@ -6,9 +6,9 @@ namespace Repositories.Factories
 {
     public class RestaurantFactory
     {
-        public static IRestaurantContext CreateRestaurant()
+        public static IRestaurantMySqlContext CreateRestaurant()
         {
-            return new RestaurantMemoryMySqlContext();
+            return new RestaurantMySqlContext();
         }
         //public static IRestaurantContext CreateRestaurantCollection()
         //{

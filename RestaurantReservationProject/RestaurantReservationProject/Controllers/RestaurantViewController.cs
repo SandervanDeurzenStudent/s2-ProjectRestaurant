@@ -17,17 +17,18 @@ namespace Presentation.Controllers
     {
         private readonly Test _context;
         IRestaurantContainerLogic _restaurantContainerLogic;
-        ICommentContainerLogic commentContainerLogic;
+        ICommentContainerLogic _commentContainerLogic;
         IRestaurantLogic restaurantLogic;
         RestaurantConverter.RestaurantViewConverter restaurantViewConverter;
         RestaurantContainer r = new RestaurantContainer();
-        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic)
+        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic)
         {
             //restaurantContainerLogic = IRESTCONTLGIC;
             //commentContainerLogic = CommentFactory.CreateCommentCollection();
             //restaurantLogic = RestaurantFactory.CreateRestaurant();
             restaurantViewConverter = new RestaurantConverter.RestaurantViewConverter();
             _restaurantContainerLogic =  restaurantContainerLogic;
+            _commentContainerLogic = commentContainerLogic;
         }
         
         // GET: Restaurant
@@ -49,10 +50,17 @@ namespace Presentation.Controllers
                 return NotFound();
             }
             //get the Comments of the restaurant
-            commentContainerLogic.GetCommentsById(Convert.ToInt32(id));
-         
+            //IndexCommentViewModel indexCommentViewModel = new IndexCommentViewModel
+            //{
+            //    commentList = _commentContainerLogic.GetCommentsById(Convert.ToInt32(id)))
+            //};
+            var commentList = new CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)));
+            IndexViewModel indexViewModel = new IndexViewModel();
+            var restaurant = new RestaurantViewModel(_restaurantContainerLogic.getRestaurantById(Convert.ToInt32(id)));
+            indexViewModel.restaurantModel = restaurant;
+            indexViewModel.commentList = commentList;
             //get the restaurant
-            return View(new RestaurantViewModel(_restaurantContainerLogic.getRestaurantById(Convert.ToInt32(id))));
+            return View(indexViewModel);
         }
 
         // GET: Restaurant/Create/restaurantId

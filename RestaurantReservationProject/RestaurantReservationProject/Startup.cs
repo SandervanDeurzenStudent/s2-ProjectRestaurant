@@ -14,6 +14,8 @@ using DataAccess;
 using DataAcces.interfaces.interfaces;
 using BusinessLogic.Restraurants;
 using BusinessLogic.Models;
+using Repositories.interfaces;
+using Repositories;
 
 namespace RestaurantReservationProject
 {
@@ -45,6 +47,7 @@ namespace RestaurantReservationProject
             services.AddSingleton<IRestaurantContainerDal, RestaurantDal>();
             services.AddSingleton<IRestaurantContainerLogic, RestaurantContainer>();
             services.AddSingleton<IRestaurantLogic, Restaurant>();
+            services.AddSingleton<IRestaurantMySqlContext, RestaurantMySqlContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

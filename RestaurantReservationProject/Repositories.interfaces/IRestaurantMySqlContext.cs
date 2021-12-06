@@ -6,7 +6,7 @@ using DataAccess.interfaces.RestaurantsDto;
 
 namespace Repositories.interfaces
 {
-    public interface IRestaurantContext
+    public interface IRestaurantMySqlContext
     {
          void create(RestaurantDto restaurant);
 

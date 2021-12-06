@@ -22,8 +22,8 @@ namespace Presentation.Controllers
       
         public async Task<IActionResult> Index()
         {
-            List<CommentModel> comment = new List<CommentModel>();
-            commentContainerLogic.GetList().ForEach(dto => comment.Add(new CommentModel(dto)));
+            List<CommentViewModel> comment = new List<CommentViewModel>();
+            commentContainerLogic.GetList().ForEach(dto => comment.Add(new CommentViewModel(dto)));
             return View(comment);
         }
 
@@ -51,7 +51,7 @@ namespace Presentation.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Info,Restaurant_id")] CommentModel commentModel, int? RestaurantId)
+        public async Task<IActionResult> Create([Bind("Id,Name,Info,Restaurant_id")] CommentViewModel commentModel, int? RestaurantId)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Presentation.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] CommentModel commentModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] CommentViewModel commentModel)
         {
             if (id != commentModel.Id)
             {

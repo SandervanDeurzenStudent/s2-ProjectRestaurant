@@ -9,6 +9,10 @@ namespace BusinessLogic.Models
         {
         private CommentDto dto;
         
+        public Comment()
+        {
+
+        }
         public int Id
             {
                 get;

@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Repositories
 {
-    public class RestaurantMemoryMySqlContext : IRestaurantContext
+    public class RestaurantMySqlContext : IRestaurantMySqlContext
     {
         public void create(RestaurantDto restaurant)
         {

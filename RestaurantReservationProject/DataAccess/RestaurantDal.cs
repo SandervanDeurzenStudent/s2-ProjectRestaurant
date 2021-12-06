@@ -12,10 +12,10 @@ namespace DataAccess
 {
     public class RestaurantDal : IRestaurantDal, IRestaurantContainerDal
     {
-        IRestaurantContext _restaurantMemoryContext;
-        public RestaurantDal(IRestaurantContext restaurantContext)
+        IRestaurantMySqlContext _restaurantMemoryContext;
+        public RestaurantDal(IRestaurantMySqlContext restaurantMySqlContext)
         {
-            _restaurantMemoryContext = restaurantContext;
+            _restaurantMemoryContext = restaurantMySqlContext;
         }
         public void create(RestaurantDto restaurant)
         {
@@ -41,6 +41,8 @@ namespace DataAccess
         }
         public List<RestaurantDto> returnList()
         {
+            //List<RestaurantDto> restaurants = RestaurantDalConverter.Convert_To_RestaurantDal(_restaurantMemoryContext.returnList());
+            //return restaurants;
             try
             {
                 DB db = new DB();
