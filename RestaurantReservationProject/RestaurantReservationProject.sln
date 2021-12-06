@@ -13,15 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantReservationUnitTe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.interfaces", "DataAcces.interfaces\DataAccess.interfaces.csproj", "{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic.Factories", "BusinessLogic.Factories\BusinessLogic.Factories.csproj", "{958C7445-86AA-4630-AF75-C282F3A72AAA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.Factories", "DataAccess.Factories\DataAccess.Factories.csproj", "{93E47475-877D-43D9-9A44-06F12C7546EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{2A90D123-5237-47B5-856F-8C904DB6E8BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{2A90D123-5237-47B5-856F-8C904DB6E8BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.interfaces", "Repositories.interfaces\Repositories.interfaces.csproj", "{86FD78E2-1A88-4A88-89F5-A95A8A4914E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.interfaces", "Repositories.interfaces\Repositories.interfaces.csproj", "{86FD78E2-1A88-4A88-89F5-A95A8A4914E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.factories", "Repository.factories\Repository.factories.csproj", "{F2CE05C5-8D32-4233-9D52-639CF53AFD92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.factories", "Repository.factories\Repository.factories.csproj", "{F2CE05C5-8D32-4233-9D52-639CF53AFD92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +47,6 @@ Global
 		{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{958C7445-86AA-4630-AF75-C282F3A72AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{958C7445-86AA-4630-AF75-C282F3A72AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{958C7445-86AA-4630-AF75-C282F3A72AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{958C7445-86AA-4630-AF75-C282F3A72AAA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93E47475-877D-43D9-9A44-06F12C7546EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{93E47475-877D-43D9-9A44-06F12C7546EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93E47475-877D-43D9-9A44-06F12C7546EE}.Release|Any CPU.ActiveCfg = Release|Any CPU

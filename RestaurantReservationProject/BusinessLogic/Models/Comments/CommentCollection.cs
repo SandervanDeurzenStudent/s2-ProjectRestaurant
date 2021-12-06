@@ -3,16 +3,15 @@ using BusinessLogic.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using DataAccess.Factories;
 using BusinessLogic.Factories;
 using DataAcces.interfaces.interfaces;
 
 namespace BusinessLogic.Controller.Comments
 {
-    public class CommentCollectionController : ICommentContainerLogic
+    public class CommentCollection : ICommentContainerLogic
     {
         ICommentContainerDal commentContainerDal;
-        public CommentCollectionController()
+        public CommentCollection()
         {
             commentContainerDal = CommentFactoryDal.CreateCommentCollection();
         }

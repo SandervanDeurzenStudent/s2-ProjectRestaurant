@@ -9,7 +9,6 @@ namespace Repositories.interfaces
         public RestaurantRepositoryDto()
         {
         }
-
         public int Id
         {
             get;

@@ -4749,19 +4749,6 @@
           "bin/placeholder/BusinessLogic.dll": {}
         }
       },
-      "BusinessLogic.Factories/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "BusinessLogic": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/BusinessLogic.Factories.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BusinessLogic.Factories.dll": {}
-        }
-      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -13042,11 +13029,6 @@
       "path": "../BusinessLogic/BusinessLogic.csproj",
       "msbuildProject": "../BusinessLogic/BusinessLogic.csproj"
     },
-    "BusinessLogic.Factories/1.0.0": {
-      "type": "project",
-      "path": "../BusinessLogic.Factories/BusinessLogic.Factories.csproj",
-      "msbuildProject": "../BusinessLogic.Factories/BusinessLogic.Factories.csproj"
-    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
@@ -13081,7 +13063,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "BusinessLogic >= 1.0.0",
-      "BusinessLogic.Factories >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -13119,9 +13100,6 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\BusinessLogic.Factories\\BusinessLogic.Factories.csproj": {
-              "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\BusinessLogic.Factories\\BusinessLogic.Factories.csproj"
-            },
             "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\BusinessLogic\\BusinessLogic.csproj": {
               "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\BusinessLogic\\BusinessLogic.csproj"
             }

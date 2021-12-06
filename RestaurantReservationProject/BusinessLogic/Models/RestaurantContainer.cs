@@ -3,26 +3,29 @@ using System.Collections.Generic;
 using System.Text;
 using BusinessLogic.Models;
 using DataAcces.interfaces.interfaces;
-using DataAccess.Factories;
 using MySqlConnector;
 namespace BusinessLogic.Restraurants
 {
-    public class RestaurantCollectionController : IRestaurantContainerLogic
+    public class RestaurantContainer : IRestaurantContainerLogic
     {
-        IRestaurantContainerDal restaurantContainerDal;
-        public RestaurantCollectionController()
+        private IRestaurantContainerDal restaurantContainerDal;
+        private RestaurantConverter restaurantConverter = new RestaurantConverter();
+        public RestaurantContainer(IRestaurantContainerDal restaurantDAl)
         {
-            restaurantContainerDal = RestaurantFactory.CreateRestaurantCollection();
+            restaurantContainerDal = restaurantDAl;
+        }
+        public RestaurantContainer()
+        {
+           
         }
         public void create(Restaurant restaurant)
         {
             restaurantContainerDal.create(restaurant.convertToDto());  
-            //testet
+         //test
         }
         public List<Restaurant> GetList()
         {
-            List<Restaurant> restaurants = new List<Restaurant>();
-            restaurantContainerDal.returnList().ForEach(dto => restaurants.Add(new Restaurant(dto)));
+            List<Restaurant> restaurants = restaurantConverter.Convert_To_Restaurant(restaurantContainerDal.returnList()); 
             return restaurants;
         }
         public void Delete(int id)

@@ -18,7 +18,6 @@ namespace Presentation.Controllers
 
         public CommentViewController()
         {
-            commentContainerLogic = CommentFactory.CreateCommentCollection();
         }
       
         public async Task<IActionResult> Index()

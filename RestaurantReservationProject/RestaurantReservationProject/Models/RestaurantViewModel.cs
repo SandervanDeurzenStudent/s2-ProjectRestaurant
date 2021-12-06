@@ -4,7 +4,7 @@ using System;
 
 namespace Presentation.models
 {
-    public class RestaurantModel
+    public class RestaurantViewModel
     {
         public int Id
         {
@@ -37,11 +37,11 @@ namespace Presentation.models
             set;
         }
 
-        public RestaurantModel()
+        public RestaurantViewModel()
         {
         }
 
-        public RestaurantModel(int id, string name, string info, string address, int telephone, string email)
+        public RestaurantViewModel(int id, string name, string info, string address, int telephone, string email)
         {
             Id = id;
             Name = name;
@@ -51,7 +51,7 @@ namespace Presentation.models
             this.Email = email;
         }
 
-        public RestaurantModel(string name, string info, string address, int telephone, string email)
+        public RestaurantViewModel(string name, string info, string address, int telephone, string email)
         {
             Name = name;
             Info = info;
@@ -63,7 +63,7 @@ namespace Presentation.models
         {
             return new Restaurant(Id, Name, Info, Address, Telephone, Email);
         }
-        public RestaurantModel(Restaurant restaurant)
+        public RestaurantViewModel(Restaurant restaurant)
         {
             Id = restaurant.Id;
             Name = restaurant.Name;

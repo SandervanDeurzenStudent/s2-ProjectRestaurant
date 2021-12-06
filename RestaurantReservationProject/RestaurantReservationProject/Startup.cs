@@ -10,6 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using DataAccess;
+using DataAcces.interfaces.interfaces;
+using BusinessLogic.Restraurants;
+using BusinessLogic.Models;
 
 namespace RestaurantReservationProject
 {
@@ -37,6 +41,10 @@ namespace RestaurantReservationProject
 
             services.AddDbContext<Test>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Test")));
+
+            services.AddSingleton<IRestaurantContainerDal, RestaurantDal>();
+            services.AddSingleton<IRestaurantContainerLogic, RestaurantContainer>();
+            services.AddSingleton<IRestaurantLogic, Restaurant>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

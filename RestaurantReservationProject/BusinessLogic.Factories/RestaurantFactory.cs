@@ -6,13 +6,13 @@ namespace BusinessLogic.Factories
 {
     public class RestaurantFactory
     {
-        public static IRestaurantLogic CreateRestaurant()
-        {
-            return new RestaurantDataController();
-        }
-        public static IRestaurantContainerLogic CreateRestaurantCollection()
-        {
-            return new RestaurantCollectionController();
-        }
+        //public static IRestaurantLogic CreateRestaurant()
+        //{
+        //    return new RestaurantData();
+        //}
+        //public static IRestaurantContainerLogic CreateRestaurantCollection()
+        //{
+        //    return new RestaurantCollection();
+        //}
     }
 }

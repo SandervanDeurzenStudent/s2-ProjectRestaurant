@@ -35,16 +35,16 @@ namespace RestaurantReservationProject.Controllers
         //Restaurants
         public IActionResult RestaurantShow()
         {
-            BusinessLogic.Restraurants.RestaurantCollectionController l = new BusinessLogic.Restraurants.RestaurantCollectionController();
+           // BusinessLogic.Restraurants.RestaurantCollection l = new BusinessLogic.Restraurants.RestaurantCollection();
             
-            return View(l.GetList());
+            return View();
         }
         public IActionResult Update(int? id)
         {
-            BusinessLogic.Restraurants.RestaurantCollectionController RDC = new BusinessLogic.Restraurants.RestaurantCollectionController();
-            return View(RDC.getRestaurantById(Convert.ToInt32(id)));
+           // BusinessLogic.Restraurants.RestaurantCollection RDC = new BusinessLogic.Restraurants.RestaurantCollection();
+            return View();
         }
-        public IActionResult UpdateRestaurant(int? id, RestaurantModel restaurant)
+        public IActionResult UpdateRestaurant(int? id, RestaurantViewModel restaurant)
         {
             return RedirectToAction("RestaurantShow");
         }
@@ -63,8 +63,8 @@ namespace RestaurantReservationProject.Controllers
                 return NotFound();
             }
 
-            BusinessLogic.Restraurants.RestaurantCollectionController RDC = new BusinessLogic.Restraurants.RestaurantCollectionController();
-            RDC.Delete(Convert.ToInt32(id));
+            //BusinessLogic.Restraurants.RestaurantCollection RDC = new BusinessLogic.Restraurants.RestaurantCollection();
+            //RDC.Delete(Convert.ToInt32(id));
 
             return RedirectToAction("RestaurantShow");
         }
@@ -72,7 +72,7 @@ namespace RestaurantReservationProject.Controllers
         {
             return View();
         }
-        public IActionResult CreateRestaurant(RestaurantModel restaurant)
+        public IActionResult CreateRestaurant(RestaurantViewModel restaurant)
         {
             //BusinessLogic.Restraurants.RestaurantCollectionController RDC = new BusinessLogic.Restraurants.RestaurantCollectionController();
             //RDC.create(restaurant);
@@ -80,8 +80,8 @@ namespace RestaurantReservationProject.Controllers
         }
         public IActionResult RestaurantInfo(int? id)
         {
-            BusinessLogic.Restraurants.RestaurantCollectionController RDC = new BusinessLogic.Restraurants.RestaurantCollectionController();
-            return View(RDC.getRestaurantById(Convert.ToInt32(id)));
+            //BusinessLogic.Restraurants.RestaurantCollection RDC = new BusinessLogic.Restraurants.RestaurantCollection();
+            return View();
         }
         
         

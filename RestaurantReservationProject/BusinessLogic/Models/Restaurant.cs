@@ -1,12 +1,15 @@
-﻿using DataAccess.interfaces.RestaurantsDto;
+﻿using BusinessLogic.Restraurants;
+using DataAcces.interfaces.interfaces;
+using DataAccess.interfaces.RestaurantsDto;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BusinessLogic.Models
 {
-        public class Restaurant
-        {
+        public class Restaurant : IRestaurantLogic
+    {
+        IRestaurantDal restaurantDal;
             public int Id
             {
                 get;
@@ -46,15 +49,12 @@ namespace BusinessLogic.Models
             Telephone = telephone;
             Email = email;
         }
-
-        public Restaurant(string name, string info, string address, int telephone, string email)
+        public Restaurant()
         {
-            Name = name;
-            Info = info;
-            Address = address;
-            Telephone = telephone;
-            Email = email;
+           
         }
+
+
         public Restaurant(RestaurantDto restaurantDto)
         {
             Id = restaurantDto.Id;
@@ -64,10 +64,20 @@ namespace BusinessLogic.Models
             Telephone = restaurantDto.Telephone;
             Email = restaurantDto.Email;
         }
+        //convert the data from the view to Dto
         public RestaurantDto convertToDto()
         {
             return new RestaurantDto(Id, Name, Info, Address, Telephone, Email);
         }
+        public RestaurantDto convertToDto(List<RestaurantContainer> restaurant)
+        {
+            return new RestaurantDto(Id, Name, Info, Address, Telephone, Email);
+        }
+        public void update(int id, Restaurant restaurant)
+        {
+             restaurantDal.update(id, restaurant.convertToDto());
+        }
+       
     }
 }
 

@@ -7,15 +7,10 @@ namespace DataAccess.interfaces.RestaurantsDto
     public  class RestaurantDto
     {
         private RestaurantDto restaurantDto;
-        private RestaurantDto dto;
+      
 
         public RestaurantDto()
         {
-        }
-
-        public RestaurantDto(RestaurantDto dto)
-        {
-            this.dto = dto;
         }
 
         public RestaurantDto(int id, string name, string info, string address, int telephone, string email)
@@ -27,7 +22,6 @@ namespace DataAccess.interfaces.RestaurantsDto
             Telephone = telephone;
             Email = email;
         }
-      
 
         public int Id
         {
