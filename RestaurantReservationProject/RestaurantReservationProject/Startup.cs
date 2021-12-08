@@ -16,6 +16,8 @@ using BusinessLogic.Restraurants;
 using BusinessLogic.Models;
 using Repositories.interfaces;
 using Repositories;
+using BusinessLogic.Interfaces.Comments;
+using BusinessLogic.Controller.Comments;
 
 namespace RestaurantReservationProject
 {
@@ -48,6 +50,10 @@ namespace RestaurantReservationProject
             services.AddSingleton<IRestaurantContainerLogic, RestaurantContainer>();
             services.AddSingleton<IRestaurantLogic, Restaurant>();
             services.AddSingleton<IRestaurantMySqlContext, RestaurantMySqlContext>();
+
+            //comments
+            services.AddSingleton<ICommentContainerDal, CommentDal>();
+            services.AddSingleton<ICommentContainerLogic, CommentContainer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

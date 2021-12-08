@@ -9,6 +9,6 @@ namespace Presentation.Models
     public class IndexViewModel
     {
         public RestaurantViewModel restaurantModel { get; set; }
-        public List<CommentModel> commentList { get; set; }
+        public List<CommentViewModel> commentList { get; set; }
     }
 }

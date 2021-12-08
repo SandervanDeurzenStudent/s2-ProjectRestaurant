@@ -8,8 +8,10 @@ using BusinessLogic.Restraurants;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Presentation.Converter;
 using Presentation.models;
 using Presentation.Models;
+using Presentation.RestaurantConverter;
 
 namespace Presentation.Controllers
 {
@@ -19,14 +21,16 @@ namespace Presentation.Controllers
         IRestaurantContainerLogic _restaurantContainerLogic;
         ICommentContainerLogic _commentContainerLogic;
         IRestaurantLogic restaurantLogic;
-        RestaurantConverter.RestaurantViewConverter restaurantViewConverter;
+        RestaurantViewConverter restaurantViewConverter;
+        CommentViewConverter commentViewConverter;
         RestaurantContainer r = new RestaurantContainer();
         public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic)
         {
             //restaurantContainerLogic = IRESTCONTLGIC;
             //commentContainerLogic = CommentFactory.CreateCommentCollection();
             //restaurantLogic = RestaurantFactory.CreateRestaurant();
-            restaurantViewConverter = new RestaurantConverter.RestaurantViewConverter();
+            restaurantViewConverter = new RestaurantViewConverter();
+            commentViewConverter = new CommentViewConverter();
             _restaurantContainerLogic =  restaurantContainerLogic;
             _commentContainerLogic = commentContainerLogic;
         }
@@ -50,15 +54,18 @@ namespace Presentation.Controllers
                 return NotFound();
             }
             //get the Comments of the restaurant
-            //IndexCommentViewModel indexCommentViewModel = new IndexCommentViewModel
-            //{
-            //    commentList = _commentContainerLogic.GetCommentsById(Convert.ToInt32(id)))
-            //};
-            var commentList = new CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)));
-            IndexViewModel indexViewModel = new IndexViewModel();
+            IndexCommentViewModel indexCommentViewModel = new IndexCommentViewModel
+            {
+                commentList = commentViewConverter.Convert_To_CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)))
+            };
+            //var commentList = new CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)));
+            
+            
             var restaurant = new RestaurantViewModel(_restaurantContainerLogic.getRestaurantById(Convert.ToInt32(id)));
+
+            IndexViewModel indexViewModel = new IndexViewModel();
             indexViewModel.restaurantModel = restaurant;
-            indexViewModel.commentList = commentList;
+            indexViewModel.commentList = indexCommentViewModel.commentList;
             //get the restaurant
             return View(indexViewModel);
         }

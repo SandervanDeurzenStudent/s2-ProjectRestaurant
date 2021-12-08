@@ -43,9 +43,9 @@ namespace BusinessLogic
                 Email = DTOrestaurant.Email,
             };
         }
-        public List<RestaurantDto> Convert_To_RestaurantDto(List<Restaurant> pageModels)
+        public List<RestaurantDto> Convert_To_RestaurantDto(List<Restaurant> restaurants)
         {
-            return pageModels.Select(x => Convert_To_RestaurantDto(x)).ToList();
+            return restaurants.Select(x => Convert_To_RestaurantDto(x)).ToList();
         }
     }
 }

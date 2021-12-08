@@ -3,7 +3,7 @@ using BusinessLogic.Models;
 
 namespace Presentation.Models
 {
-    public class CommentModel
+    public class CommentViewModel
     {
         public int Id
         {
@@ -26,11 +26,11 @@ namespace Presentation.Models
             set;
         }
 
-        public CommentModel()
+        public CommentViewModel()
         {
         }
 
-        public CommentModel(int id, string name, string info, int restaurantId)
+        public CommentViewModel(int id, string name, string info, int restaurantId)
         {
             Id = id;
             Name = name;
@@ -38,7 +38,7 @@ namespace Presentation.Models
             RestaurantId = restaurantId;
         }
 
-        public CommentModel(string name, string info, int restaurantId)
+        public CommentViewModel(string name, string info, int restaurantId)
         {
             Name = name;
             Info = info;
@@ -48,7 +48,7 @@ namespace Presentation.Models
         {
             return new Comment(Id, Name, Info, RestaurantId);
         }
-        public CommentModel(Comment comment)
+        public CommentViewModel(Comment comment)
         {
             Id = comment.Id;
             Name = comment.Name;

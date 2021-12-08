@@ -6,9 +6,6 @@ namespace DataAccess.interfaces.RestaurantsDto
 {
     public  class RestaurantDto
     {
-        private RestaurantDto restaurantDto;
-      
-
         public RestaurantDto()
         {
         }
@@ -53,10 +50,7 @@ namespace DataAccess.interfaces.RestaurantsDto
             get;
             set;
         }
-        public RestaurantDto convertToDto()
-        {
-            return new RestaurantDto(Id, Name, Info, Address, Telephone, Email);
-        }
+      
     }
 }
 

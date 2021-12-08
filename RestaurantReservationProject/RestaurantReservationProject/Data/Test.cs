@@ -15,5 +15,5 @@ using Presentation.Models;
 
         public DbSet<Presentation.models.RestaurantViewModel> RestaurantModel { get; set; }
 
-        public DbSet<Presentation.Models.CommentModel> CommentModel { get; set; }
+        public DbSet<Presentation.Models.CommentViewModel> CommentModel { get; set; }
     }
