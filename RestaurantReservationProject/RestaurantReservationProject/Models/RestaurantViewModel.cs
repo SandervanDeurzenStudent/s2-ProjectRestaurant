@@ -59,11 +59,11 @@ namespace Presentation.models
             Telephone = telephone;
             this.Email = email;
         }
-        public Restaurant convertToLogic()
+        public RestaurantModel convertToLogic()
         {
-            return new Restaurant(Id, Name, Info, Address, Telephone, Email);
+            return new RestaurantModel(Id, Name, Info, Address, Telephone, Email);
         }
-        public RestaurantViewModel(Restaurant restaurant)
+        public RestaurantViewModel(RestaurantModel restaurant)
         {
             Id = restaurant.Id;
             Name = restaurant.Name;

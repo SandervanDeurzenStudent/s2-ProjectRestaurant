@@ -19,23 +19,23 @@ namespace BusinessLogic.Restraurants
         {
            
         }
-        public void create(Restaurant restaurant)
+        public void create(RestaurantModel restaurant)
         {
-            _restaurantDal.create(restaurant.convertToDto());  
-         //test
+            //_restaurantDal.create(restaurant.convertToDto());  
         }
-        public List<Restaurant> GetList()
+        public List<RestaurantModel> GetList()
         {
-            List<Restaurant> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantDal.returnList()); 
+            List<RestaurantModel> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantDal.returnList()); 
             return restaurants;
         }
         public void Delete(int id)
         {
             _restaurantDal.Delete(id);
         }
-        public Restaurant getRestaurantById(int id)
+        public RestaurantModel getRestaurantById(int id)
         {
-            return new Restaurant(_restaurantDal.getRestaurantById(id));
+            return null;
+           // return new Restaurant(_restaurantDal.getRestaurantById(id));
         }
 
     }

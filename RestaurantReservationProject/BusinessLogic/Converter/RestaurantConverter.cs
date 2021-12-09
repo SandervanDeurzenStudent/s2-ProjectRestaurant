@@ -26,11 +26,8 @@ namespace BusinessLogic
             return restaurant.Select(x => Convert_To_Restaurant(x)).ToList();
         }
 
-        /// <summary>
-        /// Takes values from PageDTO and converts them equal to values from PageModel.
-        /// </summary>
-        /// <param name="dTO_PageModel"></param>
-        /// <returns></returns>
+
+
         public RestaurantDto Convert_To_RestaurantDto(Restaurant DTOrestaurant)
         {
             return new RestaurantDto

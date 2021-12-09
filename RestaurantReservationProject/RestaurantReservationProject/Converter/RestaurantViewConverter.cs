@@ -10,7 +10,7 @@ namespace Presentation.RestaurantConverter
     public class RestaurantViewConverter
     {
 
-        public RestaurantViewModel Convert_To_RestaurantViewModel(Restaurant restaurant)
+        public RestaurantViewModel Convert_To_RestaurantViewModel(RestaurantModel restaurant)
         {
             return new RestaurantViewModel
             {
@@ -22,7 +22,7 @@ namespace Presentation.RestaurantConverter
                 Email = restaurant.Email,
             };
         }
-        public List<RestaurantViewModel> Convert_To_RestaurantViewModel(List<Restaurant> restaurant)
+        public List<RestaurantViewModel> Convert_To_RestaurantViewModel(List<RestaurantModel> restaurant)
         {
             return restaurant.Select(x => Convert_To_RestaurantViewModel(x)).ToList();
         }
@@ -30,9 +30,9 @@ namespace Presentation.RestaurantConverter
         
         /// Takes values from PageViewModel and converts them equal to values from PageModel.
     
-        public Restaurant Convert_To_Restaurant(RestaurantViewModel restaurantView)
+        public RestaurantModel Convert_To_Restaurant(RestaurantViewModel restaurantView)
         {
-            return new Restaurant
+            return new RestaurantModel
             {
                 Id = restaurantView.Id,
                 Name = restaurantView.Name,
@@ -44,7 +44,7 @@ namespace Presentation.RestaurantConverter
         }
 
         ///  this method converts a list with the PageViewModel to a list with PageModel.
-        public List<Restaurant> Convert_To_Restaurant(List<RestaurantViewModel> restaurantView)
+        public List<RestaurantModel> Convert_To_Restaurant(List<RestaurantViewModel> restaurantView)
         {
             return restaurantView.Select(x => Convert_To_Restaurant(x)).ToList();
         }
