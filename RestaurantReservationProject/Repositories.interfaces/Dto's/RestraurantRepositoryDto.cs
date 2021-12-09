@@ -19,7 +19,6 @@ namespace Repositories.interfaces.dtos
             Telephone = telephone;
             Email = email;
         }
-
         public int Id
         {
             get;

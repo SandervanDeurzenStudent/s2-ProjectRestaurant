@@ -12,10 +12,12 @@ namespace DataAccess
 {
     public class RestaurantDal : IRestaurantDal, IRestaurantContainerDal
     {
-        IRestaurantMySqlContext _restaurantMemoryContext;
-        public RestaurantDal(IRestaurantMySqlContext restaurantMySqlContext)
+        private IRestaurantMySqlContext _restaurantMysqlContext;
+        RestaurantDalConverter _restaurantDalConverter;
+        public RestaurantDal(IRestaurantMySqlContext restaurantMySqlContext, RestaurantDalConverter restaurantDalConverter)
         {
-            _restaurantMemoryContext = restaurantMySqlContext;
+            _restaurantMysqlContext = restaurantMySqlContext;
+            _restaurantDalConverter = restaurantDalConverter;
         }
         public void create(RestaurantDto restaurant)
         {
@@ -41,45 +43,11 @@ namespace DataAccess
         }
         public List<RestaurantDto> returnList()
         {
-            //List<RestaurantDto> restaurants = RestaurantDalConverter.Convert_To_RestaurantDal(_restaurantMemoryContext.returnList());
-            //return restaurants;
-            try
-            {
-                DB db = new DB();
-                string connString = db.ReturnConnectionString();
-                string Query = "select * from restaurants;";
-                MySqlConnection MyConn = new MySqlConnection(connString);
-                MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
-                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
-                MyAdapter.SelectCommand = MyCommand;
-                List<RestaurantDto> restaurants = new List<RestaurantDto>();
-
-                using (MySqlCommand command = new MySqlCommand(Query, MyConn))
-                {
-                    MyConn.Open();
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            RestaurantDto entity = new RestaurantDto();
-                            entity.Id = (int)reader["id"];
-                            entity.Name = (string)reader["restaurant_name"];
-                            entity.Telephone = (int)reader["telephone"];
-                            entity.Address = (string)reader["address"];
-                            entity.Email = (string)reader["email"];
-                            entity.Info = (string)reader["restaurant_info"];
-                            restaurants.Add(entity);
-                        }
-                    }
-                    return restaurants;
-                }
-            }
-            catch (Exception)
-            {
-                throw new IndexOutOfRangeException();
-            }
+            List<RestaurantDto> restaurants = _restaurantDalConverter.Convert_To_RestaurantDto(_restaurantMysqlContext.returnList());
+            return restaurants;
+            
         }
-        public void Delete(int id)
+            public void Delete(int id)
         {
             //_restaurantMysqlContext.Delete(id);
         }

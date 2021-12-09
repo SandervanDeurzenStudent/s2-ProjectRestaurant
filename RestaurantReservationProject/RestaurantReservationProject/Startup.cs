@@ -20,6 +20,10 @@ using BusinessLogic.Interfaces.Comments;
 using BusinessLogic.Controller.Comments;
 using Repositories.interfaces.dtos;
 using BusinessLogic.Functions;
+using Presentation.RestaurantConverter;
+using Presentation.Converter;
+using BusinessLogic;
+using DataAccess.Converter;
 
 namespace RestaurantReservationProject
 {
@@ -47,6 +51,17 @@ namespace RestaurantReservationProject
 
             services.AddDbContext<Test>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Test")));
+
+            //Converters view 
+            services.AddSingleton<RestaurantViewConverter>();
+            services.AddSingleton<CommentViewConverter>();
+
+
+            //converters Logic
+            services.AddSingleton<RestaurantLogicConverter>();
+
+            //converters Dal
+            services.AddSingleton<RestaurantDalConverter>();
 
             services.AddSingleton<IRestaurantContainerDal, RestaurantDal>();
             services.AddSingleton<IRestaurantDal, RestaurantDal>();

@@ -21,7 +21,7 @@ namespace BusinessLogic.Restraurants
         }
         public List<RestaurantModel> GetList()
         {
-            List<RestaurantModel> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantDal.returnList()); 
+            List<RestaurantModel> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantDal.returnList());
             return restaurants;
         }
         public void Delete(int id)
@@ -31,8 +31,7 @@ namespace BusinessLogic.Restraurants
         public RestaurantModel getRestaurantById(int id)
         {
             return null;
-           // return new Restaurant(_restaurantDal.getRestaurantById(id));
+            // return new Restaurant(_restaurantDal.getRestaurantById(id));
         }
-
     }
 }
