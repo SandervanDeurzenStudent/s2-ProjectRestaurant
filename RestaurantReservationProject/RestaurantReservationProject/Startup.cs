@@ -49,6 +49,8 @@ namespace RestaurantReservationProject
             services.AddSingleton<IRestaurantContainerDal, RestaurantDal>();
             services.AddSingleton<IRestaurantContainerLogic, RestaurantContainer>();
             services.AddSingleton<IRestaurantLogic, Restaurant>();
+
+            //repositories
             services.AddSingleton<IRestaurantMySqlContext, RestaurantMySqlContext>();
 
             //comments

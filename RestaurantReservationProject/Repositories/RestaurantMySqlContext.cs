@@ -6,12 +6,17 @@ using Repositories.interfaces;
 using MySql.Data.MySqlClient;
 using DataAccess;
 using System.Linq;
+using Repositories.interfaces.dtos;
 
 namespace Repositories
 {
     public class RestaurantMySqlContext : IRestaurantMySqlContext
     {
-        public void create(RestaurantDto restaurant)
+        public RestaurantMySqlContext()
+        {
+
+        }
+        public void Create(RestaurantRepositoryDto restaurant)
         {
             try
             {
@@ -33,7 +38,7 @@ namespace Repositories
                 throw new IndexOutOfRangeException();
             }
         }
-        public List<RestaurantDto> returnList()
+        public List<RestaurantRepositoryDto> returnList()
         {
             try
             {
@@ -44,7 +49,7 @@ namespace Repositories
                 MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
                 MyAdapter.SelectCommand = MyCommand;
-                List<RestaurantDto> restaurants = new List<RestaurantDto>();
+                List<RestaurantRepositoryDto> restaurants = new List<RestaurantRepositoryDto>();
 
                 using (MySqlCommand command = new MySqlCommand(Query, MyConn))
                 {
@@ -53,7 +58,7 @@ namespace Repositories
                     {
                         while (reader.Read())
                         {
-                            RestaurantDto entity = new RestaurantDto();
+                            RestaurantRepositoryDto entity = new RestaurantRepositoryDto();
                             entity.Id = (int)reader["id"];
                             entity.Name = (string)reader["restaurant_name"];
                             entity.Telephone = (int)reader["telephone"];
@@ -91,7 +96,6 @@ namespace Repositories
                 throw new IndexOutOfRangeException();
             }
         }
-
 
         public RestaurantDto getRestaurantById(int id)
         {

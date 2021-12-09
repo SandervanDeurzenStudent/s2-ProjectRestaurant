@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DataAcces.interfaces.Dto_s
 {
-    
-    public  class CommentDto
+
+    public class CommentDto
     {
         public CommentDto()
         {

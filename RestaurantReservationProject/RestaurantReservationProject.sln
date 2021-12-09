@@ -19,8 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositorie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.interfaces", "Repositories.interfaces\Repositories.interfaces.csproj", "{86FD78E2-1A88-4A88-89F5-A95A8A4914E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.factories", "Repository.factories\Repository.factories.csproj", "{F2CE05C5-8D32-4233-9D52-639CF53AFD92}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,10 +57,6 @@ Global
 		{86FD78E2-1A88-4A88-89F5-A95A8A4914E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86FD78E2-1A88-4A88-89F5-A95A8A4914E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86FD78E2-1A88-4A88-89F5-A95A8A4914E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2CE05C5-8D32-4233-9D52-639CF53AFD92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2CE05C5-8D32-4233-9D52-639CF53AFD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2CE05C5-8D32-4233-9D52-639CF53AFD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2CE05C5-8D32-4233-9D52-639CF53AFD92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

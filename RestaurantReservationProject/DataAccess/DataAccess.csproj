@@ -11,7 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DataAcces.interfaces\DataAccess.interfaces.csproj" />
     <ProjectReference Include="..\Repositories.interfaces\Repositories.interfaces.csproj" />
-    <ProjectReference Include="..\Repository.factories\Repository.factories.csproj" />
+    <ProjectReference Include="..\Repositories\Repositories.csproj" />
   </ItemGroup>
 
 </Project>

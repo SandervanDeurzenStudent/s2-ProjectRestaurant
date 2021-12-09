@@ -8,10 +8,14 @@ C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\BusinessLogic.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\DataAccess.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\DataAccess.Factories.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\DataAccess.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\Repositories.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\Repositories.interfaces.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\BusinessLogic.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\Repositories.pdb
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\DataAccess.pdb
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\DataAccess.Factories.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\DataAccess.interfaces.pdb
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\Repositories.interfaces.pdb
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Presentation.csprojAssemblyReference.cache
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Presentation.csproj.CoreCompileInputs.cache
@@ -49,9 +53,3 @@ C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Presentation.csproj.CopyComplete
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Presentation.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Presentation.pdb
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\Repositories.dll
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\Repository.factories.dll
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\Repositories.pdb
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\Repository.factories.pdb
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\DataAccess.interfaces.dll
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\bin\Debug\netcoreapp2.1\DataAccess.interfaces.pdb

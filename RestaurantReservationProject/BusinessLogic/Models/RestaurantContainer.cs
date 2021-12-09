@@ -9,7 +9,7 @@ namespace BusinessLogic.Restraurants
     public class RestaurantContainer : IRestaurantContainerLogic
     {
         private IRestaurantContainerDal restaurantContainerDal;
-        private RestaurantConverter restaurantConverter = new RestaurantConverter();
+        private RestaurantConverter _restaurantConverter;
         public RestaurantContainer(IRestaurantContainerDal restaurantDAl)
         {
             restaurantContainerDal = restaurantDAl;
@@ -25,7 +25,7 @@ namespace BusinessLogic.Restraurants
         }
         public List<Restaurant> GetList()
         {
-            List<Restaurant> restaurants = restaurantConverter.Convert_To_Restaurant(restaurantContainerDal.returnList()); 
+            List<Restaurant> restaurants = _restaurantConverter.Convert_To_Restaurant(restaurantContainerDal.returnList()); 
             return restaurants;
         }
         public void Delete(int id)

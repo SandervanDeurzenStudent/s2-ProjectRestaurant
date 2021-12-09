@@ -461,20 +461,6 @@
         "runtime": {
           "bin/placeholder/Repositories.interfaces.dll": {}
         }
-      },
-      "Repository.factories/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "Repositories": "1.0.0",
-          "Repositories.interfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Repository.factories.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Repository.factories.dll": {}
-        }
       }
     }
   },
@@ -1452,11 +1438,6 @@
       "type": "project",
       "path": "../Repositories.interfaces/Repositories.interfaces.csproj",
       "msbuildProject": "../Repositories.interfaces/Repositories.interfaces.csproj"
-    },
-    "Repository.factories/1.0.0": {
-      "type": "project",
-      "path": "../Repository.factories/Repository.factories.csproj",
-      "msbuildProject": "../Repository.factories/Repository.factories.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1464,8 +1445,8 @@
       "DataAccess.interfaces >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "MySqlConnector >= 1.3.13",
-      "Repositories.interfaces >= 1.0.0",
-      "Repository.factories >= 1.0.0"
+      "Repositories >= 1.0.0",
+      "Repositories.interfaces >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1504,8 +1485,8 @@
             "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\Repositories.interfaces\\Repositories.interfaces.csproj": {
               "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\Repositories.interfaces\\Repositories.interfaces.csproj"
             },
-            "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\Repository.factories\\Repository.factories.csproj": {
-              "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\Repository.factories\\Repository.factories.csproj"
+            "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\Repositories\\Repositories.csproj": {
+              "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\Repositories\\Repositories.csproj"
             }
           }
         }

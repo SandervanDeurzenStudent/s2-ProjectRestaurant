@@ -221,8 +221,8 @@
         "dependencies": {
           "DataAccess.interfaces": "1.0.0",
           "MySqlConnector": "1.3.13",
-          "Repositories.interfaces": "1.0.0",
-          "Repository.factories": "1.0.0"
+          "Repositories": "1.0.0",
+          "Repositories.interfaces": "1.0.0"
         },
         "runtime": {
           "DataAccess.dll": {}
@@ -258,15 +258,6 @@
         },
         "runtime": {
           "Repositories.interfaces.dll": {}
-        }
-      },
-      "Repository.factories/1.0.0": {
-        "dependencies": {
-          "Repositories": "1.0.0",
-          "Repositories.interfaces": "1.0.0"
-        },
-        "runtime": {
-          "Repository.factories.dll": {}
         }
       }
     }
@@ -417,11 +408,6 @@
       "sha512": ""
     },
     "Repositories.interfaces/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Repository.factories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
