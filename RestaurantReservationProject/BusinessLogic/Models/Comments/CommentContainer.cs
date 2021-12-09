@@ -3,7 +3,6 @@ using BusinessLogic.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using BusinessLogic.Factories;
 using DataAcces.interfaces.interfaces;
 using BusinessLogic.Converter;
 
@@ -12,7 +11,7 @@ namespace BusinessLogic.Controller.Comments
     public class CommentContainer : ICommentContainerLogic
     {
         ICommentContainerDal _commentContainerDal;
-        private CommentConverter commentConverter = new CommentConverter();
+        private CommentLogicConverter commentConverter = new CommentLogicConverter();
         public CommentContainer(ICommentContainerDal commentContainerDal)
         {
             _commentContainerDal = commentContainerDal;

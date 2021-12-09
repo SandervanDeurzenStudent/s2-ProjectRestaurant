@@ -25,6 +25,7 @@
       "Presentation/1.0.0": {
         "dependencies": {
           "BusinessLogic": "1.0.0",
+          "DataAccess": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
@@ -738,7 +739,6 @@
       },
       "BusinessLogic/1.0.0": {
         "dependencies": {
-          "DataAccess.Factories": "1.0.0",
           "DataAccess.interfaces": "1.0.0",
           "MySqlConnector": "1.3.13"
         },
@@ -761,18 +761,6 @@
         },
         "compile": {
           "DataAccess.dll": {}
-        }
-      },
-      "DataAccess.Factories/1.0.0": {
-        "dependencies": {
-          "DataAccess": "1.0.0",
-          "DataAccess.interfaces": "1.0.0"
-        },
-        "runtime": {
-          "DataAccess.Factories.dll": {}
-        },
-        "compile": {
-          "DataAccess.Factories.dll": {}
         }
       },
       "DataAccess.interfaces/1.0.0": {
@@ -4011,11 +3999,6 @@
       "sha512": ""
     },
     "DataAccess/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DataAccess.Factories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

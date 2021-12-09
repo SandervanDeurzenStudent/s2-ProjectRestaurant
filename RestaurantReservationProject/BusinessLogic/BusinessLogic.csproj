@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataAcces.interfaces\DataAccess.interfaces.csproj" />
-    <ProjectReference Include="..\DataAccess.Factories\DataAccess.Factories.csproj" />
   </ItemGroup>
 
   <ItemGroup>

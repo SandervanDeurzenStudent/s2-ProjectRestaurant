@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BusinessLogic.Converter
 {
-    class CommentConverter
+    class CommentLogicConverter
     {
         public Comment Convert_To_Comment(CommentDto comment)
         {

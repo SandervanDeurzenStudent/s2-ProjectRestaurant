@@ -9,15 +9,11 @@ namespace BusinessLogic.Restraurants
     public class RestaurantContainer : IRestaurantContainerLogic
     {
         private IRestaurantContainerDal _restaurantDal;
-        private RestaurantConverter _restaurantConverter;
-        public RestaurantContainer(IRestaurantContainerDal restaurantDAl, RestaurantConverter restaurantConverter)
+        private RestaurantLogicConverter _restaurantConverter;
+        public RestaurantContainer(IRestaurantContainerDal restaurantDAl, RestaurantLogicConverter restaurantConverter)
         {
             _restaurantDal = restaurantDAl;
             _restaurantConverter = restaurantConverter;
-        }
-        public RestaurantContainer()
-        {
-           
         }
         public void create(RestaurantModel restaurant)
         {

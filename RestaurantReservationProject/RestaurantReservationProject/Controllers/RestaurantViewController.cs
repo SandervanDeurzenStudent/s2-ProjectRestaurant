@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using BusinessLogic.Interfaces.Comments;
 using BusinessLogic.Restraurants;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Presentation.Converter;
 using Presentation.models;
 using Presentation.Models;
@@ -18,11 +14,12 @@ namespace Presentation.Controllers
     {
         //restaurants
         IRestaurantContainerLogic _restaurantContainerLogic;
-        RestaurantViewConverter _restaurantViewConverter;
         //comments
         ICommentContainerLogic _commentContainerLogic;
+        //Converters
         CommentViewConverter _commentViewConverter;
-        
+        RestaurantViewConverter _restaurantViewConverter;
+
         public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic, RestaurantViewConverter restaurantViewConverter, CommentViewConverter commentViewConverter)
         {
             _restaurantContainerLogic =  restaurantContainerLogic;

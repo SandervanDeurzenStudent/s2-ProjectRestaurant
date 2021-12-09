@@ -12,12 +12,10 @@ namespace DataAccess
 {
     public class RestaurantDal : IRestaurantDal, IRestaurantContainerDal
     {
-       private IRestaurantMySqlContext _restaurantMysqlContext;
-        RestaurantDalConverter _restaurantDalConverter;
-        public RestaurantDal(IRestaurantMySqlContext restaurantMySqlContext, RestaurantDalConverter restaurantDalConverter)
+        IRestaurantMySqlContext _restaurantMemoryContext;
+        public RestaurantDal(IRestaurantMySqlContext restaurantMySqlContext)
         {
-            _restaurantMysqlContext = restaurantMySqlContext;
-            _restaurantDalConverter = restaurantDalConverter;
+            _restaurantMemoryContext = restaurantMySqlContext;
         }
         public void create(RestaurantDto restaurant)
         {
@@ -43,6 +41,8 @@ namespace DataAccess
         }
         public List<RestaurantDto> returnList()
         {
+            //List<RestaurantDto> restaurants = RestaurantDalConverter.Convert_To_RestaurantDal(_restaurantMemoryContext.returnList());
+            //return restaurants;
             try
             {
                 DB db = new DB();
@@ -78,21 +78,15 @@ namespace DataAccess
             {
                 throw new IndexOutOfRangeException();
             }
-            //List<RestaurantDto> restaurants = new List<RestaurantDto>();
-
-            //_restaurantMemoryContext.returnList().ForEach(x => restaurants.Add(restaurantDalConverter.Convert_To_RestaurantDto(x)));
-            //return restaurants;
-            // List<RestaurantDto> restaurants = _restaurantDalConverter.Convert_To_RestaurantDto(_restaurantMysqlContext.returnList());
-            //return restaurants;
         }
         public void Delete(int id)
         {
-            _restaurantMysqlContext.Delete(id);
+            //_restaurantMysqlContext.Delete(id);
         }
 
         public RestaurantDto getRestaurantById(int id)
         {
-            return _restaurantMysqlContext.getRestaurantById(id);
+            return null;//_restaurantMysqlContext.getRestaurantById(id);
         }
 
         public void update(int id, RestaurantDto restaurant)

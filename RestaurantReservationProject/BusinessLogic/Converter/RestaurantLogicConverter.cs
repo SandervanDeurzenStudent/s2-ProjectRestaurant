@@ -7,11 +7,11 @@ using System.Text;
 
 namespace BusinessLogic
 {
-    public class RestaurantConverter
+    public class RestaurantLogicConverter
     {
-        public Restaurant Convert_To_Restaurant(RestaurantDto restaurant)
+        public RestaurantModel Convert_To_Restaurant(RestaurantDto restaurant)
         {
-            return new Restaurant
+            return new RestaurantModel
             {
                 Id = restaurant.Id,
                 Name = restaurant.Name,
@@ -21,14 +21,14 @@ namespace BusinessLogic
                 Email = restaurant.Email,
             };
         }
-        public List<Restaurant> Convert_To_Restaurant(List<RestaurantDto> restaurant)
+        public List<RestaurantModel> Convert_To_Restaurant(List<RestaurantDto> restaurant)
         {
             return restaurant.Select(x => Convert_To_Restaurant(x)).ToList();
         }
 
 
 
-        public RestaurantDto Convert_To_RestaurantDto(Restaurant DTOrestaurant)
+        public RestaurantDto Convert_To_RestaurantDto(RestaurantModel DTOrestaurant)
         {
             return new RestaurantDto
             {
@@ -40,7 +40,7 @@ namespace BusinessLogic
                 Email = DTOrestaurant.Email,
             };
         }
-        public List<RestaurantDto> Convert_To_RestaurantDto(List<Restaurant> restaurants)
+        public List<RestaurantDto> Convert_To_RestaurantDto(List<RestaurantModel> restaurants)
         {
             return restaurants.Select(x => Convert_To_RestaurantDto(x)).ToList();
         }

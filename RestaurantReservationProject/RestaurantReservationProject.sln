@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantReservationUnitTe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.interfaces", "DataAcces.interfaces\DataAccess.interfaces.csproj", "{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.Factories", "DataAccess.Factories\DataAccess.Factories.csproj", "{93E47475-877D-43D9-9A44-06F12C7546EE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{2A90D123-5237-47B5-856F-8C904DB6E8BB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.interfaces", "Repositories.interfaces\Repositories.interfaces.csproj", "{86FD78E2-1A88-4A88-89F5-A95A8A4914E2}"
@@ -45,10 +43,6 @@ Global
 		{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93E47475-877D-43D9-9A44-06F12C7546EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93E47475-877D-43D9-9A44-06F12C7546EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93E47475-877D-43D9-9A44-06F12C7546EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93E47475-877D-43D9-9A44-06F12C7546EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2A90D123-5237-47B5-856F-8C904DB6E8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2A90D123-5237-47B5-856F-8C904DB6E8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A90D123-5237-47B5-856F-8C904DB6E8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU

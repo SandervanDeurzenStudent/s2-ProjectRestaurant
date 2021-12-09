@@ -19,6 +19,7 @@ using Repositories;
 using BusinessLogic.Interfaces.Comments;
 using BusinessLogic.Controller.Comments;
 using Repositories.interfaces.dtos;
+using BusinessLogic.Functions;
 
 namespace RestaurantReservationProject
 {
@@ -48,6 +49,8 @@ namespace RestaurantReservationProject
                     options.UseSqlServer(Configuration.GetConnectionString("Test")));
 
             services.AddSingleton<IRestaurantContainerDal, RestaurantDal>();
+            services.AddSingleton<IRestaurantDal, RestaurantDal>();
+           
             services.AddSingleton<IRestaurantContainerLogic, RestaurantContainer>();
             services.AddSingleton<IRestaurantLogic, Restaurant>();
 
