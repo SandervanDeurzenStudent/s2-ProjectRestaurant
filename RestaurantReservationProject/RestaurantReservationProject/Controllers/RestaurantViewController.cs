@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BusinessLogic.Factories;
 using BusinessLogic.Interfaces.Comments;
 using BusinessLogic.Restraurants;
 using Microsoft.AspNetCore.Mvc;
@@ -17,68 +16,49 @@ namespace Presentation.Controllers
 {
     public class RestaurantViewController : Controller
     {
-        private readonly Test _context;
+        //restaurants
         IRestaurantContainerLogic _restaurantContainerLogic;
+        RestaurantViewConverter _restaurantViewConverter;
+        //comments
         ICommentContainerLogic _commentContainerLogic;
-        IRestaurantLogic restaurantLogic;
-        RestaurantViewConverter restaurantViewConverter;
-        CommentViewConverter commentViewConverter;
-        RestaurantContainer r = new RestaurantContainer();
-        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic)
-        {
-            //restaurantContainerLogic = IRESTCONTLGIC;
-            //commentContainerLogic = CommentFactory.CreateCommentCollection();
-            //restaurantLogic = RestaurantFactory.CreateRestaurant();
-            restaurantViewConverter = new RestaurantViewConverter();
-            commentViewConverter = new CommentViewConverter();
-            _restaurantContainerLogic =  restaurantContainerLogic;
-            _commentContainerLogic = commentContainerLogic;
-        }
+        CommentViewConverter _commentViewConverter;
         
-        // GET: Restaurant
+        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic, RestaurantViewConverter restaurantViewConverter, CommentViewConverter commentViewConverter)
+        {
+            _restaurantContainerLogic =  restaurantContainerLogic;
+            _restaurantViewConverter = restaurantViewConverter;
+            _commentContainerLogic = commentContainerLogic;
+            _commentViewConverter = commentViewConverter;
+        }
+
         public IActionResult Index()
         {
             IndexRestaurantViewModel indexRestaurantViewModel = new IndexRestaurantViewModel
             {
-                restaurantList = restaurantViewConverter.Convert_To_RestaurantViewModel(_restaurantContainerLogic.GetList())
+                restaurantList = _restaurantViewConverter.Convert_To_RestaurantViewModel(_restaurantContainerLogic.GetList())
             };
-            
             return View(indexRestaurantViewModel);
         }
-
-        // GET: Restaurant/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            //get the Comments of the restaurant
             IndexCommentViewModel indexCommentViewModel = new IndexCommentViewModel
             {
-                commentList = commentViewConverter.Convert_To_CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)))
+                commentList = _commentViewConverter.Convert_To_CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)))
             };
-            //var commentList = new CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)));
-            
-            
             var restaurant = new RestaurantViewModel(_restaurantContainerLogic.getRestaurantById(Convert.ToInt32(id)));
 
             IndexViewModel indexViewModel = new IndexViewModel();
             indexViewModel.restaurantModel = restaurant;
             indexViewModel.commentList = indexCommentViewModel.commentList;
-            //get the restaurant
             return View(indexViewModel);
         }
 
-        // GET: Restaurant/Create/restaurantId
         public IActionResult Create(int? id)
         {
             return View();
         }
 
-        // POST: Restaurant/Create
         [HttpPost]
-        
         public IActionResult Create( RestaurantViewModel restaurantModel)
         {
             if (ModelState.IsValid)
@@ -116,7 +96,7 @@ namespace Presentation.Controllers
             {
                 try
                 {
-                    restaurantLogic.update((int)id, restaurantModel.convertToLogic());
+                    //restaurantLogic.update((int)id, restaurantModel.convertToLogic());
                 }
                 catch (Exception)
                 {
@@ -147,9 +127,7 @@ namespace Presentation.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var restaurantModel = await _context.RestaurantModel.FindAsync(id);
-            _context.RestaurantModel.Remove(restaurantModel);
-            await _context.SaveChangesAsync();
+           
             return RedirectToAction(nameof(Index));
         }
 

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BusinessLogic
 {
-    class RestaurantConverter
+    public class RestaurantConverter
     {
         public Restaurant Convert_To_Restaurant(RestaurantDto restaurant)
         {

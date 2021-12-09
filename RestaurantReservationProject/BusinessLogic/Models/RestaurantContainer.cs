@@ -8,11 +8,12 @@ namespace BusinessLogic.Restraurants
 {
     public class RestaurantContainer : IRestaurantContainerLogic
     {
-        private IRestaurantContainerDal restaurantContainerDal;
+        private IRestaurantContainerDal _restaurantDal;
         private RestaurantConverter _restaurantConverter;
-        public RestaurantContainer(IRestaurantContainerDal restaurantDAl)
+        public RestaurantContainer(IRestaurantContainerDal restaurantDAl, RestaurantConverter restaurantConverter)
         {
-            restaurantContainerDal = restaurantDAl;
+            _restaurantDal = restaurantDAl;
+            _restaurantConverter = restaurantConverter;
         }
         public RestaurantContainer()
         {
@@ -20,21 +21,21 @@ namespace BusinessLogic.Restraurants
         }
         public void create(Restaurant restaurant)
         {
-            restaurantContainerDal.create(restaurant.convertToDto());  
+            _restaurantDal.create(restaurant.convertToDto());  
          //test
         }
         public List<Restaurant> GetList()
         {
-            List<Restaurant> restaurants = _restaurantConverter.Convert_To_Restaurant(restaurantContainerDal.returnList()); 
+            List<Restaurant> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantDal.returnList()); 
             return restaurants;
         }
         public void Delete(int id)
         {
-            restaurantContainerDal.Delete(id);
+            _restaurantDal.Delete(id);
         }
         public Restaurant getRestaurantById(int id)
         {
-            return new Restaurant(restaurantContainerDal.getRestaurantById(id));
+            return new Restaurant(_restaurantDal.getRestaurantById(id));
         }
 
     }

@@ -7,7 +7,7 @@ using Repositories.interfaces.dtos;
 
 namespace DataAccess.Converter
 {
-    class RestaurantDalConverter
+    public class RestaurantDalConverter
     {
         public RestaurantDto Convert_To_RestaurantDto(RestaurantRepositoryDto restaurant)
         {
