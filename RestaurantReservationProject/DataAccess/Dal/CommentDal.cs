@@ -4,18 +4,23 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Repositories.interfaces.dtos;
-using DataAcces.interfaces.Dto_s;
+using DataAcces.interfaces.models;
+using Repositories.interfaces.interfaces;
+using DataAccess.Converter;
 
 namespace DataAccess
 {
     public class CommentDal : ICommentContainerDal
     {
-        public CommentDal()
+        ICommentMySqlContext _commentMysqlContext;
+        CommentDalConverter _commentDalConverter;
+        public CommentDal(ICommentMySqlContext  commentMySqlContext, CommentDalConverter commentDalConverter)
         {
-
+            _commentMysqlContext = commentMySqlContext;
+            _commentDalConverter = commentDalConverter;
         }
 
-        public void Create(CommentDto comment, int commentId)
+        public void Create(CommentDalModel comment, int commentId)
         {
             try
             {
@@ -37,41 +42,10 @@ namespace DataAccess
             }
         }
 
-        public List<CommentRepositoryDto> GetCommentsById(int id)
+        public List<CommentDalModel> GetCommentsById(int id)
         {
-            DB db = new DB();
-            string connString = db.ReturnConnectionString();
-            try
-            {
-                string Query = string.Format("select * from comments where id = {0}", id);
-                MySqlConnection MyConn = new MySqlConnection(connString);
-                MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
-                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
-                MyAdapter.SelectCommand = MyCommand;
-                List<CommentRepositoryDto> comments = new List<CommentRepositoryDto>();
-
-                using (MySqlCommand command = new MySqlCommand(Query, MyConn))
-                {
-                    MyConn.Open();
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            CommentRepositoryDto entity = new CommentRepositoryDto();
-                            entity.Id = (int)reader["id"];
-                            entity.Name = (string)reader["restaurant_name"];
-                            entity.Info = (string)reader["description"];
-                            comments.Add(entity);
-                        }
-                        // Call Close when done reading.
-                        return comments;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw new IndexOutOfRangeException();
-            }
+            List < CommentDalModel> comments = _commentDalConverter.Convert_To_CommentDalModel(_commentMysqlContext.GetCommentsById(id));
+            return comments;
         }
 
 
@@ -96,11 +70,6 @@ namespace DataAccess
                     throw new IndexOutOfRangeException();
                 }
             }
-        }
-
-        List<CommentDto> ICommentContainerDal.GetCommentsById(int id)
-        {
-            throw new NotImplementedException();
         }
 
         List<CommentRepositoryDto> GetList()
@@ -139,7 +108,7 @@ namespace DataAccess
             }
         }
 
-        List<CommentDto> ICommentContainerDal.GetList()
+        List<CommentDalModel> ICommentContainerDal.GetList()
         {
             throw new NotImplementedException();
         }

@@ -18,9 +18,9 @@ namespace Presentation.Controllers
         //comments
         ICommentContainerLogic _commentContainerLogic;
         //Converters
-        CommentViewConverter _commentViewConverter;
+        CommentLogicConverter _commentViewConverter;
         RestaurantViewConverter _restaurantViewConverter;
-        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic, RestaurantViewConverter restaurantViewConverter, CommentViewConverter commentViewConverter)
+        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic, RestaurantViewConverter restaurantViewConverter, CommentLogicConverter commentViewConverter)
         {
             //restaurantContainerLogic = IRESTCONTLGIC;
             //commentContainerLogic = CommentFactory.CreateCommentCollection();
@@ -55,7 +55,6 @@ namespace Presentation.Controllers
                 commentList = _commentViewConverter.Convert_To_CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)))
             };
             //var commentList = new CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)));
-
 
             var restaurant = new RestaurantViewModel(_restaurantContainerLogic.getRestaurantById(Convert.ToInt32(id)));
 

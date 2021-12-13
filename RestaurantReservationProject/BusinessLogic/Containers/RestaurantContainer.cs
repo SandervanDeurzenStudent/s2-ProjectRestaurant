@@ -30,8 +30,8 @@ namespace BusinessLogic.Restraurants
         }
         public RestaurantModel getRestaurantById(int id)
         {
-            return null;
-            // return new Restaurant(_restaurantDal.getRestaurantById(id));
+                RestaurantModel restaurant =  _restaurantConverter.Convert_To_Restaurant(_restaurantDal.getRestaurantById(id));
+            return restaurant;
         }
     }
 }

@@ -8,13 +8,12 @@ namespace Repositories.memory
 {
     public class RestaurantMemoryContext 
     {
-        List<RestaurantDto> restaurantList = new List<RestaurantDto>();
-        public bool create(RestaurantDto restaurant)
+        List<RestaurantDalModel> restaurantList = new List<RestaurantDalModel>();
+        public bool create(RestaurantDalModel restaurant)
         {
             if (restaurant.Id <= 0)
             {
-                throw new ArgumentException("A Comment with this ID already exists."); ;
-                return false;
+                throw new ArgumentOutOfRangeException("Id is invalid"); 
             }
             else
             {
@@ -28,17 +27,24 @@ namespace Repositories.memory
             
         }
 
-        public RestaurantDto getRestaurantById(int id)
+        public bool getRestaurantById(int restaurantid)
+        {
+            if (restaurantid <= 0)
+            {
+                throw new ArgumentOutOfRangeException("ID not found");
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public List<RestaurantDalModel> returnList()
         {
             throw new NotImplementedException();
         }
 
-        public List<RestaurantDto> returnList()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void update(int id, RestaurantDto restaurant)
+        public void update(int id, RestaurantDalModel restaurant)
         {
             throw new NotImplementedException();
         }

@@ -9,7 +9,7 @@ namespace BusinessLogic
 {
     public class RestaurantLogicConverter
     {
-        public RestaurantModel Convert_To_Restaurant(RestaurantDto restaurant)
+        public RestaurantModel Convert_To_Restaurant(RestaurantDalModel restaurant)
         {
             return new RestaurantModel
             {
@@ -21,16 +21,16 @@ namespace BusinessLogic
                 Email = restaurant.Email,
             };
         }
-        public List<RestaurantModel> Convert_To_Restaurant(List<RestaurantDto> restaurant)
+        public List<RestaurantModel> Convert_To_Restaurant(List<RestaurantDalModel> restaurant)
         {
             return restaurant.Select(x => Convert_To_Restaurant(x)).ToList();
         }
 
 
 
-        public RestaurantDto Convert_To_RestaurantDto(RestaurantModel DTOrestaurant)
+        public RestaurantDalModel Convert_To_RestaurantDto(RestaurantModel DTOrestaurant)
         {
-            return new RestaurantDto
+            return new RestaurantDalModel
             {
                 Id = DTOrestaurant.Id,
                 Name = DTOrestaurant.Name,
@@ -40,7 +40,7 @@ namespace BusinessLogic
                 Email = DTOrestaurant.Email,
             };
         }
-        public List<RestaurantDto> Convert_To_RestaurantDto(List<RestaurantModel> restaurants)
+        public List<RestaurantDalModel> Convert_To_RestaurantDto(List<RestaurantModel> restaurants)
         {
             return restaurants.Select(x => Convert_To_RestaurantDto(x)).ToList();
         }

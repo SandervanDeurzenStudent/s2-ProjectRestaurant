@@ -8,7 +8,7 @@ namespace Presentation.Models
 {
     public class IndexViewModel
     {
-        public RestaurantViewModel restaurantModel { get; set; }
+       public RestaurantViewModel restaurantModel { get; set; }
         public List<CommentViewModel> commentList { get; set; }
     }
 }

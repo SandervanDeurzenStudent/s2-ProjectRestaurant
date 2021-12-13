@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAcces.interfaces.Dto_s
+namespace DataAcces.interfaces.models
 {
 
-    public class CommentDto
+    public class CommentDalModel
     {
-        public CommentDto()
+        public CommentDalModel()
         {
         }
 
-        public CommentDto(int id, string name, string info, int restaurantId)
+        public CommentDalModel(int id, string name, string info, int restaurantId)
         {
             Id = id;
             Name = name;
             Info = info;
-            Restaurantid = restaurantId;
+            RestaurantId = restaurantId;
         }
 
         public int Id
@@ -34,7 +34,7 @@ namespace DataAcces.interfaces.Dto_s
             get;
             set;
         }
-        public int Restaurantid
+        public int RestaurantId
         {
             get;
             set;

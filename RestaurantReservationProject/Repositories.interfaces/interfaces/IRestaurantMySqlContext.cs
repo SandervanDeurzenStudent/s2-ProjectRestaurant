@@ -15,7 +15,7 @@ namespace Repositories.interfaces
 
          void Delete(int id);
 
-         //RestaurantDto getRestaurantById(int id);
+         RestaurantRepositoryDto getRestaurantById(int id);
 
 
         // void update(int id, RestaurantDto restaurant);

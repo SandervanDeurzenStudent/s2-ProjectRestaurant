@@ -19,7 +19,7 @@ namespace DataAccess
             _restaurantMysqlContext = restaurantMySqlContext;
             _restaurantDalConverter = restaurantDalConverter;
         }
-        public void create(RestaurantDto restaurant)
+        public void create(RestaurantDalModel restaurant)
         {
             try
             {
@@ -41,9 +41,9 @@ namespace DataAccess
                 throw new IndexOutOfRangeException();
             }
         }
-        public List<RestaurantDto> returnList()
+        public List<RestaurantDalModel> returnList()
         {
-            List<RestaurantDto> restaurants = _restaurantDalConverter.Convert_To_RestaurantDto(_restaurantMysqlContext.returnList());
+            List<RestaurantDalModel> restaurants = _restaurantDalConverter.Convert_To_RestaurantDalModel(_restaurantMysqlContext.returnList());
             return restaurants;
             
         }
@@ -52,12 +52,13 @@ namespace DataAccess
             //_restaurantMysqlContext.Delete(id);
         }
 
-        public RestaurantDto getRestaurantById(int id)
+        public RestaurantDalModel getRestaurantById(int id)
         {
-            return null;//_restaurantMysqlContext.getRestaurantById(id);
+            RestaurantDalModel restaurant = _restaurantDalConverter.Convert_To_RestaurantDalModel(_restaurantMysqlContext.getRestaurantById(id));
+            return restaurant;
         }
 
-        public void update(int id, RestaurantDto restaurant)
+        public void update(int id, RestaurantDalModel restaurant)
         {
             
         }

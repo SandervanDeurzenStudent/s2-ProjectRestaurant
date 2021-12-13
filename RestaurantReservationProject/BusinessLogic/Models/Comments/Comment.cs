@@ -1,4 +1,4 @@
-﻿using DataAcces.interfaces.Dto_s;
+﻿using DataAcces.interfaces.models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +7,7 @@ namespace BusinessLogic.Models
 {
         public class Comment
         {
-        private CommentDto dto;
+        private CommentDalModel dto;
         
         public Comment()
         {
@@ -50,18 +50,18 @@ namespace BusinessLogic.Models
                 
         }
 
-        public Comment(CommentDto dto)
+        public Comment(CommentDalModel dto)
         {
             Id = dto.Id;
             Name = dto.Name;
             Info = dto.Info;
-            RestaurantId = dto.Restaurantid;
+            RestaurantId = dto.RestaurantId;
         }
 
        
-        public CommentDto convertToDto()
+        public CommentDalModel convertToDto()
         {
-            return new CommentDto(Id, Name, Info, RestaurantId);
+            return new CommentDalModel(Id, Name, Info, RestaurantId);
         }
     }
 }

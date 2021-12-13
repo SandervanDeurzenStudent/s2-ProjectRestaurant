@@ -73,7 +73,7 @@ namespace Repositories
             }
             catch (Exception)
             {
-                throw new IndexOutOfRangeException();
+                throw new IndexOutOfRangeException("error while processing the query");
             }
         }
 
@@ -97,7 +97,7 @@ namespace Repositories
             }
         }
 
-        public RestaurantDto getRestaurantById(int id)
+        public RestaurantRepositoryDto getRestaurantById(int id)
         {
             DB db = new DB();
             string conn = db.ReturnConnectionString();
@@ -108,7 +108,7 @@ namespace Repositories
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
                 MyAdapter.SelectCommand = MyCommand2;
-                List<RestaurantDto> restaurants = new List<RestaurantDto>();
+                List<RestaurantRepositoryDto> restaurants = new List<RestaurantRepositoryDto>();
 
                 using (MySqlCommand command = new MySqlCommand(Query, MyConn2))
                 {
@@ -117,7 +117,7 @@ namespace Repositories
                     {
                         while (reader.Read())
                         {
-                            RestaurantDto entity = new RestaurantDto();
+                            RestaurantRepositoryDto entity = new RestaurantRepositoryDto();
                             entity.Id = (int)reader["id"];
                             entity.Name = (string)reader["restaurant_name"];
                             entity.Telephone = (int)reader["telephone"];
@@ -130,7 +130,6 @@ namespace Repositories
                         return restaurants.First();
                     }
                 }
-
             }
             catch (Exception)
             {
@@ -138,7 +137,7 @@ namespace Repositories
             }
         }
 
-        public void update(int id, RestaurantDto restaurant)
+        public void update(int id, RestaurantDalModel restaurant)
         {
             try
             {

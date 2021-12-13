@@ -9,6 +9,6 @@ using System.Text;
 {
     public interface IRestaurantDal
     {
-       void update(int id, RestaurantDto restaurant);   
+       void update(int id, RestaurantDalModel restaurant);   
     }
 }

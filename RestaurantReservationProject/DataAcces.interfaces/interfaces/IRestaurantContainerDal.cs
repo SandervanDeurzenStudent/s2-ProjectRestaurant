@@ -7,12 +7,12 @@ namespace DataAcces.interfaces.interfaces
 {
     public interface IRestaurantContainerDal
     {
-        void create(RestaurantDto restaurant);
+        void create(RestaurantDalModel restaurant);
         
-        List<RestaurantDto> returnList();
+        List<RestaurantDalModel> returnList();
         
         void Delete(int id);
 
-        RestaurantDto getRestaurantById(int id);
+        RestaurantDalModel getRestaurantById(int id);
     }
 }

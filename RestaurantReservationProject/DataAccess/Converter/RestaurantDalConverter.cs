@@ -9,9 +9,9 @@ namespace DataAccess.Converter
 {
     public class RestaurantDalConverter
     {
-        public RestaurantDto Convert_To_RestaurantDto(RestaurantRepositoryDto restaurant)
+        public RestaurantDalModel Convert_To_RestaurantDalModel(RestaurantRepositoryDto restaurant)
         {
-            return new RestaurantDto
+            return new RestaurantDalModel
             {
                 Id = restaurant.Id,
                 Name = restaurant.Name,
@@ -21,9 +21,9 @@ namespace DataAccess.Converter
                 Email = restaurant.Email,
             };
         }
-        public List<RestaurantDto> Convert_To_RestaurantDto(List<RestaurantRepositoryDto> restaurant)
+        public List<RestaurantDalModel> Convert_To_RestaurantDalModel(List<RestaurantRepositoryDto> restaurant)
         {
-            return restaurant.Select(x => Convert_To_RestaurantDto(x)).ToList();
+            return restaurant.Select(x => Convert_To_RestaurantDalModel(x)).ToList();
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace DataAccess.Converter
         /// </summary>
         /// <param name="dTO_PageModel"></param>
         /// <returns></returns>
-        public RestaurantRepositoryDto Convert_To_RestaurantRepositoryDto(RestaurantDto DTOrestaurant)
+        public RestaurantRepositoryDto Convert_To_RestaurantRepositoryDto(RestaurantDalModel DTOrestaurant)
         {
             return new RestaurantRepositoryDto
             {
@@ -43,7 +43,7 @@ namespace DataAccess.Converter
                 Email = DTOrestaurant.Email,
             };
         }
-        public List<RestaurantRepositoryDto> Convert_To_RestaurantRepositoryDto(List<RestaurantDto> pageModels)
+        public List<RestaurantRepositoryDto> Convert_To_RestaurantRepositoryDto(List<RestaurantDalModel> pageModels)
         {
             return pageModels.Select(x => Convert_To_RestaurantRepositoryDto(x)).ToList();
         }
