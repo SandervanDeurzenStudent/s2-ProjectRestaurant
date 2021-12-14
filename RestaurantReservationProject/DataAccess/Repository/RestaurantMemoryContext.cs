@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DataAcces.interfaces.interfaces;
 using DataAccess.interfaces.RestaurantsDto;
 
-
 namespace DataAccess.Repositories
 {
     public class RestaurantMemoryContext : IRestaurantDal, IRestaurantContainerDal

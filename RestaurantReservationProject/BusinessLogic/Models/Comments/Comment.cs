@@ -7,7 +7,6 @@ namespace BusinessLogic.Models
 {
         public class Comment
         {
-        private CommentDto dto;
         
         public Comment()
         {
@@ -34,34 +33,12 @@ namespace BusinessLogic.Models
                 set;
             }
 
-        public Comment(int id, string name, string info, int restaurantId)
-        {
-            Id = id;
-            Name = name;
-            Info = info;
-            RestaurantId = restaurantId;
-        }
-
-        public Comment(string name, string info, int restaurantId)
-        {
-            Name = name;
-            Info = info;
-            RestaurantId = restaurantId;
-                
-        }
-
         public Comment(CommentDto dto)
         {
             Id = dto.Id;
             Name = dto.Name;
             Info = dto.Info;
             RestaurantId = dto.RestaurantId;
-        }
-
-       
-        public CommentDto convertToDto()
-        {
-            return new CommentDto(Id, Name, Info, RestaurantId);
         }
     }
 }

@@ -11,14 +11,16 @@ namespace BusinessLogic.Controller.Comments
     public class CommentContainer : ICommentContainerLogic
     {
         ICommentContainerDal _commentContainerDal;
+        CommentLogicConverter _commentLogicConverter;
         private CommentLogicConverter commentConverter = new CommentLogicConverter();
-        public CommentContainer(ICommentContainerDal commentContainerDal)
+        public CommentContainer(ICommentContainerDal commentContainerDal, CommentLogicConverter commentLogicConverter)
         {
             _commentContainerDal = commentContainerDal;
+            _commentLogicConverter = commentLogicConverter;
         }
         void ICommentContainerLogic.Create(Comment comment, int restaurantId)
         {
-            _commentContainerDal.Create(comment.convertToDto(), comment.Id);
+            _commentContainerDal.Create(_commentLogicConverter.Convert_To_CommentDto(comment), comment.Id);
         }
         void ICommentContainerLogic.Delete(int id)
         {

@@ -18,13 +18,10 @@ namespace Presentation.Controllers
         //comments
         ICommentContainerLogic _commentContainerLogic;
         //Converters
-        CommentLogicConverter _commentViewConverter;
+        CommentViewConverter _commentViewConverter;
         RestaurantViewConverter _restaurantViewConverter;
-        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic, RestaurantViewConverter restaurantViewConverter, CommentLogicConverter commentViewConverter)
+        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic, RestaurantViewConverter restaurantViewConverter, CommentViewConverter commentViewConverter)
         {
-            //restaurantContainerLogic = IRESTCONTLGIC;
-            //commentContainerLogic = CommentFactory.CreateCommentCollection();
-            //restaurantLogic = RestaurantFactory.CreateRestaurant();
             _restaurantViewConverter = restaurantViewConverter;
             _commentViewConverter = commentViewConverter;
             _restaurantContainerLogic = restaurantContainerLogic;
@@ -75,10 +72,10 @@ namespace Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                _restaurantContainerLogic.create(restaurantModel.convertToLogic());
+                _restaurantContainerLogic.create(_restaurantViewConverter.Convert_To_Restaurant(restaurantModel));
                 return RedirectToAction(nameof(Index));
             }
-            return View(restaurantModel);
+            return View();
         }
 
         public async Task<IActionResult> Edit(int? id)

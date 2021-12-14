@@ -9,11 +9,6 @@ namespace DataAccess
 {
     public class CommentDal : ICommentContainerDal
     {
-        public CommentDal()
-        {
-            
-        }
-
         public void Create(CommentDto comment, int commentId)
         {
             try
@@ -35,12 +30,28 @@ namespace DataAccess
                 throw new IndexOutOfRangeException();
             }
         }
-
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            {
+                DB db = new DB();
+                string conn = db.ReturnConnectionString();
+                try
+                {
+                    using (MySqlConnection MyConn = new MySqlConnection(conn))
+                    {
+                        string Query = string.Format("Delete from comments where id = {0};", id);
+                        MyConn.Open();
+                        MySqlCommand cmd = new MySqlCommand(Query, MyConn);
+                        cmd.ExecuteNonQuery();
+                        MyConn.Close();
+                    }
+                }
+                catch (Exception)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+            }
         }
-
         public List<CommentDto> GetCommentsById(int id)
         {
             DB db = new DB();
@@ -79,10 +90,40 @@ namespace DataAccess
                 throw new IndexOutOfRangeException();
             }
         }
-
         public List<CommentDto> GetList()
         {
-            throw new NotImplementedException();
+            DB db = new DB();
+            string connString = db.ReturnConnectionString();
+            try
+            {
+                string Query = "select * from comments;";
+                MySqlConnection MyConn = new MySqlConnection(connString);
+                MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
+                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                MyAdapter.SelectCommand = MyCommand;
+                List<CommentDto> comments = new List<CommentDto>();
+
+                using (MySqlCommand command = new MySqlCommand(Query, MyConn))
+                {
+                    MyConn.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CommentDto entity = new CommentDto();
+                            entity.Id = (int)reader["id"];
+                            entity.Name = (string)reader["name"];
+                            entity.Info = (string)reader["description"];
+                            comments.Add(entity);
+                        }
+                    }
+                    return comments;
+                }
+            }
+            catch (Exception)
+            {
+                throw new IndexOutOfRangeException();
+            }
         }
     }
 }

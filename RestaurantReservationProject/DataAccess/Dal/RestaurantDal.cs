@@ -11,9 +11,6 @@ namespace DataAccess
 {
     public class RestaurantDal : IRestaurantDal, IRestaurantContainerDal
     {
-        public RestaurantDal()
-        {
-        }
         public void create(RestaurantDto restaurant)
         {
             try
@@ -93,7 +90,6 @@ namespace DataAccess
                 throw new IndexOutOfRangeException();
             }
         }
-
         public RestaurantDto getRestaurantById(int id)
         {
             DB db = new DB();
@@ -133,7 +129,6 @@ namespace DataAccess
                 throw new IndexOutOfRangeException();
             }
         }
-
         public void update(int id, RestaurantDto restaurant)
         {
             try

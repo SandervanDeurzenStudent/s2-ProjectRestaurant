@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Converter
 {
-    public class CommentLogicConverter
+    public class CommentViewConverter
     {
 
         public CommentViewModel Convert_To_CommentViewModel(Comment restaurant)

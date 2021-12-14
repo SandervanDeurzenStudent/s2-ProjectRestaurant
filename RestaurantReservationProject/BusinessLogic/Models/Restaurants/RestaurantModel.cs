@@ -19,17 +19,6 @@ namespace BusinessLogic.Models
         {
 
         }
-        public RestaurantModel(int id, string name, string info, string address, int telephone, string email)
-        {
-            Id = id;
-            Name = name;
-            Info = info;
-            Address = address;
-            Telephone = telephone;
-            Email = email;
-        }
-      
-       
     }
 }
 

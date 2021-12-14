@@ -6,6 +6,7 @@ using BusinessLogic.Interfaces.Comments;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Presentation.Converter;
 using Presentation.Models;
 
 namespace Presentation.Controllers
@@ -13,16 +14,19 @@ namespace Presentation.Controllers
     public class CommentViewController : Controller
     {
         private readonly Test _context;
-        ICommentContainerLogic commentContainerLogic;
+        ICommentContainerLogic _commentContainerLogic;
+        CommentViewConverter _commentViewConverter;
 
-        public CommentViewController()
+        public CommentViewController(ICommentContainerLogic commentContainerLogic, CommentViewConverter commentViewConverter)
         {
+            _commentViewConverter = commentViewConverter;
+            _commentContainerLogic = commentContainerLogic;
         }
       
         public async Task<IActionResult> Index()
         {
             List<CommentViewModel> comment = new List<CommentViewModel>();
-            commentContainerLogic.GetList().ForEach(dto => comment.Add(new CommentViewModel(dto)));
+            _commentContainerLogic.GetList().ForEach(dto => comment.Add(new CommentViewModel(dto)));
             return View(comment);
         }
 
@@ -54,7 +58,7 @@ namespace Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                commentContainerLogic.Create(commentModel.convertToLogic(), Convert.ToInt32(commentModel.Id));
+                _commentContainerLogic.Create(_commentViewConverter.Convert_To_Comment(commentModel), Convert.ToInt32(commentModel.Id));
                 return RedirectToAction(nameof(Index));
             }
             return View(commentModel);
@@ -114,7 +118,7 @@ namespace Presentation.Controllers
                 return NotFound();
             }
 
-            commentContainerLogic.Delete(Convert.ToInt32(id));
+            _commentContainerLogic.Delete(Convert.ToInt32(id));
              return Redirect("/");
         }
 

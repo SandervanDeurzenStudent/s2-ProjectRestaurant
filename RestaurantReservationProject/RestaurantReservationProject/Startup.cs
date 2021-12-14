@@ -69,7 +69,7 @@ namespace RestaurantReservationProject
             //comments converter view
             services.AddSingleton<RestaurantViewConverter>();
             //comments coverter logic
-            services.AddSingleton<CommentLogicConverter>();
+            services.AddSingleton<CommentViewConverter>();
             //comments converter dal
 
 
