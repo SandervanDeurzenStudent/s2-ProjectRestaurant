@@ -49,7 +49,6 @@ namespace RestaurantReservationUnitTests.Mockups
             {
                 if (item.Id == comment.Id)
                 {
-                    
                     throw new ArgumentException("A Comment with this ID already exists.");
                 }
             }

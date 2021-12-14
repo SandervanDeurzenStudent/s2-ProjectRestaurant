@@ -39,22 +39,30 @@ namespace RestaurantReservationUnitTests.Restaurants
             //Arrange
             var f = new RestaurantMemoryContext();
             //act
-            //var result = f.create(new RestaurantDalModel(-0, "restaurantName", "Info", "1111 AA", 32432, "frfjr"));
             //Assert
-
-            //Assert.Throws<ArgumentOutOfRangeException>(() => f.create(new RestaurantDalModel(-0, "restaurantName", "Info", "1111 AA", 32432, "frfjr")));
-
-            //Assert.Contains("must be greater than or equal to zero.", ex.Message);
-            Assert.Throws<ArgumentOutOfRangeException>(() => f.create((new RestaurantDalModel(-5, "restaurantName", "Info", "1111 AA", 32432, "frfjr")))); 
+            Assert.Throws<ArgumentOutOfRangeException>(() => f.create(new RestaurantDalModel(-5, "restaurantName", "Info", "1111 AA", 32432, "frfjr"))); 
         }
-        public void Should_Give()
+
+        //getrestaurantById
+        [Test]
+        public void Should_return_Restaurant()
         {
             //Arrange
             var f = new RestaurantMemoryContext();
             //act
-            var result = f.create(new RestaurantDalModel(-0, "restaurantName", "Info", "1111 AA", 32432, "frfjr"));
+            var result = f.getRestaurantById(1);
             //Assert
-            Assert.AreSame(new ArgumentException(), result);
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void Should_return_Exeption_alreadyExists()
+        {
+            //Arrange
+            var f = new RestaurantMemoryContext();
+            //act
+            //Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() => f.getRestaurantById(2));
         }
     }
 }

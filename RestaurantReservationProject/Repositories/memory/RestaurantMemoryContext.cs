@@ -9,6 +9,11 @@ namespace Repositories.memory
     public class RestaurantMemoryContext 
     {
         List<RestaurantDalModel> restaurantList = new List<RestaurantDalModel>();
+
+        public RestaurantMemoryContext()
+        {
+            restaurantList.Add(new RestaurantDalModel(1, "restaurantName", "Info", "1111 AA", 32432, "frfjr"));
+        }
         public bool create(RestaurantDalModel restaurant)
         {
             if (restaurant.Id <= 0)
@@ -29,19 +34,19 @@ namespace Repositories.memory
 
         public bool getRestaurantById(int restaurantid)
         {
-            if (restaurantid <= 0)
+            foreach (var item in restaurantList)
             {
-                throw new ArgumentOutOfRangeException("ID not found");
+                if (restaurantid == item.Id)
+                {
+                    return true;
+                }
             }
-            else
-            {
-                return true;
-            }
+            throw new ArgumentOutOfRangeException("Restaurant does not exist"); 
         }
 
         public List<RestaurantDalModel> returnList()
         {
-            throw new NotImplementedException();
+            return restaurantList.GetRange(0, 1);
         }
 
         public void update(int id, RestaurantDalModel restaurant)
