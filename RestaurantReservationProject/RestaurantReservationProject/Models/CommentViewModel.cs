@@ -30,25 +30,7 @@ namespace Presentation.Models
         {
         }
 
-        public CommentViewModel(int id, string name, string info, int restaurantId)
-        {
-            Id = id;
-            Name = name;
-            Info = info;
-            RestaurantId = restaurantId;
-        }
-
-        public CommentViewModel(string name, string info, int restaurantId)
-        {
-            Name = name;
-            Info = info;
-            RestaurantId = restaurantId;
-        }
-        public Comment convertToLogic()
-        {
-            return new Comment(Id, Name, Info, RestaurantId);
-        }
-        public CommentViewModel(Comment comment)
+        public CommentViewModel(CommentModel comment)
         {
             Id = comment.Id;
             Name = comment.Name;

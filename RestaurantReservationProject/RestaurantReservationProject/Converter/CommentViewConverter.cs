@@ -10,7 +10,7 @@ namespace Presentation.Converter
     public class CommentViewConverter
     {
 
-        public CommentViewModel Convert_To_CommentViewModel(Comment restaurant)
+        public CommentViewModel Convert_To_CommentViewModel(CommentModel restaurant)
         {
             return new CommentViewModel
             {
@@ -20,14 +20,14 @@ namespace Presentation.Converter
                 RestaurantId = restaurant.RestaurantId,
             };
         }
-        public List<CommentViewModel> Convert_To_CommentViewModel(List<Comment> restaurant)
+        public List<CommentViewModel> Convert_To_CommentViewModel(List<CommentModel> restaurant)
         {
             return restaurant.Select(x => Convert_To_CommentViewModel(x)).ToList();
         }   
 
-        public Comment Convert_To_Comment(CommentViewModel restaurant)
+        public CommentModel Convert_To_Comment(CommentViewModel restaurant)
         {
-            return new Comment
+            return new CommentModel
             {
                 Id = restaurant.Id,
                 Name = restaurant.Name,
@@ -35,7 +35,7 @@ namespace Presentation.Converter
                 RestaurantId = restaurant.RestaurantId,
             };
         }
-        public List<Comment> Convert_To_Comment(List<CommentViewModel> restaurant)
+        public List<CommentModel> Convert_To_Comment(List<CommentViewModel> restaurant)
         {
             return restaurant.Select(x => Convert_To_Comment(x)).ToList();
         }

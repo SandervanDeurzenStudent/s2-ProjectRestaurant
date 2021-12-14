@@ -13,6 +13,7 @@ namespace BusinessLogic.Restraurants
             _restaurantDal = restaurantDAl;
             _restaurantConverter = restaurantConverter;
         }
+
         public void create(RestaurantModel restaurant)
         {
             _restaurantDal.create(_restaurantConverter.Convert_To_RestaurantDto(restaurant));
@@ -28,7 +29,7 @@ namespace BusinessLogic.Restraurants
         }
         public RestaurantModel getRestaurantById(int id)
         {
-                RestaurantModel restaurant =  _restaurantConverter.Convert_To_Restaurant(_restaurantDal.getRestaurantById(id));
+            RestaurantModel restaurant =  _restaurantConverter.Convert_To_Restaurant(_restaurantDal.getRestaurantById(id));
             return restaurant;
         }
     }

@@ -6,6 +6,7 @@ using System.Text;
 using DataAcces.interfaces.interfaces;
 using BusinessLogic.Converter;
 
+
 namespace BusinessLogic.Controller.Comments
 {
     public class CommentContainer : ICommentContainerLogic
@@ -18,7 +19,7 @@ namespace BusinessLogic.Controller.Comments
             _commentContainerDal = commentContainerDal;
             _commentLogicConverter = commentLogicConverter;
         }
-        void ICommentContainerLogic.Create(Comment comment, int restaurantId)
+        void ICommentContainerLogic.Create(CommentModel comment, int restaurantId)
         {
             _commentContainerDal.Create(_commentLogicConverter.Convert_To_CommentDto(comment), comment.Id);
         }
@@ -26,16 +27,14 @@ namespace BusinessLogic.Controller.Comments
         {
             _commentContainerDal.Delete(id);
         }
-        List<Comment> ICommentContainerLogic.GetList()
+        List<CommentModel> ICommentContainerLogic.GetList()
         {
-            List<Comment> comments = new List<Comment>();
-            _commentContainerDal.GetList().ForEach(dto => comments.Add(new Comment(dto)));
+            List<CommentModel> comments = _commentLogicConverter.Convert_To_CommentModel(_commentContainerDal.GetList());
             return comments;
         }
-        List<Comment> ICommentContainerLogic.GetCommentsById(int id)
+        List<CommentModel> ICommentContainerLogic.GetCommentsById(int id)
         {
-            List<Comment> comments = commentConverter.Convert_To_Comment(_commentContainerDal.GetCommentsById(id));
-            //commentContainerDal.GetCommentsById(id).ForEach(dto => comments.Add(new Comment(dto)));
+            List<CommentModel> comments = commentConverter.Convert_To_CommentModel(_commentContainerDal.GetCommentsById(id));
             return comments;
         }
     }

@@ -20,7 +20,7 @@ using BusinessLogic.Functions;
 using Presentation.RestaurantConverter;
 using Presentation.Converter;
 using BusinessLogic;
-
+using BusinessLogic.Converter;
 
 namespace RestaurantReservationProject
 {
@@ -68,13 +68,13 @@ namespace RestaurantReservationProject
 
             //comments converter view
             services.AddSingleton<RestaurantViewConverter>();
-            //comments coverter logic
+            //comments coverter View
             services.AddSingleton<CommentViewConverter>();
-            //comments converter dal
-
+            //comments converter Logic
+            services.AddSingleton<CommentLogicConverter>();
 
             //comments View
-           
+
 
             //commentsLogic
             services.AddSingleton<ICommentContainerLogic, CommentContainer>();

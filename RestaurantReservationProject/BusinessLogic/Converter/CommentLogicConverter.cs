@@ -9,9 +9,9 @@ namespace BusinessLogic.Converter
 {
     public class CommentLogicConverter
     {
-        public Comment Convert_To_Comment(CommentDto comment)
+        public CommentModel Convert_To_CommentModel(CommentDto comment)
         {
-            return new Comment
+            return new CommentModel
             {
                 Id = comment.Id,
                 Name = comment.Name,
@@ -19,12 +19,12 @@ namespace BusinessLogic.Converter
                 RestaurantId = comment.RestaurantId
             };
         }
-        public List<Comment> Convert_To_Comment(List<CommentDto> comment)
+        public List<CommentModel> Convert_To_CommentModel(List<CommentDto> comment)
         {
-            return comment.Select(x => Convert_To_Comment(x)).ToList();
+            return comment.Select(x => Convert_To_CommentModel(x)).ToList();
         }
 
-        public CommentDto Convert_To_CommentDto(Comment commentDto)
+        public CommentDto Convert_To_CommentDto(CommentModel commentDto)
         {
         return new CommentDto
         {
@@ -34,7 +34,7 @@ namespace BusinessLogic.Converter
             RestaurantId = commentDto.RestaurantId
             };
         }
-        public List<CommentDto> Convert_To_CommentDto(List<Comment> comments)
+        public List<CommentDto> Convert_To_CommentDto(List<CommentModel> comments)
         {
             return comments.Select(x => Convert_To_CommentDto(x)).ToList();
         }

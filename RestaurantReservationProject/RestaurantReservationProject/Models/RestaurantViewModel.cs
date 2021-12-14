@@ -40,29 +40,6 @@ namespace Presentation.models
         public RestaurantViewModel()
         {
         }
-
-        public RestaurantViewModel(int id, string name, string info, string address, int telephone, string email)
-        {
-            Id = id;
-            Name = name;
-            Info = info;
-            Address = address;
-            Telephone = telephone;
-            this.Email = email;
-        }
-
-        public RestaurantViewModel(string name, string info, string address, int telephone, string email)
-        {
-            Name = name;
-            Info = info;
-            Address = address;
-            Telephone = telephone;
-            this.Email = email;
-        }
-        public RestaurantModel convertToLogic()
-        {
-            return new RestaurantModel(Id, Name, Info, Address, Telephone, Email);
-        }
         public RestaurantViewModel(RestaurantModel restaurant)
         {
             Id = restaurant.Id;

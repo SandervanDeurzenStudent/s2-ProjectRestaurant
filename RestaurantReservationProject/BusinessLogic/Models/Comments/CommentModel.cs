@@ -5,10 +5,10 @@ using System.Text;
 
 namespace BusinessLogic.Models
 {
-        public class Comment
+        public class CommentModel
         {
         
-        public Comment()
+        public CommentModel()
         {
 
         }
@@ -33,7 +33,7 @@ namespace BusinessLogic.Models
                 set;
             }
 
-        public Comment(CommentDto dto)
+        public CommentModel(CommentDto dto)
         {
             Id = dto.Id;
             Name = dto.Name;
