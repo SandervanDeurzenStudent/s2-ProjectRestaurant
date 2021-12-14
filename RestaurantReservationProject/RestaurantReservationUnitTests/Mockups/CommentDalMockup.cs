@@ -6,20 +6,20 @@ namespace RestaurantReservationUnitTests.Mockups
 {
     public class CommentDalMockup
     {
-        public List<CommentDalModel> Comments = new List<CommentDalModel>();
+        public List<CommentDto> Comments = new List<CommentDto>();
         private CommentDalMockup cdm;
 
 
         public void RunCommentMockup()
         {
-            CommentDalModel cmt = new CommentDalModel(1, "name", "info", 1);
+            CommentDto cmt = new CommentDto(1, "name", "info", 1);
             Comments.Add(cmt);
         }
-        public CommentDalModel[] ReadAllComments(int commentId)
+        public CommentDto[] ReadAllComments(int commentId)
         {
-            List<CommentDalModel> returnList = new List<CommentDalModel>();
+            List<CommentDto> returnList = new List<CommentDto>();
 
-            foreach (CommentDalModel item in Comments)
+            foreach (CommentDto item in Comments)
             {
                 if (item.Id == commentId)
                 {
@@ -29,9 +29,9 @@ namespace RestaurantReservationUnitTests.Mockups
             return returnList.ToArray();
         }
 
-        public void UpdateComment(CommentDalModel comment)
+        public void UpdateComment(CommentDto comment)
         {
-            foreach (CommentDalModel item in Comments)
+            foreach (CommentDto item in Comments)
             {
                 if (item.Id == comment.Id)
                 {
@@ -43,9 +43,9 @@ namespace RestaurantReservationUnitTests.Mockups
             throw new ArgumentException("No run with this ID was found.");
         }
 
-        public bool CreateComment(CommentDalModel comment)
+        public bool CreateComment(CommentDto comment)
         {
-            foreach (CommentDalModel item in Comments)
+            foreach (CommentDto item in Comments)
             {
                 if (item.Id == comment.Id)
                 {
@@ -58,7 +58,7 @@ namespace RestaurantReservationUnitTests.Mockups
 
         public bool DeleteComment(int commentId)
         {
-            foreach (CommentDalModel item in Comments)
+            foreach (CommentDto item in Comments)
             {
                 if (item.Id == commentId)
                 {
@@ -70,9 +70,9 @@ namespace RestaurantReservationUnitTests.Mockups
             throw new IndexOutOfRangeException();
         }
 
-        public CommentDalModel ReadComment(int runId)
+        public CommentDto ReadComment(int runId)
         {
-            foreach (CommentDalModel item in Comments)
+            foreach (CommentDto item in Comments)
             {
                 if (item.Id == runId)
                 {

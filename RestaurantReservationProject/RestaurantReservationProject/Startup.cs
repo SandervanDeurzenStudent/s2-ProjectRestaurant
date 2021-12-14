@@ -14,18 +14,13 @@ using DataAccess;
 using DataAcces.interfaces.interfaces;
 using BusinessLogic.Restraurants;
 using BusinessLogic.Models;
-using Repositories.interfaces;
-using Repositories;
 using BusinessLogic.Interfaces.Comments;
 using BusinessLogic.Controller.Comments;
-using Repositories.interfaces.dtos;
 using BusinessLogic.Functions;
 using Presentation.RestaurantConverter;
 using Presentation.Converter;
 using BusinessLogic;
-using DataAccess.Converter;
-using Repositories.interfaces.interfaces;
-using Repositories.MySql;
+
 
 namespace RestaurantReservationProject
 {
@@ -60,27 +55,22 @@ namespace RestaurantReservationProject
             //restaurant converters Logic
             services.AddSingleton<RestaurantLogicConverter>();
 
-            //restaurant converters Dal
-            services.AddSingleton<RestaurantDalConverter>();
-           
-            //restaurant dal
-            services.AddSingleton<IRestaurantContainerDal, RestaurantDal>();
-            services.AddSingleton<IRestaurantDal, RestaurantDal>();
-           
             //restaurant logic
             services.AddSingleton<IRestaurantContainerLogic, RestaurantContainer>();
             services.AddSingleton<IRestaurantLogic, Restaurant>();
 
-            //restaurant repositories
-            services.AddSingleton<IRestaurantMySqlContext, RestaurantMySqlContext>();
+            //restaurant dal
+            services.AddSingleton<IRestaurantContainerDal, RestaurantDal>();
 
+
+
+            //COMMENTS
 
             //comments converter view
             services.AddSingleton<RestaurantViewConverter>();
             //comments coverter logic
             services.AddSingleton<CommentLogicConverter>();
             //comments converter dal
-            services.AddSingleton<CommentDalConverter>();
 
 
             //comments View
@@ -92,8 +82,6 @@ namespace RestaurantReservationProject
             //comments Dal
             services.AddSingleton<ICommentContainerDal, CommentDal>();
 
-            //commentsRepository
-            services.AddSingleton<ICommentMySqlContext, CommentMySqlContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

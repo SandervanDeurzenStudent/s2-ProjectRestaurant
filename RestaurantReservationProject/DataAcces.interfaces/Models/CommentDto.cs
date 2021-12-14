@@ -5,13 +5,13 @@ using System.Text;
 namespace DataAcces.interfaces.models
 {
 
-    public class CommentDalModel
+    public class CommentDto
     {
-        public CommentDalModel()
+        public CommentDto()
         {
         }
 
-        public CommentDalModel(int id, string name, string info, int restaurantId)
+        public CommentDto(int id, string name, string info, int restaurantId)
         {
             Id = id;
             Name = name;

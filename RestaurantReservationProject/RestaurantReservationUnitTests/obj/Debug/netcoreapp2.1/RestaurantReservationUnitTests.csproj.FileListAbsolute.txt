@@ -13,14 +13,10 @@ C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\DataAccess.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\DataAccess.interfaces.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\Presentation.dll
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\Repositories.dll
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\Repositories.interfaces.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\BusinessLogic.pdb
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\DataAccess.pdb
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\Presentation.pdb
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\DataAccess.interfaces.pdb
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\Repositories.pdb
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\Repositories.interfaces.pdb
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\obj\Debug\netcoreapp2.1\RestaurantReservationUnitTests.csprojAssemblyReference.cache
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\obj\Debug\netcoreapp2.1\RestaurantReservationUnitTests.csproj.CoreCompileInputs.cache
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\obj\Debug\netcoreapp2.1\RestaurantReservationUnitTests.AssemblyInfoInputs.cache

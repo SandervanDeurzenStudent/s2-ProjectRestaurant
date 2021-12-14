@@ -134,7 +134,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral("\r\n    </dl>\r\n</div>\r\n\r\n<div>\r\n    ");
             EndContext();
             BeginContext(811, 72, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b896c868bba64cfda839f8b534b24608", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74350a1cb3dd424e9376dc5b4b8d8cb0", async() => {
                 BeginContext(875, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -169,7 +169,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(891, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12af8612a7e245288729ebe1e684a803", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7970ad7f6856461db07e63497d2d1ed9", async() => {
                 BeginContext(913, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
@@ -191,7 +191,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral("  |\r\n    ");
             EndContext();
             BeginContext(938, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f2eb558474f44899cdd7065c95afe80", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4fb8a0e6a18f464ba96fc0193b082634", async() => {
                 BeginContext(1031, 12, true);
                 WriteLiteral("Make Comment");
                 EndContext();

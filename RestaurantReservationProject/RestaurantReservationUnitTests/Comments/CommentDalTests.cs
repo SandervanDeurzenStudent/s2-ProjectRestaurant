@@ -22,7 +22,7 @@ namespace RestaurantReservationUnitTests.Comments
             var f = new Mockups.CommentDalMockup();
             f.RunCommentMockup();
             //act
-             var result = f.CreateComment(new CommentDalModel(23, "newname", "thisisinfo", 3));
+             var result = f.CreateComment(new CommentDto(23, "newname", "thisisinfo", 3));
             //Assert
             Assert.IsTrue(result);
         }
@@ -34,7 +34,7 @@ namespace RestaurantReservationUnitTests.Comments
             var f = new Mockups.CommentDalMockup();
             f.RunCommentMockup();
             //act
-            var result = f.CreateComment(new CommentDalModel(1314, "newname", "thisisinfo", 11241));
+            var result = f.CreateComment(new CommentDto(1314, "newname", "thisisinfo", 11241));
             //Assert
             Assert.IsTrue(result);
         }
@@ -48,7 +48,7 @@ namespace RestaurantReservationUnitTests.Comments
             //act
 
             //Assert
-            Assert.Throws<ArgumentException>(() => f.CreateComment(new CommentDalModel(1, "newname", "thisisinfo", 3)));
+            Assert.Throws<ArgumentException>(() => f.CreateComment(new CommentDto(1, "newname", "thisisinfo", 3)));
 
         }
 

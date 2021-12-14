@@ -7,7 +7,7 @@ namespace BusinessLogic.Models
 {
         public class Comment
         {
-        private CommentDalModel dto;
+        private CommentDto dto;
         
         public Comment()
         {
@@ -50,7 +50,7 @@ namespace BusinessLogic.Models
                 
         }
 
-        public Comment(CommentDalModel dto)
+        public Comment(CommentDto dto)
         {
             Id = dto.Id;
             Name = dto.Name;
@@ -59,9 +59,9 @@ namespace BusinessLogic.Models
         }
 
        
-        public CommentDalModel convertToDto()
+        public CommentDto convertToDto()
         {
-            return new CommentDalModel(Id, Name, Info, RestaurantId);
+            return new CommentDto(Id, Name, Info, RestaurantId);
         }
     }
 }

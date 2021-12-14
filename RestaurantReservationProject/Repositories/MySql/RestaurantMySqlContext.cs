@@ -137,7 +137,7 @@ namespace Repositories
             }
         }
 
-        public void update(int id, RestaurantDalModel restaurant)
+        public void update(int id, RestaurantDto restaurant)
         {
             try
             {

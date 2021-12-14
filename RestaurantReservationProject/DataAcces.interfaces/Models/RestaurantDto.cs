@@ -4,13 +4,13 @@ using System.Text;
 
 namespace DataAccess.interfaces.RestaurantsDto
 {
-    public class RestaurantDalModel
+    public class RestaurantDto
     {
-        public RestaurantDalModel()
+        public RestaurantDto()
         {
         }
 
-        public RestaurantDalModel(int id, string name, string info, string address, int telephone, string email)
+        public RestaurantDto(int id, string name, string info, string address, int telephone, string email)
         {
             Id = id;
             Name = name;
@@ -50,9 +50,9 @@ namespace DataAccess.interfaces.RestaurantsDto
             get;
             set;
         }
-        public RestaurantDalModel convertToDto()
+        public RestaurantDto convertToDto()
         {
-            return new RestaurantDalModel(Id, Name, Info, Address, Telephone, Email);
+            return new RestaurantDto(Id, Name, Info, Address, Telephone, Email);
         }
     }
 }

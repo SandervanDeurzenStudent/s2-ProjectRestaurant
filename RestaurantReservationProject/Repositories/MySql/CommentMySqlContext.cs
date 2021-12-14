@@ -43,7 +43,6 @@ namespace Repositories.MySql
             try
             {
                 string Query = string.Format("select * from comments where restaurant_id = {0}", id);
-        
                 MySqlConnection MyConn = new MySqlConnection(connString);
                 MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();

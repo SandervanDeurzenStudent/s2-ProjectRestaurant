@@ -3,24 +3,18 @@ using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Repositories.interfaces.dtos;
 using DataAcces.interfaces.models;
-using Repositories.interfaces.interfaces;
-using DataAccess.Converter;
 
 namespace DataAccess
 {
     public class CommentDal : ICommentContainerDal
     {
-        ICommentMySqlContext _commentMysqlContext;
-        CommentDalConverter _commentDalConverter;
-        public CommentDal(ICommentMySqlContext  commentMySqlContext, CommentDalConverter commentDalConverter)
+        public CommentDal()
         {
-            _commentMysqlContext = commentMySqlContext;
-            _commentDalConverter = commentDalConverter;
+            
         }
 
-        public void Create(CommentDalModel comment, int commentId)
+        public void Create(CommentDto comment, int commentId)
         {
             try
             {
@@ -42,48 +36,24 @@ namespace DataAccess
             }
         }
 
-        public List<CommentDalModel> GetCommentsById(int id)
+        public void Delete(int id)
         {
-            List < CommentDalModel> comments = _commentDalConverter.Convert_To_CommentDalModel(_commentMysqlContext.GetCommentsById(id));
-            return comments;
+            throw new NotImplementedException();
         }
 
-
-        void ICommentContainerDal.Delete(int id)
-        {
-            {
-                DB db = new DB();
-                string conn = db.ReturnConnectionString();
-                try
-                {
-                    using (MySqlConnection MyConn = new MySqlConnection(conn))
-                    {
-                        string Query = string.Format("Delete from comments where id = {0};", id);
-                        MyConn.Open();
-                        MySqlCommand cmd = new MySqlCommand(Query, MyConn);
-                        cmd.ExecuteNonQuery();
-                        MyConn.Close();
-                    }
-                }
-                catch (Exception)
-                {
-                    throw new IndexOutOfRangeException();
-                }
-            }
-        }
-
-        List<CommentRepositoryDto> GetList()
+        public List<CommentDto> GetCommentsById(int id)
         {
             DB db = new DB();
             string connString = db.ReturnConnectionString();
             try
             {
-                string Query = "select * from comments;";
+                string Query = string.Format("select * from comments where restaurant_id = {0}", id);
+
                 MySqlConnection MyConn = new MySqlConnection(connString);
                 MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
                 MyAdapter.SelectCommand = MyCommand;
-                List<CommentRepositoryDto> comments = new List<CommentRepositoryDto>();
+                List<CommentDto> comments = new List<CommentDto>();
 
                 using (MySqlCommand command = new MySqlCommand(Query, MyConn))
                 {
@@ -92,14 +62,16 @@ namespace DataAccess
                     {
                         while (reader.Read())
                         {
-                            CommentRepositoryDto entity = new CommentRepositoryDto();
+                            CommentDto entity = new CommentDto();
                             entity.Id = (int)reader["id"];
                             entity.Name = (string)reader["name"];
                             entity.Info = (string)reader["description"];
+                            entity.RestaurantId = (int)reader["restaurant_id"];
                             comments.Add(entity);
                         }
+                        // Call Close when done reading.
+                        return comments;
                     }
-                    return comments;
                 }
             }
             catch (Exception)
@@ -108,7 +80,7 @@ namespace DataAccess
             }
         }
 
-        List<CommentDalModel> ICommentContainerDal.GetList()
+        public List<CommentDto> GetList()
         {
             throw new NotImplementedException();
         }
