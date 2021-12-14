@@ -21,6 +21,10 @@ using Presentation.RestaurantConverter;
 using Presentation.Converter;
 using BusinessLogic;
 using BusinessLogic.Converter;
+using BusinessLogic.Interfaces.Reservations;
+using BusinessLogic.Containers;
+using DataAccess.interfaces.interfaces.Reservations;
+using DataAccess.MySqlContext;
 
 namespace RestaurantReservationProject
 {
@@ -60,7 +64,7 @@ namespace RestaurantReservationProject
             services.AddSingleton<IRestaurantLogic, Restaurant>();
 
             //restaurant dal
-            services.AddSingleton<IRestaurantContainerDal, RestaurantDal>();
+            services.AddSingleton<IRestaurantContainerDal, RestaurantMySqlContext>();
 
 
 
@@ -80,8 +84,23 @@ namespace RestaurantReservationProject
             services.AddSingleton<ICommentContainerLogic, CommentContainer>();
 
             //comments Dal
-            services.AddSingleton<ICommentContainerDal, CommentDal>();
+            services.AddSingleton<ICommentContainerDal, CommentMySqlContext>();
 
+
+            //RESERVATION
+            //comments coverter View
+            services.AddSingleton<ReservationViewConverter>();
+            //comments converter Logic
+            services.AddSingleton<ReservationLogicConverter>();
+
+            //comments View
+
+
+            //commentsLogic
+            services.AddSingleton<IReservationContainer, ReservationContainer>();
+
+            //comments Dal
+            services.AddSingleton<IReservationContainerDal, ReservationMySqlContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

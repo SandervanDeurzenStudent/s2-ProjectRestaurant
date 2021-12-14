@@ -50,10 +50,7 @@ namespace DataAccess.interfaces.RestaurantsDto
             get;
             set;
         }
-        public RestaurantDto convertToDto()
-        {
-            return new RestaurantDto(Id, Name, Info, Address, Telephone, Email);
-        }
+        
     }
 }
 

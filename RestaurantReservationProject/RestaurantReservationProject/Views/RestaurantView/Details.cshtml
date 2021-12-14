@@ -37,4 +37,5 @@
     <a asp-action="Edit" asp-route-id="@Model.restaurantModel.Name">Edit</a> |
     <a asp-action="Index">Back to List</a>  |
     <a asp-controller="CommentView" asp-action="Create" asp-route-id="@Model.restaurantModel.Id">Make Comment</a>
+    <h3><a asp-controller="ReservationView" asp-action="Create" asp-route-id="@Model.restaurantModel.Id"> Make Reservation!</a></h3>
 </div>

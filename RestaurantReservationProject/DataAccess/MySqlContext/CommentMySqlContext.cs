@@ -7,7 +7,7 @@ using DataAcces.interfaces.models;
 
 namespace DataAccess
 {
-    public class CommentDal : ICommentContainerDal
+    public class CommentMySqlContext : ICommentContainerDal
     {
         public void Create(CommentDto comment, int commentId)
         {

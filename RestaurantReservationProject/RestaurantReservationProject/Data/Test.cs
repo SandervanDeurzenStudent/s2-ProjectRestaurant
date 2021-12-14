@@ -16,4 +16,6 @@ using Presentation.Models;
         public DbSet<RestaurantViewModel> RestaurantModel { get; set; }
 
         public DbSet<CommentViewModel> CommentModel { get; set; }
+
+        public DbSet<Presentation.Models.ReservationViewModel> ReservationViewModel { get; set; }
     }
