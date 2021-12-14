@@ -1,10 +1,12 @@
-﻿using BusinessLogic.Models;
-using BusinessLogic.Models.Reservation;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Presentation.Models
+namespace DataAccess.interfaces.Dtos
 {
-    public class ReservationViewModel
+    public class ReservationDto
     {
+
         public int Id
         {
             get;
@@ -30,18 +32,9 @@ namespace Presentation.Models
             get;
             set;
         }
-        
 
-        public ReservationViewModel()
+        public ReservationDto()
         {
-        }
-        public ReservationViewModel(ReservationModel restaurant)
-        {
-            Id = restaurant.Id;
-            Date = restaurant.Date;
-            Time = restaurant.Time;
-            Restaurant_id = 3;
-            User_id = 1;
         }
     }
 }

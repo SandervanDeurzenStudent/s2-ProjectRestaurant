@@ -1,5 +1,4 @@
 ﻿using BusinessLogic.Models;
-using System;
 
 
 namespace Presentation.models
@@ -48,7 +47,6 @@ namespace Presentation.models
             Address = restaurant.Address;
             Telephone = restaurant.Telephone;
             Email = restaurant.Email;
-
         }
     }
 }
