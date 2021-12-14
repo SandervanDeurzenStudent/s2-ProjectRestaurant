@@ -13,7 +13,7 @@ using Presentation.Models;
         {
         }
 
-        public DbSet<Presentation.models.RestaurantModel> RestaurantModel { get; set; }
+        public DbSet<RestaurantViewModel> RestaurantModel { get; set; }
 
-        public DbSet<Presentation.Models.CommentModel> CommentModel { get; set; }
+        public DbSet<CommentViewModel> CommentModel { get; set; }
     }

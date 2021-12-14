@@ -5,9 +5,9 @@ namespace BusinessLogic.Restraurants
 {
     public interface IRestaurantContainerLogic
     {
-        void create(Restaurant restaurant);
+        void create(RestaurantModel restaurant);
         void Delete(int id);
-        List<Restaurant> GetList();
-        Restaurant getRestaurantById(int id);
+        List<RestaurantModel> GetList();
+        RestaurantModel getRestaurantById(int id);
     }
 }

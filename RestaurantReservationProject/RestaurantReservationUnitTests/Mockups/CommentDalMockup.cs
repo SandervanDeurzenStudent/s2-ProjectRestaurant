@@ -1,4 +1,4 @@
-﻿using DataAcces.interfaces.Dto_s;
+﻿using DataAcces.interfaces.models;
 using System;
 using System.Collections.Generic;
 
@@ -49,7 +49,6 @@ namespace RestaurantReservationUnitTests.Mockups
             {
                 if (item.Id == comment.Id)
                 {
-                    
                     throw new ArgumentException("A Comment with this ID already exists.");
                 }
             }

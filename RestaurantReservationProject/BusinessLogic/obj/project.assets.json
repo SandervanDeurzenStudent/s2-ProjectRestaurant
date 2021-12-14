@@ -217,42 +217,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "DataAcces.interfaces/1.0.0": {
+      "DataAccess.interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "compile": {
-          "bin/placeholder/DataAcces.interfaces.dll": {}
+          "bin/placeholder/DataAccess.interfaces.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DataAcces.interfaces.dll": {}
-        }
-      },
-      "DataAccess/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
-          "MySqlConnector": "1.3.13"
-        },
-        "compile": {
-          "bin/placeholder/DataAccess.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataAccess.dll": {}
-        }
-      },
-      "DataAccess.Factories/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
-          "DataAccess": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DataAccess.Factories.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataAccess.Factories.dll": {}
+          "bin/placeholder/DataAccess.interfaces.dll": {}
         }
       }
     }
@@ -759,26 +731,15 @@
         "netstandard.library.nuspec"
       ]
     },
-    "DataAcces.interfaces/1.0.0": {
+    "DataAccess.interfaces/1.0.0": {
       "type": "project",
-      "path": "../DataAcces.interfaces/DataAcces.interfaces.csproj",
-      "msbuildProject": "../DataAcces.interfaces/DataAcces.interfaces.csproj"
-    },
-    "DataAccess/1.0.0": {
-      "type": "project",
-      "path": "../DataAccess/DataAccess.csproj",
-      "msbuildProject": "../DataAccess/DataAccess.csproj"
-    },
-    "DataAccess.Factories/1.0.0": {
-      "type": "project",
-      "path": "../DataAccess.Factories/DataAccess.Factories.csproj",
-      "msbuildProject": "../DataAccess.Factories/DataAccess.Factories.csproj"
+      "path": "../DataAcces.interfaces/DataAccess.interfaces.csproj",
+      "msbuildProject": "../DataAcces.interfaces/DataAccess.interfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "DataAcces.interfaces >= 1.0.0",
-      "DataAccess.Factories >= 1.0.0",
+      "DataAccess.interfaces >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "MySqlConnector >= 1.3.13"
     ]
@@ -813,11 +774,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAcces.interfaces.csproj": {
-              "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAcces.interfaces.csproj"
-            },
-            "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAccess.Factories\\DataAccess.Factories.csproj": {
-              "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAccess.Factories\\DataAccess.Factories.csproj"
+            "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAccess.interfaces.csproj": {
+              "projectPath": "C:\\Users\\Sander van Deurzen\\source\\repos\\FONTYS\\s2-herstart\\s2-ProjectRestaurant\\RestaurantReservationProject\\DataAcces.interfaces\\DataAccess.interfaces.csproj"
             }
           }
         }

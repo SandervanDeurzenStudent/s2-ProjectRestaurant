@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "BusinessLogic/1.0.0": {
         "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
-          "DataAccess.Factories": "1.0.0",
+          "DataAccess.interfaces": "1.0.0",
           "MySqlConnector": "1.3.13"
         },
         "runtime": {
@@ -24,27 +23,9 @@
           }
         }
       },
-      "DataAcces.interfaces/1.0.0": {
+      "DataAccess.interfaces/1.0.0": {
         "runtime": {
-          "DataAcces.interfaces.dll": {}
-        }
-      },
-      "DataAccess/1.0.0": {
-        "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
-          "MySqlConnector": "1.3.13"
-        },
-        "runtime": {
-          "DataAccess.dll": {}
-        }
-      },
-      "DataAccess.Factories/1.0.0": {
-        "dependencies": {
-          "DataAcces.interfaces": "1.0.0",
-          "DataAccess": "1.0.0"
-        },
-        "runtime": {
-          "DataAccess.Factories.dll": {}
+          "DataAccess.interfaces.dll": {}
         }
       }
     }
@@ -62,17 +43,7 @@
       "path": "mysqlconnector/1.3.13",
       "hashPath": "mysqlconnector.1.3.13.nupkg.sha512"
     },
-    "DataAcces.interfaces/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DataAccess/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DataAccess.Factories/1.0.0": {
+    "DataAccess.interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,36 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using BusinessLogic.Factories;
 using BusinessLogic.Interfaces.Comments;
 using BusinessLogic.Restraurants;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+using Presentation.Converter;
 using Presentation.models;
+using Presentation.Models;
+using Presentation.RestaurantConverter;
 
 namespace Presentation.Controllers
 {
     public class RestaurantViewController : Controller
     {
-        private readonly Test _context;
-        IRestaurantContainerLogic restaurantContainerLogic;
-        ICommentContainerLogic commentContainerLogic;
-        IRestaurantLogic restaurantLogic;
-        
-        public RestaurantViewController()
+
+        //restaurants
+        IRestaurantContainerLogic _restaurantContainerLogic;
+        //comments
+        ICommentContainerLogic _commentContainerLogic;
+        //Converters
+        CommentViewConverter _commentViewConverter;
+        RestaurantViewConverter _restaurantViewConverter;
+        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic, RestaurantViewConverter restaurantViewConverter, CommentViewConverter commentViewConverter)
         {
-            restaurantContainerLogic = RestaurantFactory.CreateRestaurantCollection();
-            commentContainerLogic = CommentFactory.CreateCommentCollection();
-            restaurantLogic = RestaurantFactory.CreateRestaurant();
+            _restaurantViewConverter = restaurantViewConverter;
+            _commentViewConverter = commentViewConverter;
+            _restaurantContainerLogic = restaurantContainerLogic;
+            _commentContainerLogic = commentContainerLogic;
         }
+
         // GET: Restaurant
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            List<RestaurantModel> restaurants = new List<RestaurantModel>();
-            restaurantContainerLogic.GetList().ForEach(dto => restaurants.Add(new RestaurantModel(dto)));
-            return View(restaurants);
+            IndexRestaurantViewModel indexRestaurantViewModel = new IndexRestaurantViewModel
+            {
+                restaurantList = _restaurantViewConverter.Convert_To_RestaurantViewModel(_restaurantContainerLogic.GetList())
+            };
+
+            return View(indexRestaurantViewModel);
         }
 
         // GET: Restaurant/Details/5
@@ -41,32 +47,37 @@ namespace Presentation.Controllers
                 return NotFound();
             }
             //get the Comments of the restaurant
-            commentContainerLogic.GetCommentsById(Convert.ToInt32(id));
-         
+            IndexCommentViewModel indexCommentViewModel = new IndexCommentViewModel
+            {
+                commentList = _commentViewConverter.Convert_To_CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)))
+            };
+            //var commentList = new CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)));
+
+            var restaurant = new RestaurantViewModel(_restaurantContainerLogic.getRestaurantById(Convert.ToInt32(id)));
+
+            IndexViewModel indexViewModel = new IndexViewModel();
+            indexViewModel.restaurantModel = restaurant;
+            indexViewModel.commentList = indexCommentViewModel.commentList;
             //get the restaurant
-            return View(new RestaurantModel(restaurantContainerLogic.getRestaurantById(Convert.ToInt32(id))));
+            return View(indexViewModel);
         }
 
-        // GET: Restaurant/Create/restaurantId
         public IActionResult Create(int? id)
         {
             return View();
         }
 
-        // POST: Restaurant/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Info,Address,Telephone,Email")] RestaurantModel restaurantModel)
+        public IActionResult Create( RestaurantViewModel restaurantModel)
         {
             if (ModelState.IsValid)
             {
-                restaurantContainerLogic.create(restaurantModel.convertToLogic());
+                _restaurantContainerLogic.create(_restaurantViewConverter.Convert_To_Restaurant(restaurantModel));
                 return RedirectToAction(nameof(Index));
             }
-            return View(restaurantModel);
+            return View();
         }
 
-        // GET: Restaurant/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,18 +85,16 @@ namespace Presentation.Controllers
                 return NotFound();
             }
 
-            var restaurantModel = restaurantContainerLogic.getRestaurantById((int)id);
+            var restaurantModel = _restaurantContainerLogic.getRestaurantById((int)id);
             if (restaurantModel == null)
             {
                 return NotFound();
             }
-            return View(new RestaurantModel( restaurantModel));
+            return View(new RestaurantViewModel( restaurantModel));
         }
 
-        // POST: Restaurant/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,[FromForm] RestaurantModel restaurantModel)
+        public async Task<IActionResult> Edit(int id,[FromForm] RestaurantViewModel restaurantModel)
         {
             if (id != restaurantModel.Id)
             {
@@ -96,7 +105,7 @@ namespace Presentation.Controllers
             {
                 try
                 {
-                    restaurantLogic.update((int)id, restaurantModel.convertToLogic());
+                    //restaurantLogic.update((int)id, restaurantModel.convertToLogic());
                 }
                 catch (Exception)
                 {
@@ -114,31 +123,26 @@ namespace Presentation.Controllers
             return View(restaurantModel);
         }
 
-        // GET: Restaurant/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-            restaurantContainerLogic.Delete(Convert.ToInt32(id));
+            _restaurantContainerLogic.Delete(Convert.ToInt32(id));
             return Redirect("Index");
         }
 
-        // POST: Restaurant/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var restaurantModel = await _context.RestaurantModel.FindAsync(id);
-            _context.RestaurantModel.Remove(restaurantModel);
-            await _context.SaveChangesAsync();
+           
             return RedirectToAction(nameof(Index));
         }
 
         private bool RestaurantModelExists(int id)
         {
-            if (restaurantContainerLogic.getRestaurantById(id) == null) 
+            if (_restaurantContainerLogic.getRestaurantById(id) == null) 
             {
                 return false;
             }

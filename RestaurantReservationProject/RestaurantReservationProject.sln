@@ -11,13 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantReservationUnitTests", "RestaurantReservationUnitTests\RestaurantReservationUnitTests.csproj", "{E39B5463-1765-4B7F-9B55-61B05CB0F6A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcces.interfaces", "DataAcces.interfaces\DataAcces.interfaces.csproj", "{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic.Factories", "BusinessLogic.Factories\BusinessLogic.Factories.csproj", "{958C7445-86AA-4630-AF75-C282F3A72AAA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.Factories", "DataAccess.Factories\DataAccess.Factories.csproj", "{93E47475-877D-43D9-9A44-06F12C7546EE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{8EDEE602-0F29-4DAD-854D-00A7B81D3ABE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.interfaces", "DataAcces.interfaces\DataAccess.interfaces.csproj", "{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,18 +39,6 @@ Global
 		{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA2F9CD6-DBE0-42EF-81D4-F72C042AC68F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{958C7445-86AA-4630-AF75-C282F3A72AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{958C7445-86AA-4630-AF75-C282F3A72AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{958C7445-86AA-4630-AF75-C282F3A72AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{958C7445-86AA-4630-AF75-C282F3A72AAA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93E47475-877D-43D9-9A44-06F12C7546EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93E47475-877D-43D9-9A44-06F12C7546EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93E47475-877D-43D9-9A44-06F12C7546EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93E47475-877D-43D9-9A44-06F12C7546EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EDEE602-0F29-4DAD-854D-00A7B81D3ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EDEE602-0F29-4DAD-854D-00A7B81D3ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EDEE602-0F29-4DAD-854D-00A7B81D3ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EDEE602-0F29-4DAD-854D-00A7B81D3ABE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
