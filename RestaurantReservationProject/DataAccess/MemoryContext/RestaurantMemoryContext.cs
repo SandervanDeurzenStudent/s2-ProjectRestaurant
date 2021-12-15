@@ -57,7 +57,16 @@ namespace DataAccess.Repositories
 
         public void update(int id, RestaurantDto restaurant)
         {
-            throw new NotImplementedException();
+            foreach (RestaurantDto item in restaurantList)
+            {
+                if (item.Id ==  id)
+                {
+                    restaurantList[item.Id - 1] = restaurant;
+                    return;
+                }
+            }
+
+            throw new ArgumentOutOfRangeException("No run with this ID was found.");
         }
     }
 }

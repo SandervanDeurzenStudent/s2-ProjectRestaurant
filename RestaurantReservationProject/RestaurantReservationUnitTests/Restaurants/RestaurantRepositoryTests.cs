@@ -99,5 +99,29 @@ namespace RestaurantReservationUnitTests.Restaurants
             Assert.Throws<ArgumentOutOfRangeException>(() => f.Delete(234565));
         }
 
+
+
+        //Update
+        [Test]
+        public void updateRestaurant_Should_updateRestaurant()
+        {
+            //Arrange
+            var f = new RestaurantMemoryContext();
+            //act
+            f.update(1, new RestaurantDto(1, "NewRestaurantName", "Info", "1111 AA", 32432, "fddrfjr"));
+            //Assert
+            Assert.AreEqual(f.restaurantList[0].Name, "NewRestaurantName");
+        }
+
+        [Test]
+        public void updateRestaurant_Should_giveException_IdNotFound()
+        {
+            //Arrange
+            var f = new RestaurantMemoryContext();
+            //act
+            //Assert
+            Assert.Throws<ArgumentOutOfRangeException>(() => f.update(234565, new RestaurantDto(3456, "NewrestaurantName", "Info", "1111 AA", 32432, "fddrfjr")));
+        }
+
     }
 }
