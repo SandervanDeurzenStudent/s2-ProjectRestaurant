@@ -5,7 +5,7 @@ using DataAccess.interfaces.RestaurantsDto;
 
 namespace DataAccess.Repositories
 {
-    public class RestaurantMemoryContext : IRestaurantDal, IRestaurantContainerDal
+    public class RestaurantMemoryContext : IRestaurantContext, IRestaurantContainerDal
     {
         List<RestaurantDto> restaurantList = new List<RestaurantDto>();
 

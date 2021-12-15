@@ -64,7 +64,7 @@ namespace RestaurantReservationProject
             services.AddSingleton<IRestaurantLogic, Restaurant>();
 
             //restaurant dal
-            services.AddSingleton<IRestaurantContainerDal, RestaurantMySqlContext>();
+            services.AddSingleton<IRestaurantContainerContext, RestaurantMySqlContext>();
 
 
 
@@ -84,7 +84,7 @@ namespace RestaurantReservationProject
             services.AddSingleton<ICommentContainerLogic, CommentContainer>();
 
             //comments Dal
-            services.AddSingleton<ICommentContainerDal, CommentMySqlContext>();
+            services.AddSingleton<ICommentContainerContext, CommentMySqlContext>();
 
 
             //RESERVATION
@@ -100,7 +100,7 @@ namespace RestaurantReservationProject
             services.AddSingleton<IReservationContainer, ReservationContainer>();
 
             //comments Dal
-            services.AddSingleton<IReservationContainerDal, ReservationMySqlContext>();
+            services.AddSingleton<IReservationContainerContext, ReservationMySqlContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

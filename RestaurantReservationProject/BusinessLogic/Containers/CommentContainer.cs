@@ -11,10 +11,10 @@ namespace BusinessLogic.Controller.Comments
 {
     public class CommentContainer : ICommentContainerLogic
     {
-        ICommentContainerDal _commentContainerDal;
+        ICommentContainerContext _commentContainerDal;
         CommentLogicConverter _commentLogicConverter;
         private CommentLogicConverter commentConverter = new CommentLogicConverter();
-        public CommentContainer(ICommentContainerDal commentContainerDal, CommentLogicConverter commentLogicConverter)
+        public CommentContainer(ICommentContainerContext commentContainerDal, CommentLogicConverter commentLogicConverter)
         {
             _commentContainerDal = commentContainerDal;
             _commentLogicConverter = commentLogicConverter;
