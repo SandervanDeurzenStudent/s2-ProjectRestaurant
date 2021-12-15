@@ -5,9 +5,9 @@ using DataAccess.interfaces.RestaurantsDto;
 
 namespace DataAccess.Repositories
 {
-    public class RestaurantMemoryContext : IRestaurantContext, IRestaurantContainerDal
+    public class RestaurantMemoryContext : IRestaurantContext, IRestaurantContainerContext
     {
-        List<RestaurantDto> restaurantList = new List<RestaurantDto>();
+       public List<RestaurantDto> restaurantList = new List<RestaurantDto>();
 
         public RestaurantMemoryContext()
         {
@@ -27,7 +27,15 @@ namespace DataAccess.Repositories
 
         public void Delete(int id)
         {
-
+            foreach (RestaurantDto item in restaurantList)
+            {
+                if (item.Id == id)
+                {
+                    restaurantList.Remove(item);
+                    return;
+                }
+            }
+            throw new ArgumentOutOfRangeException("Restaurant does not exist");
         }
 
         public RestaurantDto getRestaurantById(int restaurantid)

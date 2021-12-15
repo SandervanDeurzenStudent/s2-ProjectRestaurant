@@ -6,30 +6,30 @@ namespace BusinessLogic.Restraurants
 {
     public class RestaurantContainer : IRestaurantContainerLogic
     {
-        private IRestaurantContainerDal _restaurantDal;
+        private IRestaurantContainerContext _restaurantContainerContext;
         private RestaurantLogicConverter _restaurantConverter;
-        public RestaurantContainer(IRestaurantContainerDal restaurantDAl, RestaurantLogicConverter restaurantConverter)
+        public RestaurantContainer(IRestaurantContainerContext restaurantContainerContext, RestaurantLogicConverter restaurantConverter)
         {
-            _restaurantDal = restaurantDAl;
+            _restaurantContainerContext = restaurantContainerContext;
             _restaurantConverter = restaurantConverter;
         }
 
         public void create(RestaurantModel restaurant)
         {
-            _restaurantDal.create(_restaurantConverter.Convert_To_RestaurantDto(restaurant));
+            _restaurantContainerContext.create(_restaurantConverter.Convert_To_RestaurantDto(restaurant));
         }
         public List<RestaurantModel> GetList()
         {
-            List<RestaurantModel> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantDal.returnList());
+            List<RestaurantModel> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantContainerContext.returnList());
             return restaurants;
         }
         public void Delete(int id)
         {
-            _restaurantDal.Delete(id);
+            _restaurantContainerContext.Delete(id);
         }
         public RestaurantModel getRestaurantById(int id)
         {
-            RestaurantModel restaurant =  _restaurantConverter.Convert_To_Restaurant(_restaurantDal.getRestaurantById(id));
+            RestaurantModel restaurant =  _restaurantConverter.Convert_To_Restaurant(_restaurantContainerContext.getRestaurantById(id));
             return restaurant;
         }
     }

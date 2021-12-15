@@ -11,16 +11,16 @@ namespace BusinessLogic.Containers
     public class ReservationContainer : IReservationContainer
     {
 
-        IReservationContainerContext _reservationContainerDal;
+        IReservationContainerContext _reservationContainerContext;
         ReservationLogicConverter _reservationLogicConverter;
-        public ReservationContainer(IReservationContainerContext reservationContainerDal, ReservationLogicConverter reservationLogicConverter)
+        public ReservationContainer(IReservationContainerContext reservationContainerContext, ReservationLogicConverter reservationLogicConverter)
         {
-            _reservationContainerDal = reservationContainerDal;
+            _reservationContainerContext = reservationContainerContext;
             _reservationLogicConverter = reservationLogicConverter;
         }
         public void create(ReservationModel reservation, int d, int s)
         {
-            _reservationContainerDal.create(_reservationLogicConverter.Convert_To_ReservationDto(reservation));
+            _reservationContainerContext.create(_reservationLogicConverter.Convert_To_ReservationDto(reservation));
             //if created return
             //else exeption return message
         }
@@ -32,7 +32,7 @@ namespace BusinessLogic.Containers
 
         public List<ReservationModel> GetList()
         {
-            List<ReservationModel> reservations = _reservationLogicConverter.Convert_To_ReservationModel(_reservationContainerDal.GetList());
+            List<ReservationModel> reservations = _reservationLogicConverter.Convert_To_ReservationModel(_reservationContainerContext.GetList());
             return reservations;
         }
 

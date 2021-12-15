@@ -11,30 +11,29 @@ namespace BusinessLogic.Controller.Comments
 {
     public class CommentContainer : ICommentContainerLogic
     {
-        ICommentContainerContext _commentContainerDal;
+        ICommentContainerContext _commentContainerContext;
         CommentLogicConverter _commentLogicConverter;
-        private CommentLogicConverter commentConverter = new CommentLogicConverter();
-        public CommentContainer(ICommentContainerContext commentContainerDal, CommentLogicConverter commentLogicConverter)
+        public CommentContainer(ICommentContainerContext commentContainerContext, CommentLogicConverter commentLogicConverter)
         {
-            _commentContainerDal = commentContainerDal;
+            _commentContainerContext = commentContainerContext;
             _commentLogicConverter = commentLogicConverter;
         }
         void ICommentContainerLogic.Create(CommentModel comment, int restaurantId)
         {
-            _commentContainerDal.Create(_commentLogicConverter.Convert_To_CommentDto(comment), comment.Id);
+            _commentContainerContext.Create(_commentLogicConverter.Convert_To_CommentDto(comment), comment.Id);
         }
         void ICommentContainerLogic.Delete(int id)
         {
-            _commentContainerDal.Delete(id);
+            _commentContainerContext.Delete(id);
         }
         List<CommentModel> ICommentContainerLogic.GetList()
         {
-            List<CommentModel> comments = _commentLogicConverter.Convert_To_CommentModel(_commentContainerDal.GetList());
+            List<CommentModel> comments = _commentLogicConverter.Convert_To_CommentModel(_commentContainerContext.GetList());
             return comments;
         }
         List<CommentModel> ICommentContainerLogic.GetCommentsById(int id)
         {
-            List<CommentModel> comments = commentConverter.Convert_To_CommentModel(_commentContainerDal.GetCommentsById(id));
+            List<CommentModel> comments = _commentLogicConverter.Convert_To_CommentModel(_commentContainerContext.GetCommentsById(id));
             return comments;
         }
     }

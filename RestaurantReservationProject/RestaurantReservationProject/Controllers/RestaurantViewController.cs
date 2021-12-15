@@ -31,12 +31,12 @@ namespace Presentation.Controllers
         // GET: Restaurant
         public IActionResult Index()
         {
-            IndexRestaurantViewModel indexReservationViewModel = new IndexRestaurantViewModel
+            IndexRestaurantViewModel indexRestaurantViewModel = new IndexRestaurantViewModel
             {
                 restaurantList = _restaurantViewConverter.Convert_To_RestaurantViewModel(_restaurantContainerLogic.GetList())
             };
 
-            return View(indexReservationViewModel);
+            return View(indexRestaurantViewModel);
         }
 
         // GET: Restaurant/Details/5

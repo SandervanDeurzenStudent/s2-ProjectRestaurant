@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataAcces.interfaces.interfaces
 {
-    public interface IRestaurantContainerDal
+    public interface IRestaurantContainerContext
     {
         void create(RestaurantDto restaurant);
         
