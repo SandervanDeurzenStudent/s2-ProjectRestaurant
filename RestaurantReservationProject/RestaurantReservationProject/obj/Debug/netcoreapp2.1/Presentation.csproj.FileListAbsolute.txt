@@ -47,3 +47,5 @@ C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Presentation.csproj.CopyComplete
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Presentation.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Presentation.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Razor\Views\ReservationView\Create.g.cshtml.cs
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationProject\obj\Debug\netcoreapp2.1\Razor\Views\ReservationView\Index.g.cshtml.cs

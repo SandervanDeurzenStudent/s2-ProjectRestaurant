@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace DataAccess
 {
-    public class RestaurantDal : IRestaurantDal, IRestaurantContainerDal
+    public class RestaurantMySqlContext : IRestaurantContext, IRestaurantContainerContext
     {
         public void create(RestaurantDto restaurant)
         {

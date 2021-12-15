@@ -6,7 +6,7 @@ using System.Text;
 
  namespace DataAcces.interfaces.interfaces
 {
-    public interface IRestaurantDal
+    public interface IRestaurantContext
     {
        void update(int id, RestaurantDto restaurant);   
     }

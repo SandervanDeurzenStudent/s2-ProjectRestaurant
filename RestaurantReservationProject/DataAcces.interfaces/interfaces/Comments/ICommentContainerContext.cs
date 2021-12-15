@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataAcces.interfaces.interfaces
 {
-    public interface ICommentContainerDal
+    public interface ICommentContainerContext
     {
         void Create(CommentDto comment, int commentId);
         void Delete(int id);
