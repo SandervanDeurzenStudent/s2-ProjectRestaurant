@@ -39,9 +39,9 @@ namespace RestaurantReservationUnitTests.Restaurants
         {
             //Arrange
             //act
-            _restaurantRepository.create(new RestaurantDto(33434, "restaurantttttName", "Info", "111166tt5 AA", 32432, "frfjr"));
+            _restaurantRepository.create(new RestaurantDto(234, "restaurantName", "Info", "111166 AA", 32432, "frfjr"));
             //Assert
-            Assert.AreEqual(_restaurantMemoryContext.returnList().Count, 2);
+            Assert.AreEqual(_restaurantMemoryContext.restaurantList.Count, 2);
         }
 
         [Test]
@@ -73,10 +73,10 @@ namespace RestaurantReservationUnitTests.Restaurants
         public void getRestaurantById_Should_return_IdNotFoundExeption()
         {
             //Arrange
-            var f = new RestaurantMemoryContext();
+            
             //act
             //Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => _restaurantRepository.getRestaurantById(1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => _restaurantRepository.getRestaurantById(14335));
         }
 
 
@@ -97,10 +97,10 @@ namespace RestaurantReservationUnitTests.Restaurants
         public void deleteRestaurant_Should_giveException_IdNotFound()
         {
             //Arrange
-            var f = new RestaurantMemoryContext();
+            
             //act
             //Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => f.Delete(234565));
+            Assert.Throws<ArgumentOutOfRangeException>(() => _restaurantRepository.Delete(234565));
         }
 
 
@@ -110,21 +110,21 @@ namespace RestaurantReservationUnitTests.Restaurants
         public void updateRestaurant_Should_updateRestaurant()
         {
             //Arrange
-            var f = new RestaurantMemoryContext();
+            
             //act
-            f.update(1, new RestaurantDto(1, "NewRestaurantName", "Info", "1111 AA", 32432, "fddrfjr"));
+            _restaurantRepository.update(1, new RestaurantDto(1, "NewRestaurantName", "Info", "1111 AA", 32432, "fddrfjr"));
             //Assert
-            Assert.AreEqual(f.restaurantList[0].Name, "NewRestaurantName");
+            Assert.AreEqual(_restaurantMemoryContext.restaurantList[0].Name, "NewRestaurantName");
         }
 
         [Test]
         public void updateRestaurant_Should_giveException_IdNotFound()
         {
             //Arrange
-            var f = new RestaurantMemoryContext();
+            
             //act
             //Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => f.update(234565, new RestaurantDto(3456, "NewrestaurantName", "Info", "1111 AA", 32432, "fddrfjr")));
+            Assert.Throws<ArgumentOutOfRangeException>(() => _restaurantRepository.update(234565, new RestaurantDto(3456, "NewrestaurantName", "Info", "1111 AA", 32432, "fddrfjr")));
         }
 
     }

@@ -39,7 +39,7 @@ namespace DataAccess.Repository
         
         public void update(int id, RestaurantDto restaurant)
         {
-           // throw new NotImplementedException();
+            _restaurantContext.update(id, restaurant);
         }
     }
 }
