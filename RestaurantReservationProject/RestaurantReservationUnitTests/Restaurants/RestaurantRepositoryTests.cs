@@ -6,26 +6,37 @@ using BusinessLogic.Restraurants;
 using DataAcces.interfaces.interfaces;
 using DataAccess.interfaces.RestaurantsDto;
 using DataAccess.Repositories;
+using DataAccess.Repository;
 using NUnit.Framework;
 
 namespace RestaurantReservationUnitTests.Restaurants
 {
-    class RestaurantRepositoryTests
+    public class RestaurantRepositoryTests
     {
-          
 
+        private IRestaurantContainerContext _restaurantContainerContext;
+        private IRestaurantContext _restaurantContext;
+        private RestaurantMemoryContext _restaurantMemoryContext = new RestaurantMemoryContext();
+        
+        private RestaurantRepository _restaurantRepository = new RestaurantRepository();
+
+        [SetUp]
+        public void SetUp()
+        {
+            // initialize here
+            _restaurantContainerContext = new RestaurantMemoryContext();
+            _restaurantContext = new RestaurantMemoryContext();
+            _restaurantRepository = new RestaurantRepository(_restaurantContainerContext, _restaurantContext);
+        }
         //CREATE
         [Test]
         public void Should_createRestaurant()
         {
             //Arrange
-            //var g = new RestaurantContainer(IRestaurantContainerContext , RestaurantLogicConverter );
-            var f = new RestaurantMemoryContext();
-            
             //act
-            f.create(new RestaurantDto(1, "restaurantName", "Info", "1111 AA", 32432, "frfjr"));
+             _restaurantRepository.create(new RestaurantDto(3, "restaurantName", "Info", "111166 AA", 32432, "frfjr"));
             //Assert
-            Assert.AreEqual(f.restaurantList.Count,  2);
+            //Assert.AreEqual(_restaurantRepository., 1);
             
         }
 
@@ -33,21 +44,20 @@ namespace RestaurantReservationUnitTests.Restaurants
         public void Create_Restaurant_Should_createRestaurant_DifferentId()
         {
             //Arrange
-            var f = new RestaurantMemoryContext();
             //act
-            f.create(new RestaurantDto(12345, "restaurantName", "Info", "1111 AA", 32432, "frfjr"));
+            _restaurantRepository.create(new RestaurantDto(33434, "restaurantttttName", "Info", "111166tt5 AA", 32432, "frfjr"));
             //Assert
-            Assert.AreEqual(f.restaurantList.Count, 2);
+            Assert.AreEqual(_restaurantContainerContext.returnList().Count, 1);
         }
 
         [Test]
         public void Create_Restaurant_Should_GiveExeption()
         {
             //Arrange
-            var f = new RestaurantMemoryContext();
+            
             //act
             //Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => f.create(new RestaurantDto(-5, "restaurantName", "Info", "1111 AA", 32432, "frfjr"))); 
+            Assert.Throws<ArgumentOutOfRangeException>(() => _restaurantMemoryContext.create(new RestaurantDto(-5, "restaurantName", "Info", "1111 AA", 32432, "frfjr"))); 
         }
 
 
@@ -57,9 +67,9 @@ namespace RestaurantReservationUnitTests.Restaurants
         public void getRestaurantByid_Should_return_Restaurant()
         {
             //Arrange
-            var f = new RestaurantMemoryContext();
+            
             //act
-            var result = f.getRestaurantById(1);
+            var result = _restaurantRepository.getRestaurantById(1);
             //Assert
             var newRestaurantDto = ( 1, "restaurantName", "Info", "1111 AA", 32432, "frfjr");
             Assert.AreEqual(result.Id, newRestaurantDto.Item1);
@@ -72,7 +82,7 @@ namespace RestaurantReservationUnitTests.Restaurants
             var f = new RestaurantMemoryContext();
             //act
             //Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => f.getRestaurantById(2));
+            Assert.Throws<ArgumentOutOfRangeException>(() => _restaurantRepository.getRestaurantById(1));
         }
 
 
@@ -84,7 +94,7 @@ namespace RestaurantReservationUnitTests.Restaurants
             //Arrange
             var f = new RestaurantMemoryContext();
             //act
-             f.Delete(1);
+             _restaurantRepository.Delete(1);
             //Assert
             Assert.AreEqual(f.restaurantList.Count, 0);
         }

@@ -19,6 +19,11 @@ namespace DataAccess.Repository
             _restaurantContext = restaurantContext;
         }
 
+        public RestaurantRepository()
+        {
+           
+        }
+
         public void create(RestaurantDto restaurant)
         {
             _restaurantContainerContext.create(restaurant);
