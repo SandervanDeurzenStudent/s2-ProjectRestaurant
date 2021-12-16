@@ -25,6 +25,9 @@ using BusinessLogic.Interfaces.Reservations;
 using BusinessLogic.Containers;
 using DataAccess.interfaces.interfaces.Reservations;
 using DataAccess.MySqlContext;
+using DataAccess.interfaces.Repositories;
+using DataAccess.Repository;
+using DataAcces.interfaces.Repositories;
 
 namespace RestaurantReservationProject
 {
@@ -65,8 +68,11 @@ namespace RestaurantReservationProject
 
             //restaurant dal
             services.AddSingleton<IRestaurantContainerContext, RestaurantMySqlContext>();
+            services.AddSingleton<IRestaurantContext, RestaurantMySqlContext>();
 
-
+            //restaurant dal interfaces
+            services.AddSingleton<IRestaurantContainerRepository, RestaurantRepository>();
+            services.AddSingleton<IRestaurantRepository, RestaurantRepository>();
 
             //COMMENTS
 

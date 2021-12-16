@@ -1,36 +1,46 @@
-﻿using System;
+﻿using DataAcces.interfaces.interfaces;
+using DataAcces.interfaces.Repositories;
+using DataAccess.interfaces.Repositories;
+using DataAccess.interfaces.RestaurantsDto;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace DataAccess.Repository
 {
-    class RestaurantRepository
+    public class RestaurantRepository : IRestaurantContainerRepository, IRestaurantRepository
     {
-        //private IRestaurantContainerContext _restaurantContainerContext;
-        //private RestaurantLogicConverter _restaurantConverter;
-        //public RestaurantContainer(IRestaurantContainerContext restaurantContainerContext, RestaurantLogicConverter restaurantConverter)
-        //{
-        //    _restaurantContainerContext = restaurantContainerContext;
-        //    _restaurantConverter = restaurantConverter;
-        //}
+        private IRestaurantContainerContext _restaurantContainerContext;
+        private IRestaurantContext _restaurantContext;
+        public RestaurantRepository(IRestaurantContainerContext restaurantContainerContext, IRestaurantContext restaurantContext )
+        {
+            _restaurantContainerContext = restaurantContainerContext;
+            _restaurantContext = restaurantContext;
+        }
 
-        //public void create(RestaurantModel restaurant)
-        //{
-        //    _restaurantContainerContext.create(_restaurantConverter.Convert_To_RestaurantDto(restaurant));
-        //}
-        //public List<RestaurantModel> GetList()
-        //{
-        //    List<RestaurantModel> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantContainerContext.returnList());
-        //    return restaurants;
-        //}
-        //public void Delete(int id)
-        //{
-        //    _restaurantContainerContext.Delete(id);
-        //}
-        //public RestaurantModel getRestaurantById(int id)
-        //{
-        //    RestaurantModel restaurant = _restaurantConverter.Convert_To_Restaurant(_restaurantContainerContext.getRestaurantById(id));
-        //    return restaurant;
-        //}
+        public void create(RestaurantDto restaurant)
+        {
+            _restaurantContainerContext.create(restaurant);
+        }
+        public List<RestaurantDto> GetList()
+        {
+            List<RestaurantDto> restaurants = _restaurantContainerContext.returnList();
+            return restaurants;
+        }
+        public void Delete(int id)
+        {
+            _restaurantContainerContext.Delete(id);
+        }
+        public RestaurantDto getRestaurantById(int id)
+        {
+            RestaurantDto restaurant = _restaurantContainerContext.getRestaurantById(id);
+            return restaurant;
+        }
+        
+        public void update(int id, RestaurantDto restaurant)
+        {
+           // throw new NotImplementedException();
+        }
     }
 }

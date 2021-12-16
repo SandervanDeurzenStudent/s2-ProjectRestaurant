@@ -1,35 +1,36 @@
 ﻿using System.Collections.Generic;
 using BusinessLogic.Models;
 using DataAcces.interfaces.interfaces;
+using DataAccess.interfaces.Repositories;
 
 namespace BusinessLogic.Restraurants
 {
     public class RestaurantContainer : IRestaurantContainerLogic
     {
-        private IRestaurantContainerContext _restaurantContainerContext;
+        private IRestaurantContainerRepository _restaurantContainerRepository;
         private RestaurantLogicConverter _restaurantConverter;
-        public RestaurantContainer(IRestaurantContainerContext restaurantContainerContext, RestaurantLogicConverter restaurantConverter)
+        public RestaurantContainer(IRestaurantContainerRepository restaurantContainerRepository, RestaurantLogicConverter restaurantConverter)
         {
-            _restaurantContainerContext = restaurantContainerContext;
+            _restaurantContainerRepository = restaurantContainerRepository;
             _restaurantConverter = restaurantConverter;
         }
 
         public void create(RestaurantModel restaurant)
         {
-            _restaurantContainerContext.create(_restaurantConverter.Convert_To_RestaurantDto(restaurant));
+            _restaurantContainerRepository.create(_restaurantConverter.Convert_To_RestaurantDto(restaurant));
         }
         public List<RestaurantModel> GetList()
         {
-            List<RestaurantModel> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantContainerContext.returnList());
+            List<RestaurantModel> restaurants = _restaurantConverter.Convert_To_Restaurant(_restaurantContainerRepository.GetList());
             return restaurants;
         }
         public void Delete(int id)
         {
-            _restaurantContainerContext.Delete(id);
+            _restaurantContainerRepository.Delete(id);
         }
         public RestaurantModel getRestaurantById(int id)
         {
-            RestaurantModel restaurant =  _restaurantConverter.Convert_To_Restaurant(_restaurantContainerContext.getRestaurantById(id));
+            RestaurantModel restaurant =  _restaurantConverter.Convert_To_Restaurant(_restaurantContainerRepository.getRestaurantById(id));
             return restaurant;
         }
     }
