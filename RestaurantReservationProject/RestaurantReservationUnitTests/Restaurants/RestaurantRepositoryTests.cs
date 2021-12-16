@@ -13,31 +13,25 @@ namespace RestaurantReservationUnitTests.Restaurants
 {
     public class RestaurantRepositoryTests
     {
-
-        private IRestaurantContainerContext _restaurantContainerContext;
-        private IRestaurantContext _restaurantContext;
-        private RestaurantMemoryContext _restaurantMemoryContext = new RestaurantMemoryContext();
-        
-        private RestaurantRepository _restaurantRepository = new RestaurantRepository();
+        RestaurantMemoryContext _restaurantMemoryContext;
+        RestaurantRepository _restaurantRepository;
 
         [SetUp]
         public void SetUp()
         {
             // initialize here
-            _restaurantContainerContext = new RestaurantMemoryContext();
-            _restaurantContext = new RestaurantMemoryContext();
-            _restaurantRepository = new RestaurantRepository(_restaurantContainerContext, _restaurantContext);
+            _restaurantMemoryContext = new RestaurantMemoryContext();
+            _restaurantRepository = new RestaurantRepository(_restaurantMemoryContext, _restaurantMemoryContext);
         }
         //CREATE
         [Test]
         public void Should_createRestaurant()
         {
-            //Arrange
-            //act
-             _restaurantRepository.create(new RestaurantDto(3, "restaurantName", "Info", "111166 AA", 32432, "frfjr"));
-            //Assert
-            //Assert.AreEqual(_restaurantRepository., 1);
-            
+        //Arrange
+        //act
+         _restaurantRepository.create(new RestaurantDto(3, "restaurantName", "Info", "111166 AA", 32432, "frfjr"));
+        //Assert
+         Assert.AreEqual(_restaurantMemoryContext.restaurantList.Count, 2);
         }
 
         [Test]
@@ -47,7 +41,7 @@ namespace RestaurantReservationUnitTests.Restaurants
             //act
             _restaurantRepository.create(new RestaurantDto(33434, "restaurantttttName", "Info", "111166tt5 AA", 32432, "frfjr"));
             //Assert
-            Assert.AreEqual(_restaurantContainerContext.returnList().Count, 1);
+            Assert.AreEqual(_restaurantMemoryContext.returnList().Count, 2);
         }
 
         [Test]
@@ -94,7 +88,7 @@ namespace RestaurantReservationUnitTests.Restaurants
             //Arrange
             var f = new RestaurantMemoryContext();
             //act
-             _restaurantRepository.Delete(1);
+            f.Delete(1);
             //Assert
             Assert.AreEqual(f.restaurantList.Count, 0);
         }
