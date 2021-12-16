@@ -23,6 +23,8 @@ namespace RestaurantReservationUnitTests.Restaurants
             _restaurantMemoryContext = new RestaurantMemoryContext();
             _restaurantRepository = new RestaurantRepository(_restaurantMemoryContext, _restaurantMemoryContext);
         }
+
+
         //CREATE
         [Test]
         public void Should_createRestaurant()
@@ -53,7 +55,6 @@ namespace RestaurantReservationUnitTests.Restaurants
             //Assert
             Assert.Throws<ArgumentOutOfRangeException>(() => _restaurantMemoryContext.create(new RestaurantDto(-5, "restaurantName", "Info", "1111 AA", 32432, "frfjr"))); 
         }
-
 
 
         //GETRESTAURANTBYID

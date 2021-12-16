@@ -130,7 +130,7 @@ namespace Presentation.Controllers
                 return NotFound();
             }
             _restaurantContainerLogic.Delete(Convert.ToInt32(id));
-            return Redirect("Index");
+            return View();
         }
 
         [HttpPost, ActionName("Delete")]

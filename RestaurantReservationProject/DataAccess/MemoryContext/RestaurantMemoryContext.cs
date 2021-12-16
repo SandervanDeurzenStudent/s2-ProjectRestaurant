@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataAcces.interfaces.dtos;
 using DataAcces.interfaces.interfaces;
 using DataAccess.interfaces.RestaurantsDto;
 
@@ -48,6 +49,11 @@ namespace DataAccess.Repositories
                 }
             }
             throw new ArgumentOutOfRangeException("Restaurant does not exist");
+        }
+
+        public RestaurantDto getRestaurantWithComments(CommentDto commentDto, RestaurantDto restaurantDto)
+        {
+            throw new NotImplementedException();
         }
 
         public List<RestaurantDto> returnList()

@@ -1,4 +1,4 @@
-﻿using DataAcces.interfaces.models;
+﻿using DataAcces.interfaces.dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,10 +8,10 @@ namespace BusinessLogic.Models
         public class CommentModel
         {
         
-        public CommentModel()
-        {
+            public CommentModel()
+            {
 
-        }
+            }
         public int Id
             {
                 get;
@@ -32,13 +32,5 @@ namespace BusinessLogic.Models
                 get;
                 set;
             }
-
-        public CommentModel(CommentDto dto)
-        {
-            Id = dto.Id;
-            Name = dto.Name;
-            Info = dto.Info;
-            RestaurantId = dto.RestaurantId;
-        }
     }
 }

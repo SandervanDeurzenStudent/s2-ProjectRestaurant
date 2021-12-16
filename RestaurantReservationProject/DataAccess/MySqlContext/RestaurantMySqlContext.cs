@@ -5,7 +5,7 @@ using MySqlConnector;
 using DataAcces.interfaces.interfaces;
 using DataAccess.interfaces.RestaurantsDto;
 using System.Linq;
-
+using DataAcces.interfaces.dtos;
 
 namespace DataAccess
 {
@@ -79,7 +79,8 @@ namespace DataAccess
             {
                 using (MySqlConnection MyConn = new MySqlConnection(conn))
                 {
-                    MySqlCommand cmd = new MySqlCommand("Delete from Restaurants where id =" + id + ";", MyConn);
+                    string query = string.Format("delete restaurants, comments from restaurants join comments on restaurants.id = comments.restaurant_id where restaurants.id = {0}", id);
+                    MySqlCommand cmd = new MySqlCommand(query, MyConn);
                     MyConn.Open();
                     cmd.ExecuteNonQuery();
                     MyConn.Close();
@@ -147,6 +148,46 @@ namespace DataAccess
                 MySqlDataReader MyReader;
                 MyConn.Open();
                 MyReader = MyCommand.ExecuteReader();
+            }
+            catch (Exception)
+            {
+                throw new IndexOutOfRangeException();
+            }
+        }
+
+        public RestaurantDto getRestaurantWithComments(CommentDto commentDto, RestaurantDto restaurantDto)
+        {
+            DB db = new DB();
+            string conn = db.ReturnConnectionString();
+            try
+            {
+                string Query = string.Format("DELETE restaurants FROM restaurants LEFT JOIN comments ON restaurants.id = comments.restaurant.id WHERE id IS {0}; ", 1);
+                MySqlConnection MyConn2 = new MySqlConnection(conn);
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                MyAdapter.SelectCommand = MyCommand2;
+                List<RestaurantDto> restaurants = new List<RestaurantDto>();
+
+                using (MySqlCommand command = new MySqlCommand(Query, MyConn2))
+                {
+                    MyConn2.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            RestaurantDto entity = new RestaurantDto();
+                            entity.Id = (int)reader["id"];
+                            entity.Name = (string)reader["restaurant_name"];
+                            entity.Telephone = (int)reader["telephone"];
+                            entity.Address = (string)reader["address"];
+                            entity.Email = (string)reader["email"];
+                            entity.Info = (string)reader["restaurant_info"];
+                            restaurants.Add(entity);
+                        }
+                        // Call Close when done reading.
+                        return restaurants.First();
+                    }
+                }
             }
             catch (Exception)
             {
