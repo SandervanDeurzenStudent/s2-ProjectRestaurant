@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using DataAccess;
 using DataAcces.interfaces.interfaces;
 using BusinessLogic.Restraurants;
-using BusinessLogic.Models;
 using BusinessLogic.Interfaces.Comments;
 using BusinessLogic.Controller.Comments;
 using BusinessLogic.Functions;
@@ -28,7 +23,6 @@ using DataAccess.MySqlContext;
 using DataAccess.interfaces.Repositories;
 using DataAccess.Repository;
 using DataAcces.interfaces.Repositories;
-using DataAccess.Repositories;
 
 namespace RestaurantReservationProject
 {
@@ -58,56 +52,51 @@ namespace RestaurantReservationProject
                     options.UseSqlServer(Configuration.GetConnectionString("Test")));
 
             //restaurant Converters view 
-            services.AddSingleton<RestaurantViewConverter>();
+            services.AddTransient<RestaurantViewConverter>();
             
             //restaurant converters Logic
-            services.AddSingleton<RestaurantLogicConverter>();
+            services.AddTransient<RestaurantLogicConverter>();
 
             //restaurant logic
-            services.AddSingleton<IRestaurantContainerLogic, RestaurantContainer>();
-            services.AddSingleton<IRestaurantLogic, Restaurant>();
+            services.AddTransient<IRestaurantContainerLogic, RestaurantContainer>();
+            services.AddTransient<IRestaurantLogic, Restaurant>();
 
             //restaurant dal
-            services.AddSingleton<IRestaurantContainerContext, RestaurantMemoryContext>();
-            services.AddSingleton<IRestaurantContext, RestaurantMySqlContext>();
+            services.AddTransient<IRestaurantContainerContext, RestaurantMySqlContext>();
+            services.AddTransient<IRestaurantContext, RestaurantMySqlContext>();
 
             //restaurant dal interfaces
-            services.AddSingleton<IRestaurantContainerRepository, RestaurantRepository>();
-            services.AddSingleton<IRestaurantRepository, RestaurantRepository>();
+            services.AddTransient<IRestaurantContainerRepository, RestaurantRepository>();
+            services.AddTransient<IRestaurantRepository, RestaurantRepository>();
 
             //COMMENTS
 
             //comments converter view
-            services.AddSingleton<RestaurantViewConverter>();
+            services.AddTransient<RestaurantViewConverter>();
             //comments coverter View
-            services.AddSingleton<CommentViewConverter>();
+            services.AddTransient<CommentViewConverter>();
             //comments converter Logic
-            services.AddSingleton<CommentLogicConverter>();
-
-            //comments View
-
+            services.AddTransient<CommentLogicConverter>();
 
             //commentsLogic
-            services.AddSingleton<ICommentContainerLogic, CommentContainer>();
+            services.AddTransient<ICommentContainerLogic, CommentContainer>();
 
             //comments Dal
-            services.AddSingleton<ICommentContainerContext, CommentMySqlContext>();
+            services.AddTransient<ICommentContainerContext, CommentMySqlContext>();
 
 
             //RESERVATION
             //comments coverter View
-            services.AddSingleton<ReservationViewConverter>();
+            services.AddTransient<ReservationViewConverter>();
             //comments converter Logic
-            services.AddSingleton<ReservationLogicConverter>();
-
-            //comments View
+            services.AddTransient<ReservationLogicConverter>();
 
 
             //commentsLogic
-            services.AddSingleton<IReservationContainer, ReservationContainer>();
+            services.AddTransient<IReservationContainer, ReservationContainer>();
 
             //comments Dal
-            services.AddSingleton<IReservationContainerContext, ReservationMySqlContext>();
+            services.AddTransient<IReservationContainerContext, ReservationMySqlContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

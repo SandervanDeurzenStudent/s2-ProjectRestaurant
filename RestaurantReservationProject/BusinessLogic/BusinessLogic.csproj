@@ -9,11 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic.interfaces\BusinessLogic.interfaces.csproj" />
     <ProjectReference Include="..\DataAcces.interfaces\DataAccess.interfaces.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Interfaces\Users\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using DataAcces.interfaces.interfaces;
+﻿using DataAcces.interfaces.dtos;
+using DataAcces.interfaces.interfaces;
 using DataAcces.interfaces.Repositories;
 using DataAccess.interfaces.Repositories;
 using DataAccess.interfaces.RestaurantsDto;
@@ -40,6 +41,11 @@ namespace DataAccess.Repository
         public void update(int id, RestaurantDto restaurant)
         {
             _restaurantContext.update(id, restaurant);
+        }
+
+        public RestaurantDto getRestaurantWithComments(CommentDto commentDto, RestaurantDto restaurantDto)
+        {
+            throw new NotImplementedException();
         }
     }
 }

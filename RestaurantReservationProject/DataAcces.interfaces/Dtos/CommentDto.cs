@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAcces.interfaces.models
+namespace DataAcces.interfaces.dtos
 {
 
     public class CommentDto

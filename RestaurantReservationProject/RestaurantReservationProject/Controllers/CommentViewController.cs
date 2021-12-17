@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BusinessLogic.Interfaces.Comments;
+using BusinessLogic.Restraurants;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Presentation.Converter;
+using Presentation.models;
 using Presentation.Models;
 
 namespace Presentation.Controllers
@@ -16,11 +18,12 @@ namespace Presentation.Controllers
         private readonly Test _context;
         ICommentContainerLogic _commentContainerLogic;
         CommentViewConverter _commentViewConverter;
-
-        public CommentViewController(ICommentContainerLogic commentContainerLogic, CommentViewConverter commentViewConverter)
+        IRestaurantContainerLogic _restaurantContainerLogic;
+        public CommentViewController(ICommentContainerLogic commentContainerLogic, CommentViewConverter commentViewConverter, IRestaurantContainerLogic restaurantContainerLogic)
         {
             _commentViewConverter = commentViewConverter;
             _commentContainerLogic = commentContainerLogic;
+            _restaurantContainerLogic = restaurantContainerLogic;
         }
       
         public async Task<IActionResult> Index()
@@ -49,16 +52,17 @@ namespace Presentation.Controllers
 
         public IActionResult Create(int? id)
         {
-            return View();
+            var restaurant = new RestaurantViewModel(_restaurantContainerLogic.getRestaurantById(Convert.ToInt32(id)));
+            return View(restaurant);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Info,Restaurant_id")] CommentViewModel commentModel, int? RestaurantId)
+        public async Task<IActionResult> Create([Bind("Id,Name,Info,Restaurant_id")] CommentViewModel commentModel)
         {
             if (ModelState.IsValid)
             {
-                _commentContainerLogic.Create(_commentViewConverter.Convert_To_Comment(commentModel), Convert.ToInt32(commentModel.Id));
+                _commentContainerLogic.Create(_commentViewConverter.Convert_To_CommentModel(commentModel));
                 return RedirectToAction(nameof(Index));
             }
             return View(commentModel);

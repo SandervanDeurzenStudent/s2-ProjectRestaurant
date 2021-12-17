@@ -3,13 +3,13 @@ using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using DataAcces.interfaces.models;
+using DataAcces.interfaces.dtos;
 
 namespace DataAccess
 {
     public class CommentMySqlContext : ICommentContainerContext
     {
-        public void Create(CommentDto comment, int commentId)
+        public void Create(CommentDto comment)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace DataAccess
                 MySqlCommand MyCommand = new MySqlCommand("INSERT INTO comments (`name`, `description`, `restaurant_id` ) VALUES (@name, @info, @restaurantId)", MyConn);
                 MyCommand.Parameters.AddWithValue("@name", comment.Name);
                 MyCommand.Parameters.AddWithValue("@info", comment.Info);
-                MyCommand.Parameters.AddWithValue("@restaurantId", commentId);
+                MyCommand.Parameters.AddWithValue("@restaurantId", comment.RestaurantId);
                 MySqlDataReader MyReader;
                 MyConn.Open();
                 MyReader = MyCommand.ExecuteReader();

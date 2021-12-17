@@ -2586,6 +2586,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
+          "BusinessLogic.interfaces": "1.0.0",
           "DataAccess.interfaces": "1.0.0",
           "MySqlConnector": "1.3.13"
         },
@@ -2594,6 +2595,19 @@
         },
         "runtime": {
           "bin/placeholder/BusinessLogic.dll": {}
+        }
+      },
+      "BusinessLogic.interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "DataAccess.interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BusinessLogic.interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLogic.interfaces.dll": {}
         }
       },
       "DataAccess/1.0.0": {
@@ -8255,6 +8269,11 @@
       "type": "project",
       "path": "../BusinessLogic/BusinessLogic.csproj",
       "msbuildProject": "../BusinessLogic/BusinessLogic.csproj"
+    },
+    "BusinessLogic.interfaces/1.0.0": {
+      "type": "project",
+      "path": "../BusinessLogic.interfaces/BusinessLogic.interfaces.csproj",
+      "msbuildProject": "../BusinessLogic.interfaces/BusinessLogic.interfaces.csproj"
     },
     "DataAccess/1.0.0": {
       "type": "project",

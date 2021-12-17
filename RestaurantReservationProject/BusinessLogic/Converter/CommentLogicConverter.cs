@@ -1,5 +1,5 @@
 ﻿using BusinessLogic.Models;
-using DataAcces.interfaces.models;
+using DataAcces.interfaces.dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
