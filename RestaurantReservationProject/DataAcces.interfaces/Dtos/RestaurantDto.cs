@@ -6,19 +6,7 @@ namespace DataAccess.interfaces.RestaurantsDto
 {
     public class RestaurantDto
     {
-        public RestaurantDto()
-        {
-        }
-
-        public RestaurantDto(int id, string name, string info, string address, int telephone, string email)
-        {
-            Id = id;
-            Name = name;
-            Info = info;
-            Address = address;
-            Telephone = telephone;
-            Email = email;
-        }
+     
 
         public int Id
         {
@@ -50,7 +38,20 @@ namespace DataAccess.interfaces.RestaurantsDto
             get;
             set;
         }
-        
+        public RestaurantDto()
+        {
+        }
+
+        public RestaurantDto(int id, string name, string info, string address, int telephone, string email)
+        {
+            Id = id;
+            Name = name;
+            Info = info;
+            Address = address;
+            Telephone = telephone;
+            Email = email;
+        }
+
     }
 }
 

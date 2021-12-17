@@ -18,12 +18,10 @@ namespace Presentation.Controllers
         //comments
         ICommentContainerLogic _commentContainerLogic;
         //Converters
-        CommentViewConverter _commentViewConverter;
-        RestaurantViewConverter _restaurantViewConverter;
-        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic, RestaurantViewConverter restaurantViewConverter, CommentViewConverter commentViewConverter)
+        CommentViewConverter _commentViewConverter = new CommentViewConverter();
+        RestaurantViewConverter _restaurantViewConverter = new RestaurantViewConverter();
+        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic)
         {
-            _restaurantViewConverter = restaurantViewConverter;
-            _commentViewConverter = commentViewConverter;
             _restaurantContainerLogic = restaurantContainerLogic;
             _commentContainerLogic = commentContainerLogic;
         }

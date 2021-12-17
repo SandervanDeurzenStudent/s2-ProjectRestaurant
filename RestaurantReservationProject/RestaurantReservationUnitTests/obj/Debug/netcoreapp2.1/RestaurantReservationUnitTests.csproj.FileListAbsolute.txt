@@ -24,3 +24,5 @@ C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\obj\Debug\netcoreapp2.1\RestaurantReservationUnitTests.csproj.CopyComplete
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\obj\Debug\netcoreapp2.1\RestaurantReservationUnitTests.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\obj\Debug\netcoreapp2.1\RestaurantReservationUnitTests.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\BusinessLogic.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\RestaurantReservationUnitTests\bin\Debug\netcoreapp2.1\BusinessLogic.interfaces.pdb

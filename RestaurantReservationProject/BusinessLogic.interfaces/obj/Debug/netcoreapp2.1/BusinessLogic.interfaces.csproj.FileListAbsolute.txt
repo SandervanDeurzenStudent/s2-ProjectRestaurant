@@ -1,0 +1,12 @@
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\obj\Debug\netcoreapp2.1\BusinessLogic.interfaces.csprojAssemblyReference.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\obj\Debug\netcoreapp2.1\BusinessLogic.interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\obj\Debug\netcoreapp2.1\BusinessLogic.interfaces.AssemblyInfoInputs.cache
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\obj\Debug\netcoreapp2.1\BusinessLogic.interfaces.AssemblyInfo.cs
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\bin\Debug\netcoreapp2.1\BusinessLogic.interfaces.deps.json
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\bin\Debug\netcoreapp2.1\BusinessLogic.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\bin\Debug\netcoreapp2.1\BusinessLogic.interfaces.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\bin\Debug\netcoreapp2.1\DataAccess.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\bin\Debug\netcoreapp2.1\DataAccess.interfaces.pdb
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\obj\Debug\netcoreapp2.1\BusinessLogic.interfaces.csproj.CopyComplete
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\obj\Debug\netcoreapp2.1\BusinessLogic.interfaces.dll
+C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessLogic.interfaces\obj\Debug\netcoreapp2.1\BusinessLogic.interfaces.pdb

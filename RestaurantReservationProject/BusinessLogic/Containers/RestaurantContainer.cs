@@ -8,11 +8,10 @@ namespace BusinessLogic.Restraurants
     public class RestaurantContainer : IRestaurantContainerLogic
     {
         private IRestaurantContainerRepository _restaurantContainerRepository;
-        private RestaurantLogicConverter _restaurantConverter;
-        public RestaurantContainer(IRestaurantContainerRepository restaurantContainerRepository, RestaurantLogicConverter restaurantConverter)
+        private RestaurantLogicConverter _restaurantConverter = new RestaurantLogicConverter();
+        public RestaurantContainer(IRestaurantContainerRepository restaurantContainerRepository)
         {
             _restaurantContainerRepository = restaurantContainerRepository;
-            _restaurantConverter = restaurantConverter;
         }
 
         public void create(RestaurantModel restaurant)

@@ -6,4 +6,3 @@ C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\obj\Debug\netcoreapp2.1\DataAccess.interfaces.AssemblyInfo.cs
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\obj\Debug\netcoreapp2.1\DataAccess.interfaces.dll
 C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\obj\Debug\netcoreapp2.1\DataAccess.interfaces.pdb
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\DataAcces.interfaces\obj\Debug\netcoreapp2.1\DataAccess.interfaces.csprojAssemblyReference.cache

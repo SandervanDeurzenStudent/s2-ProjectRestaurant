@@ -12,11 +12,10 @@ namespace BusinessLogic.Containers
     {
 
         IReservationContainerContext _reservationContainerContext;
-        ReservationLogicConverter _reservationLogicConverter;
-        public ReservationContainer(IReservationContainerContext reservationContainerContext, ReservationLogicConverter reservationLogicConverter)
+        ReservationLogicConverter _reservationLogicConverter = new ReservationLogicConverter();
+        public ReservationContainer(IReservationContainerContext reservationContainerContext)
         {
             _reservationContainerContext = reservationContainerContext;
-            _reservationLogicConverter = reservationLogicConverter;
         }
         public void create(ReservationModel reservation, int d, int s)
         {

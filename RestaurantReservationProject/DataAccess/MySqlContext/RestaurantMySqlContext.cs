@@ -161,7 +161,7 @@ namespace DataAccess
             string conn = db.ReturnConnectionString();
             try
             {
-                string Query = string.Format("DELETE restaurants FROM restaurants LEFT JOIN comments ON restaurants.id = comments.restaurant.id WHERE id IS {0}; ", 1);
+                string Query = string.Format("{0}; ", 1);
                 MySqlConnection MyConn2 = new MySqlConnection(conn);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
