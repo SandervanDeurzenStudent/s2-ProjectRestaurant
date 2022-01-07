@@ -1,9 +1,0 @@
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessObject\bin\Debug\netcoreapp2.1\Presentation.deps.json
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessObject\bin\Debug\netcoreapp2.1\Presentation.dll
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessObject\obj\Debug\netcoreapp2.1\Presentation.csprojAssemblyReference.cache
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessObject\obj\Debug\netcoreapp2.1\Presentation.csproj.CoreCompileInputs.cache
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessObject\obj\Debug\netcoreapp2.1\Presentation.AssemblyInfoInputs.cache
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessObject\obj\Debug\netcoreapp2.1\Presentation.AssemblyInfo.cs
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessObject\bin\Debug\netcoreapp2.1\Presentation.pdb
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessObject\obj\Debug\netcoreapp2.1\Presentation.dll
-C:\Users\Sander van Deurzen\source\repos\FONTYS\s2-herstart\s2-ProjectRestaurant\RestaurantReservationProject\BusinessObject\obj\Debug\netcoreapp2.1\Presentation.pdb

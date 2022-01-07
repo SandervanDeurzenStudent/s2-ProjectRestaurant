@@ -12,21 +12,21 @@ namespace Presentation.Controllers
 {
     public class RestaurantViewController : Controller
     {
-
         //restaurants
         IRestaurantContainerLogic _restaurantContainerLogic;
+        IRestaurantLogic _restaurantLogic;
         //comments
         ICommentContainerLogic _commentContainerLogic;
         //Converters
         CommentViewConverter _commentViewConverter = new CommentViewConverter();
         RestaurantViewConverter _restaurantViewConverter = new RestaurantViewConverter();
-        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic)
+        public RestaurantViewController(IRestaurantContainerLogic restaurantContainerLogic, ICommentContainerLogic commentContainerLogic, IRestaurantLogic restaurantLogic)
         {
             _restaurantContainerLogic = restaurantContainerLogic;
             _commentContainerLogic = commentContainerLogic;
+            _restaurantLogic = restaurantLogic;
         }
 
-        // GET: Restaurant
         public IActionResult Index()
         {
             IndexRestaurantViewModel indexRestaurantViewModel = new IndexRestaurantViewModel
@@ -37,22 +37,15 @@ namespace Presentation.Controllers
             return View(indexRestaurantViewModel);
         }
 
-        // GET: Restaurant/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
             //get the Comments of the restaurant
             IndexCommentViewModel indexCommentViewModel = new IndexCommentViewModel
             {
                 commentList = _commentViewConverter.Convert_To_CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)))
             };
-            //var commentList = new CommentViewModel(_commentContainerLogic.GetCommentsById(Convert.ToInt32(id)));
 
             var restaurant = new RestaurantViewModel(_restaurantContainerLogic.getRestaurantById(Convert.ToInt32(id)));
-
             IndexViewModel indexViewModel = new IndexViewModel();
             indexViewModel.restaurantModel = restaurant;
             indexViewModel.commentList = indexCommentViewModel.commentList;
@@ -76,57 +69,35 @@ namespace Presentation.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var restaurantModel = _restaurantContainerLogic.getRestaurantById((int)id);
-            if (restaurantModel == null)
-            {
-                return NotFound();
-            }
             return View(new RestaurantViewModel( restaurantModel));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id,[FromForm] RestaurantViewModel restaurantModel)
+        public IActionResult Edit(int id,[FromForm] RestaurantViewModel restaurantModel)
         {
-            if (id != restaurantModel.Id)
+            try
             {
-                return NotFound();
+                _restaurantLogic.update(id, _restaurantViewConverter.Convert_To_Restaurant(restaurantModel));
             }
-
-            if (ModelState.IsValid)
+            catch (Exception)
             {
-                try
+                if (!RestaurantModelExists(restaurantModel.Id))
                 {
-                    //restaurantLogic.update((int)id, restaurantModel.convertToLogic());
+                    return NotFound();
                 }
-                catch (Exception)
+                else
                 {
-                    if (!RestaurantModelExists(restaurantModel.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
-                return RedirectToAction(nameof(Index));
             }
-            return View(restaurantModel);
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
             _restaurantContainerLogic.Delete(Convert.ToInt32(id));
             return View();
         }
@@ -134,7 +105,6 @@ namespace Presentation.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-           
             return RedirectToAction(nameof(Index));
         }
 
