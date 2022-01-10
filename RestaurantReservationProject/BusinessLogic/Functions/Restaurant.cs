@@ -9,10 +9,9 @@ namespace BusinessLogic.Functions
     {
         private IRestaurantRepository _IRestaurantRepository;
         private RestaurantLogicConverter _restaurantConverter;
-        public Restaurant(IRestaurantRepository RestaurantRepository, RestaurantLogicConverter restaurantLogicConverter)
+        public Restaurant(IRestaurantRepository RestaurantRepository)
         {
             _IRestaurantRepository = RestaurantRepository;
-            _restaurantConverter = restaurantLogicConverter;
         }
         public void update(int id, RestaurantModel restaurant)
         {

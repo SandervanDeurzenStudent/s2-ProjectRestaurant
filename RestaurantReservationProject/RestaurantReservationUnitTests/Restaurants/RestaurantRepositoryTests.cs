@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BusinessLogic;
+using BusinessLogic.Controller.Comments;
+using BusinessLogic.Functions;
+using BusinessLogic.Interfaces.Comments;
 using BusinessLogic.Restraurants;
 using DataAcces.interfaces.interfaces;
+using DataAccess.interfaces.Repositories;
 using DataAccess.interfaces.RestaurantsDto;
 using DataAccess.Repositories;
 using DataAccess.Repository;
@@ -17,10 +18,25 @@ namespace RestaurantReservationUnitTests.Restaurants
         RestaurantMemoryContext _restaurantMemoryContext;
         RestaurantRepository _restaurantRepository;
 
+        IRestaurantContainerRepository _restaurantContainerRepository;
+        IRestaurantContainerLogic _restaurantContainerLogic;
+
+        ICommentContainerLogic _commentContainerLogic;
+        ICommentContainerContext _commentContainerContext;
+        IRestaurantLogic _restaurantLogic;
+
+        RestaurantViewController _rvc;
+
         [SetUp]
         public void SetUp()
         {
             // initialize here
+            _restaurantContainerLogic = new RestaurantContainer(_restaurantContainerRepository);
+            _commentContainerLogic = new CommentContainer(_commentContainerContext);
+            _restaurantLogic = new Restaurant(_restaurantRepository);
+
+            _rvc = new RestaurantViewController(_restaurantContainerLogic, _commentContainerLogic, _restaurantLogic);
+            //memoryContext
             _restaurantMemoryContext = new RestaurantMemoryContext();
             _restaurantRepository = new RestaurantRepository(_restaurantMemoryContext, _restaurantMemoryContext);
         }
@@ -101,8 +117,6 @@ namespace RestaurantReservationUnitTests.Restaurants
             Assert.Throws<ArgumentOutOfRangeException>(() => _restaurantRepository.Delete(234565));
         }
 
-
-
         //Update
         [Test]
         public void updateRestaurant_Should_updateRestaurant()
@@ -123,6 +137,27 @@ namespace RestaurantReservationUnitTests.Restaurants
             //act
             //Assert
             Assert.Throws<ArgumentOutOfRangeException>(() => _restaurantRepository.update(234565, restaurant));
+        }
+
+        [Test]
+        public void getRestaurantByid_Should_return_Restaurant()
+        {
+            //Arrange
+
+            //var k = new RestaurantViewModel()
+            //{
+            //    Id = 1,
+            //    Name = "fr",
+            //    Info = "rf",
+            //    Address = "vbvb",
+            //    Telephone = 34342,
+            //    Email = "blabla@email.com"
+            //};
+            //_rvc.Edit(2);
+            ////act
+            //var result = _restaurantRepository.getRestaurantById(1);
+            ////Assert
+            //Assert.AreEqual(result.Id, newRestaurantDto.Item1);
         }
     }
 }

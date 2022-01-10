@@ -19,8 +19,4 @@
     <ProjectReference Include="..\RestaurantReservationProject\Presentation.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Comments\" />
-  </ItemGroup>
-
 </Project>

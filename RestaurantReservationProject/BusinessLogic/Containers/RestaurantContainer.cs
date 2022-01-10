@@ -30,6 +30,7 @@ namespace BusinessLogic.Restraurants
         public RestaurantModel getRestaurantById(int id)
         {
             RestaurantModel restaurant =  _restaurantConverter.Convert_To_Restaurant(_restaurantContainerRepository.getRestaurantById(id));
+            
             return restaurant;
         }
     }

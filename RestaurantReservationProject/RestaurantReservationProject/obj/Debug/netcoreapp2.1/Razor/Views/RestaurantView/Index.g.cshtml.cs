@@ -64,7 +64,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral("\r\n<h2>Index</h2>\r\n<p>\r\n    ");
             EndContext();
             BeginContext(168, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd3b5ba9ff8f4f13a2b39016a61de2f6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20efa24f2d8b4d3da231dbeab62b8cba", async() => {
                 BeginContext(191, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -145,7 +145,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(917, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f89845fa2154553b2d4f16b9594d727", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "05dacd6fcc534e98b677fcda1feb170e", async() => {
                 BeginContext(962, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -180,7 +180,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral(" |\r\n                    ");
             EndContext();
             BeginContext(994, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "29b581d02a0549f6a069ef5db12b13fa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "925afb1469ea49af8905c5849c6c5b6c", async() => {
                 BeginContext(1042, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -215,7 +215,7 @@ using RestaurantReservationProject.Models;
             WriteLiteral(" |\r\n                    ");
             EndContext();
             BeginContext(1077, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0699bda4fde4e408b9699e3456def20", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "375af8623d1d407385f1f4fc67fb08a5", async() => {
                 BeginContext(1124, 6, true);
                 WriteLiteral("Delete");
                 EndContext();
