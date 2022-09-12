@@ -18,24 +18,24 @@ namespace RestaurantReservationUnitTests.Restaurants
         RestaurantMemoryContext _restaurantMemoryContext;
         RestaurantRepository _restaurantRepository;
 
-        IRestaurantContainerRepository _restaurantContainerRepository;
-        IRestaurantContainerLogic _restaurantContainerLogic;
+        //IRestaurantContainerRepository _restaurantContainerRepository;
+        //IRestaurantContainerLogic _restaurantContainerLogic;
 
-        ICommentContainerLogic _commentContainerLogic;
-        ICommentContainerContext _commentContainerContext;
+        //ICommentContainerLogic _commentContainerLogic;
+        //ICommentContainerContext _commentContainerContext;
         IRestaurantLogic _restaurantLogic;
 
-        RestaurantViewController _rvc;
+        //RestaurantViewController _rvc;
 
         [SetUp]
         public void SetUp()
         {
             // initialize here
-            _restaurantContainerLogic = new RestaurantContainer(_restaurantContainerRepository);
-            _commentContainerLogic = new CommentContainer(_commentContainerContext);
-            _restaurantLogic = new Restaurant(_restaurantRepository);
+            //_restaurantContainerLogic = new RestaurantContainer(_restaurantContainerRepository);
+            //_commentContainerLogic = new CommentContainer(_commentContainerContext);
+            //_restaurantLogic = new Restaurant(_restaurantRepository);
 
-            _rvc = new RestaurantViewController(_restaurantContainerLogic, _commentContainerLogic, _restaurantLogic);
+            //_rvc = new RestaurantViewController(_restaurantContainerLogic, _commentContainerLogic, _restaurantLogic);
             //memoryContext
             _restaurantMemoryContext = new RestaurantMemoryContext();
             _restaurantRepository = new RestaurantRepository(_restaurantMemoryContext, _restaurantMemoryContext);
@@ -140,7 +140,7 @@ namespace RestaurantReservationUnitTests.Restaurants
         }
 
         [Test]
-        public void getRestaurantByid_Should_return_Restaurant()
+        public void getRestaurantByid_Shouldg_return_Restaurant()
         {
             //Arrange
 

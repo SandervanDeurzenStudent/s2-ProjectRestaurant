@@ -40,7 +40,7 @@ namespace RestaurantReservationUnitTests.Comments
         public void Create_Restaurant_Should_createComment_DifferentId()
         {
             //Arrange
-            CommentDto comment = new CommentDto(56734, "commenttName", "Info", 8);
+            CommentDto comment = new CommentDto(56734, "commentName", "Info", 8);
             //act
             _commentRepository.Create(comment);
             //Assert
